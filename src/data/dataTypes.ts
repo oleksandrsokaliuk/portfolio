@@ -35,6 +35,8 @@ export interface ExperienceI {
 }
 
 interface DataI {
+  cv: string;
+  cvName: string;
   language: Language;
   introduction: {
     header: string;

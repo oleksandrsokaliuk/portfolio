@@ -1,7 +1,10 @@
 import DataI, { Language } from "./dataTypes";
 import { programmingSkills } from "./generalData";
+import englishCV from "./../assets/CV_Sokaliuk.docx";
 
 const englishData: DataI = {
+  cv: englishCV,
+  cvName: "CV_Sokaliuk",
   language: Language.ENGLISH,
   introduction: {
     header: "full-stack",

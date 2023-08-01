@@ -5,7 +5,11 @@ import { CVDownloadButton } from "../styles/Info.styles";
 
 const ButtonCV: FC = () => {
   const languageState = useAppSelector(languageSelector);
-  return <CVDownloadButton>{languageState.aboutMe.cvButton}</CVDownloadButton>;
+  return (
+    <CVDownloadButton href={languageState.cv} download={languageState.cvName}>
+      {languageState.aboutMe.cvButton}
+    </CVDownloadButton>
+  );
 };
 
 export default ButtonCV;

@@ -50,7 +50,7 @@ export const InfoItemDescription = styled.p`
   line-height: normal;
 `;
 
-export const CVDownloadButton = styled.button`
+export const CVDownloadButton = styled.a`
   color: ${(props) => props.theme.light.header};
   text-align: center;
   font-family: ${(props) => props.theme.light.mainFont};
@@ -63,6 +63,8 @@ export const CVDownloadButton = styled.button`
   background: ${(props) => props.theme.light.exceptionalColour};
   align-self: flex-start;
   padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
 `;
 
 export const ItemsContainer = styled.div``;
