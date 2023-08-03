@@ -1,4 +1,4 @@
-declare module "*.docx" {
+declare module "*.pdf" {
   const content: string;
   export default content;
 }

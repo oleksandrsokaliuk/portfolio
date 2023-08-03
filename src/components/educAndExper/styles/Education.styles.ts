@@ -8,7 +8,7 @@ export const TitleHeader = styled(motion.div)`
   align-items: center;
 `;
 
-export const NewComer = styled.p`
+export const NewComer = styled(motion.p)`
   color: ${(props) => props.theme.light.header};
   text-align: center;
   font-family: ${(props) => props.theme.light.mainFont};
@@ -20,7 +20,7 @@ export const NewComer = styled.p`
   margin: 0;
   text-transform: uppercase;
 `;
-export const Motivated = styled.p`
+export const Motivated = styled(motion.p)`
   color: ${(props) => props.theme.light.header};
   font-family: ${(props) => props.theme.light.mainFont};
   font-size: 3em;
@@ -30,7 +30,7 @@ export const Motivated = styled.p`
   font-variant: small-caps;
   margin: 0;
 `;
-export const Lawyer = styled.p`
+export const Lawyer = styled(motion.p)`
   color: ${(props) => props.theme.light.header};
   text-align: center;
   font-family: ${(props) => props.theme.light.mainFont};

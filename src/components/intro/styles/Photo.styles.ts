@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const MainPhotoContainer = styled.div`
+export const MainPhotoContainer = styled(motion.div)`
   position: relative;
   width: 100%;
   overflow: hidden;

@@ -1,6 +1,6 @@
 import DataI, { Language } from "./dataTypes";
 import { programmingSkills } from "./generalData";
-import germanCV from "./../assets/Lebenslauf_Sokaliuk.docx";
+import germanCV from "./../assets/Lebenslauf_Sokaliuk.pdf";
 
 const germanData: DataI = {
   cv: germanCV,

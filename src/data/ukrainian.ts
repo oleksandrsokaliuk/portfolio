@@ -1,6 +1,6 @@
 import DataI, { Language } from "./dataTypes";
 import { programmingSkills } from "./generalData";
-import englishCV from "./../assets/CV_Sokaliuk.docx";
+import englishCV from "./../assets/CV_Sokaliuk.pdf";
 
 const ukrainianData: DataI = {
   cv: englishCV,

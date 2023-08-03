@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { ExperienceI } from "../../../data/dataTypes";
 import {
+  BarItemContainer,
   JobItemContainer,
   JobItemDescription,
   JobItemTitle,

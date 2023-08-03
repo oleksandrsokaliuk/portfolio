@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { useAppSelector } from "../../../redux/hooks";
 import { languageSelector } from "../../../redux/languageSlice";
 import JobPlace from "./../subComponents/JobPlace";
@@ -13,7 +13,9 @@ import {
   TitleHeader,
 } from "../styles/Education.styles";
 import jobBar from "./../../../assets/jobs-bar.svg";
-import { JobsBar } from "../styles/JobPlace.styles";
+import JobsBar from "./JobsBar";
+import { useInView } from "framer-motion";
+// import { JobsBar } from "../styles/JobPlace.styles";
 
 const Education: FC = () => {
   const selectedLanguage = useAppSelector(languageSelector);
@@ -21,6 +23,8 @@ const Education: FC = () => {
   const { experience } = selectedLanguage.edAndExp;
   const { programmingSkills } = selectedLanguage.skills;
   console.log(Object.values(programmingSkills));
+  const ref = useRef(null);
+  const isInView = useInView(ref);
   return (
     <>
       <RunningLine
@@ -29,12 +33,18 @@ const Education: FC = () => {
       />
       <EducationContainer>
         <TitleHeader>
-          <NewComer>{newComer}</NewComer>
-          <Motivated>{motivated}</Motivated>
-          <Lawyer>{lawyer}</Lawyer>
+          <NewComer initial={{ x: 600 }} animate={isInView && { x: 0 }}>
+            {newComer}
+          </NewComer>
+          <Motivated initial={{ x: -600 }} animate={isInView && { x: 0 }}>
+            {motivated}
+          </Motivated>
+          <Lawyer ref={ref} initial={{ x: 600 }} animate={isInView && { x: 0 }}>
+            {lawyer}
+          </Lawyer>
         </TitleHeader>
         <JobsContainer>
-          <JobsBar src={jobBar} alt="jobs bar" />
+          <JobsBar />
           <JobsListContainer>
             {Object.values(experience).map((place) => (
               <JobPlace

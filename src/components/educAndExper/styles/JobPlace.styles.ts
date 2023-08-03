@@ -14,6 +14,7 @@ export const JobItemTitle = styled(motion.h4)`
   font-weight: 700;
   line-height: normal;
   margin: 0;
+  width: 80%;
 `;
 
 export const JobItemDescription = styled(motion.p)`
@@ -28,4 +29,10 @@ export const JobItemDescription = styled(motion.p)`
 
 export const JobsBar = styled(motion.img)`
   height: 95%;
+`;
+
+export const BarItemContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 2%;
 `;
