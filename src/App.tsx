@@ -3,17 +3,29 @@ import AboutMe from "./components/aboutMe/AboutMe";
 import EducAndExper from "./components/educAndExper/EducAndExper";
 import MyWorks from "./components/works/MyWorks";
 import Feedback from "./components/feedback/Feedback";
-import GlobalStyle from "./generalStyles/GlobalStyles";
+import GlobalStyle, { AppContainer } from "./generalStyles/GlobalStyles";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Intro />
-      <AboutMe />
-      <EducAndExper />
-      <MyWorks />
-      <Feedback />
+      <AppContainer>
+        <div style={{ scrollSnapAlign: "start" }}>
+          <Intro />
+        </div>
+        <div style={{ scrollSnapAlign: "start" }}>
+          <AboutMe />
+        </div>
+        <div style={{ scrollSnapAlign: "start" }}>
+          <EducAndExper />
+        </div>
+        <div style={{ scrollSnapAlign: "start" }}>
+          <MyWorks />
+        </div>
+        <div style={{ scrollSnapAlign: "start" }}>
+          <Feedback />
+        </div>
+      </AppContainer>
     </>
   );
 }

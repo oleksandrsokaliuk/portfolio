@@ -11,4 +11,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const AppContainer = styled.div`
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+`;
+
 export default GlobalStyle;
