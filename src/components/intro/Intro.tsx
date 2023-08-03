@@ -25,12 +25,32 @@ const Intro: FC = () => {
       <IntroHeader>
         <Photo />
         <TextHeaderContainer>
-          <IntroTextHeader>{header}</IntroTextHeader>
-          <IntroTextSubHeader>{subHeader}</IntroTextSubHeader>
+          <IntroTextHeader
+            initial={{ x: 1000 }}
+            animate={{ x: 0 }}
+            transition={{ type: "spring" }}
+          >
+            {header}
+          </IntroTextHeader>
+          <IntroTextSubHeader
+            initial={{ x: -1000 }}
+            animate={{ x: 0 }}
+            transition={{ type: "spring" }}
+          >
+            {subHeader}
+          </IntroTextSubHeader>
         </TextHeaderContainer>
       </IntroHeader>
       <LanguageSwitcher />
-      <ScrollButtonContainer>
+      <ScrollButtonContainer
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1 }}
+        whileHover={{
+          scale: 1.1,
+          transition: { duration: 0.4 },
+        }}
+      >
         {scrollButton.map((word) => (
           <ScrollP>{word}</ScrollP>
         ))}

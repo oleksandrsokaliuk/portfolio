@@ -33,7 +33,7 @@ const ukrainianData: DataI = {
       title: "Національність",
       description: "українець",
     },
-    cvButton: "Завантажити резюме",
+    cvButton: "Резюме",
   },
   interests: {
     football: {

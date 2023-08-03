@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import aboutMePhoto from "../../assets/aboutMePhoto.png";
 import InterestsSlider from "./subComponents/InterestsSlider";
 import Info from "./subComponents/Info";
@@ -6,8 +6,9 @@ import {
   AboutMeContainer,
   AboutMeImage,
   InfoInterestsContainer,
+  InnerContainer,
 } from "./styles/AboutMe.styles";
-import { useInView } from "framer-motion";
+import { useInView, useMotionValueEvent, useScroll } from "framer-motion";
 import { InfoHeader } from "./styles/Info.styles";
 import { useAppSelector } from "../../redux/hooks";
 import { languageSelector } from "../../redux/languageSlice";
@@ -17,13 +18,39 @@ const AboutMe: FC = () => {
   const isImgInView = useInView(imgRef);
   const languageState = useAppSelector(languageSelector);
   const { whoAmI } = languageState.aboutMe;
+  const [infoAppearance, setInfoAppearance] = useState<boolean>(false);
+  const [interestsAppearance, setInterestsAppearance] =
+    useState<boolean>(false);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log(latest);
+    if (latest >= 0.5 && latest < 0.9) {
+      setInfoAppearance(true);
+    } else {
+      setInfoAppearance(false);
+    }
+    if (latest >= 0.1 && latest < 0.5) {
+      setInterestsAppearance(true);
+    } else {
+      setInterestsAppearance(false);
+    }
+  });
+  // useEffect(() => {
+  //   console.log(scrollYProgress);
+  // }, [scrollYProgress]);
   return (
-    <AboutMeContainer>
-      <InfoInterestsContainer>
+    <AboutMeContainer ref={ref}>
+      <InnerContainer>
         <InfoHeader>{whoAmI}</InfoHeader>
-        <Info />
-        <InterestsSlider />
-      </InfoInterestsContainer>
+        <InfoInterestsContainer>
+          <Info appears={infoAppearance} />
+          <InterestsSlider appears={interestsAppearance} />
+        </InfoInterestsContainer>
+      </InnerContainer>
       <AboutMeImage
         ref={imgRef}
         style={{

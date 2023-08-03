@@ -33,7 +33,7 @@ const germanData: DataI = {
       title: "Nationalität",
       description: "ukrainisch",
     },
-    cvButton: "Lebenslauf herunterladen",
+    cvButton: "Lebenslauf",
   },
   interests: {
     football: {

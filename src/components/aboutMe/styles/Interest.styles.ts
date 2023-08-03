@@ -20,6 +20,8 @@ export const InterestContainer = styled(motion.div)<InterestContainerProps>`
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
+  /* opacity: 0; */
+  // opacity изменить на 1 когда скролл проходит
 `;
 
 export const Title = styled.h3`
@@ -40,4 +42,7 @@ export const BGImage = styled.img`
 
 export const InterestsSliderContainer = styled(motion.div)`
   height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 15%;
 `;

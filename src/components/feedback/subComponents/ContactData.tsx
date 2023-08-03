@@ -17,6 +17,7 @@ import {
   ContactDataContainer,
   Container,
   Github,
+  IconA,
   Instagram,
   LinkedIn,
   MailIcon,
@@ -50,9 +51,18 @@ const ContactData: FC = () => {
         </PhoneEmailContainer>
       </ContactDataContainer>
       <SocialNetworksContainer>
-        <LinkedIn />
-        <Instagram />
-        <Github />
+        <IconA
+          href="https://www.linkedin.com/in/oleksandr-sokaliuk-b7b9b0244"
+          target="_blank"
+        >
+          <LinkedIn />
+        </IconA>
+        <IconA href="https://www.instagram.com/alex_sokal/" target="_blank">
+          <Instagram />
+        </IconA>
+        <IconA href="https://github.com/oleksandrsokaliuk" target="_blank">
+          <Github />
+        </IconA>
       </SocialNetworksContainer>
     </Container>
   );

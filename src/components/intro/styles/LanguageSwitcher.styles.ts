@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface LangSwitcherItemI {
   selected: boolean;
@@ -16,7 +17,7 @@ export const LangSwitcherContainer = styled.div`
   }
 `;
 
-export const LangSwitcherItem = styled.p<LangSwitcherItemI>`
+export const LangSwitcherItem = styled(motion.p)<LangSwitcherItemI>`
   text-align: center;
   font-family: ${(props) => props.theme.light.secondaryFont};
   font-size: 30px;

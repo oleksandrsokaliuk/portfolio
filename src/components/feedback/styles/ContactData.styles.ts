@@ -86,19 +86,22 @@ export const MailIcon = styled(FiMail)`
 export const LinkedIn = styled(IoLogoLinkedin)`
   color: ${(props) => props.theme.light.exceptionalColour};
   height: 100%;
-  width: 20%;
-  cursor: pointer;
+  width: 100%;
 `;
 
 export const Instagram = styled(IoLogoInstagram)`
   color: ${(props) => props.theme.light.exceptionalColour};
   height: 100%;
-  width: 20%;
-  cursor: pointer;
+  width: 100%;
 `;
 
 export const Github = styled(IoLogoGithub)`
   color: ${(props) => props.theme.light.exceptionalColour};
+  height: 100%;
+  width: 100%;
+`;
+
+export const IconA = styled.a`
   height: 100%;
   width: 20%;
   cursor: pointer;

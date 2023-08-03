@@ -33,7 +33,7 @@ export const TextHeaderContainer = styled.div`
   width: 150%;
 `;
 
-export const IntroTextHeader = styled.h1`
+export const IntroTextHeader = styled(motion.h1)`
   margin: 0;
   padding: 0;
   position: relative;
@@ -54,7 +54,7 @@ export const IntroTextHeader = styled.h1`
   }
 `;
 
-export const IntroTextSubHeader = styled.h2`
+export const IntroTextSubHeader = styled(motion.h2)`
   margin: 0;
   padding: 0;
   position: relative;
@@ -75,7 +75,7 @@ export const IntroTextSubHeader = styled.h2`
   }
 `;
 
-export const ScrollButtonContainer = styled.div`
+export const ScrollButtonContainer = styled(motion.div)`
   width: 10px;
   cursor: pointer;
   position: absolute;

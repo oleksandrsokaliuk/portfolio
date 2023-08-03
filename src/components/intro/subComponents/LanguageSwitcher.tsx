@@ -16,6 +16,8 @@ const LanguageSwitcher: FC = () => {
     <LangSwitcherContainer>
       {languages.map((language) => (
         <LangSwitcherItem
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, scale: [0, 1, 0.8, 1] }}
           onClick={() => {
             if (language === Language.ENGLISH) {
               dispatch(changeLanguage(language));

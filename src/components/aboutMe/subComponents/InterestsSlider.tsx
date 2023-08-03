@@ -9,9 +9,13 @@ import { useAppSelector } from "../../../redux/hooks";
 import { languageSelector } from "../../../redux/languageSlice";
 import { useInView } from "framer-motion";
 
-const InterestsSlider: FC = () => {
-  const interestsRef = useRef(null);
-  const isInterestsInView = useInView(interestsRef);
+interface InterestsSliderI {
+  appears: boolean;
+}
+
+const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
+  // const interestsRef = useRef(null);
+  // const isInterestsInView = useInView(interestsRef);
   const selectedLanguage = useAppSelector(languageSelector);
   const allInterests = [
     {
@@ -66,10 +70,15 @@ const InterestsSlider: FC = () => {
   };
   return (
     <InterestsSliderContainer
-      ref={interestsRef}
+      // ref={interestsRef}
+      // style={{
+      //   transform: isInterestsInView ? "none" : "translateX(-600px)",
+      //   opacity: isInterestsInView ? 1 : 0,
+      //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      // }}
       style={{
-        transform: isInterestsInView ? "none" : "translateX(-600px)",
-        opacity: isInterestsInView ? 1 : 0,
+        transform: appears ? "none" : "translateX(600px)",
+        opacity: appears ? 1 : 0,
         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
       }}
     >

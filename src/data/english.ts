@@ -33,7 +33,7 @@ const englishData: DataI = {
       title: "Nationality",
       description: "ukrainian",
     },
-    cvButton: "Download CV",
+    cvButton: "CV",
   },
   interests: {
     football: {
