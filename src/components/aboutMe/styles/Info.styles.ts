@@ -8,8 +8,10 @@ export const InfoContainer = styled(motion.div)`
   flex-direction: column;
   /* justify-content: center; */
   /* gap: 15px; */
-  height: 80vh;
+  height: 100%;
   width: 100%;
+  flex: 3;
+  justify-content: center;
   /* overflow: hidden; */
 `;
 
@@ -24,8 +26,9 @@ export const InfoHeader = styled.h2`
   color: ${(props) => props.theme.light.header};
   /* position: absolute;
   bottom: 85%; */
-  height: 20vh;
+  /* height: 20vh; */
   margin: 0;
+  flex: 1;
 `;
 
 export const InfoItemContainer = styled.div`
@@ -35,7 +38,7 @@ export const InfoItemContainer = styled.div`
 
 export const InfoItemHeader = styled.p`
   font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 1.7em;
+  font-size: 2.2em;
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -47,7 +50,7 @@ export const InfoItemHeader = styled.p`
 
 export const InfoItemDescription = styled.p`
   font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 1.7em;
+  font-size: 2.2em;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -67,10 +70,10 @@ export const CVDownloadButton = styled.a`
   background: ${(props) => props.theme.light.exceptionalColour};
   align-self: flex-start;
   /* vertical-align: middle; */
-  padding: 10px;
+  padding: 2% 6%;
   cursor: pointer;
   text-decoration: none;
-  margin-top: 10%;
+  /* margin-top: 10%; */
 `;
 
 export const CVDownloadIcon = styled(BiSolidDownload)`

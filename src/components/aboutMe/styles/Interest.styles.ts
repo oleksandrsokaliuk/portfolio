@@ -10,7 +10,7 @@ interface InterestContainerProps {
 export const InterestContainer = styled(motion.div)<InterestContainerProps>`
   position: absolute;
   width: 500px;
-  height: 500px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,8 +41,6 @@ export const BGImage = styled.img`
 `;
 
 export const InterestsSliderContainer = styled(motion.div)`
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  top: 15%;
+  height: 100%;
+  flex: 3;
 `;

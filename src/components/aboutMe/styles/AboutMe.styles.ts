@@ -4,37 +4,39 @@ import { motion } from "framer-motion";
 export const AboutMeContainer = styled(motion.div)`
   width: 100vw;
   display: flex;
-  margin-top: -2vh;
   position: relative;
-  height: 300vh;
+  height: 100vh;
+  padding-top: 10%;
 `;
 
 export const InnerContainer = styled(motion.div)`
   width: 50vw;
   margin-left: 10%;
-  margin-top: 15%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   /* overflow: hidden; */
-  position: sticky;
-  top: 10%;
+  justify-content: space-between;
 `;
 
 export const InfoInterestsContainer = styled(motion.div)`
   display: flex;
   width: 50vw;
-  margin: 10% 0;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  /* height: 50vh; */
+  /* margin: 10% 0;
+  flex-wrap: nowrap; */
+  /* flex-direction: column; */
+  /* overflow: hidden; */
+  position: relative;
+  /* gap: 30%; */
+  height: 100%;
 `;
 
 export const AboutMeImage = styled(motion.img)`
   position: absolute;
-  height: 90vh;
+  height: 90%;
   width: auto;
-  margin-top: 5%;
-  margin-right: 10%;
-  margin-bottom: -2%;
+  bottom: -2%;
+  right: 5%;
 `;

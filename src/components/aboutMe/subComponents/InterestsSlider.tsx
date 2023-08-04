@@ -10,7 +10,7 @@ import { languageSelector } from "../../../redux/languageSlice";
 import { useInView } from "framer-motion";
 
 interface InterestsSliderI {
-  appears: boolean;
+  appears?: boolean;
 }
 
 const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
@@ -70,17 +70,9 @@ const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
   };
   return (
     <InterestsSliderContainer
-      // ref={interestsRef}
-      // style={{
-      //   transform: isInterestsInView ? "none" : "translateX(-600px)",
-      //   opacity: isInterestsInView ? 1 : 0,
-      //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      // }}
-      style={{
-        transform: appears ? "none" : "translateX(600px)",
-        opacity: appears ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      }}
+      initial={{ opacity: 0, y: 1000 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 1000 }}
     >
       {interests.map((interest) => (
         <Interest
