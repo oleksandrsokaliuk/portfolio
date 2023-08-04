@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/portfolio/static/js/main.c8809d9e.js",
+    "static/media/photo.png": "/portfolio/static/media/photo.4da331b3f95b4cc50051.png",
+    "static/media/aboutMePhoto.png": "/portfolio/static/media/aboutMePhoto.255b6306a0a69e59e588.png",
+    "static/media/Lebenslauf_Sokaliuk.pdf": "/portfolio/static/media/Lebenslauf_Sokaliuk.3c860243eab43e9a3c28.pdf",
+    "static/media/CV_Sokaliuk.pdf": "/portfolio/static/media/CV_Sokaliuk.0d44aefdbec0c388ca19.pdf",
+    "static/media/videogames.svg": "/portfolio/static/media/videogames.d1effe770b6eb0d914d8292ba1e9a158.svg",
+    "static/media/football.svg": "/portfolio/static/media/football.ce53f063a6c2e64c28d8789c4cbcd5a0.svg",
+    "static/media/languages.svg": "/portfolio/static/media/languages.e8abaa155a9ea647c1a2222da096170d.svg",
+    "static/media/music.svg": "/portfolio/static/media/music.a4a51203c330c605d917430001a190f0.svg",
+    "index.html": "/portfolio/index.html",
+    "main.c8809d9e.js.map": "/portfolio/static/js/main.c8809d9e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c8809d9e.js"
+  ]
+}
