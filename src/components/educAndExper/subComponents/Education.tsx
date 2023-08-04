@@ -26,7 +26,7 @@ const Education: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
-    <>
+    <div style={{ scrollSnapAlign: "start" }}>
       <RunningLine
         direction={LineDirection.RIGHT}
         text="education and experience • education and experience • education and experience •"
@@ -57,7 +57,7 @@ const Education: FC = () => {
           </JobsListContainer>
         </JobsContainer>
       </EducationContainer>
-    </>
+    </div>
   );
 };
 

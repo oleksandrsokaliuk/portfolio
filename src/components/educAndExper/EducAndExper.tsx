@@ -20,28 +20,30 @@ const EducAndExper: FC = () => {
   return (
     <>
       <Education />
-      <div style={{ overflow: "hidden" }}>
-        <RunningLine
-          direction={LineDirection.RIGHT}
-          text="skills • skills • skills • skills •"
-        />
+      <div style={{ scrollSnapAlign: "start" }}>
+        <div style={{ overflow: "hidden" }}>
+          <RunningLine
+            direction={LineDirection.RIGHT}
+            text="skills • skills • skills • skills •"
+          />
+        </div>
+        <SkillsGeneralContainer>
+          <SkillsProgrammingContainer>
+            {Object.values(programmingSkills).map((skill) => (
+              <Skill title={skill.title} level={skill.level} />
+            ))}
+          </SkillsProgrammingContainer>
+          <SkillsLanguageContainer>
+            {Object.values(languagesSkills).map((skill) => (
+              <Skill
+                title={skill.title}
+                langProgress={skill.level}
+                langLevel={skill.langLevel}
+              />
+            ))}
+          </SkillsLanguageContainer>
+        </SkillsGeneralContainer>
       </div>
-      <SkillsGeneralContainer>
-        <SkillsProgrammingContainer>
-          {Object.values(programmingSkills).map((skill) => (
-            <Skill title={skill.title} level={skill.level} />
-          ))}
-        </SkillsProgrammingContainer>
-        <SkillsLanguageContainer>
-          {Object.values(languagesSkills).map((skill) => (
-            <Skill
-              title={skill.title}
-              langProgress={skill.level}
-              langLevel={skill.langLevel}
-            />
-          ))}
-        </SkillsLanguageContainer>
-      </SkillsGeneralContainer>
     </>
   );
 };

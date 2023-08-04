@@ -25,9 +25,7 @@ function App() {
         <div style={{ scrollSnapAlign: "center" }}>
           <AboutMe />
         </div>
-        <div style={{ scrollSnapAlign: "start" }}>
-          <EducAndExper />
-        </div>
+        <EducAndExper />
         <div style={{ scrollSnapAlign: "start" }}>
           <MyWorks />
         </div>
