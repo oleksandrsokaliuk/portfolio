@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import LanguageSwitcher from "./subComponents/LanguageSwitcher";
 import { useAppSelector } from "../../redux/hooks";
 import { languageSelector } from "../../redux/languageSlice";
@@ -13,18 +13,25 @@ import {
   ScrollP,
   TextHeaderContainer,
 } from "./styles/Intro.styles";
-import { MotionValue, useScroll, useTransform } from "framer-motion";
+import {
+  MotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ThemeI } from "../../generalStyles/theme";
 
-const Intro: FC = () => {
+export interface IntroI {
+  scrollPosition: number;
+}
+
+const Intro: FC<IntroI> = ({ scrollPosition }) => {
   const selectedLanguage = useAppSelector(languageSelector);
   const { header, subHeader, scrollButton } = selectedLanguage.introduction;
-
   return (
-    <IntroContainer
-    // style={{ scrollSnapAlign: "start" }}
-    >
+    <IntroContainer>
       <IntroHeader>
-        <Photo />
+        <Photo scrollPosition={scrollPosition} />
         <TextHeaderContainer>
           <IntroTextHeader
             initial={{ x: 1000 }}

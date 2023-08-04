@@ -9,6 +9,7 @@ export const IntroContainer = styled.div`
   flex-direction: column;
   background-color: ${(props) => props.theme.light.secondaryBG};
   border-radius: 25% 25% 25% 25% / 0% 0% 5% 5%;
+  position: relative;
   @media (max-width: 770px) {
     width: 770px;
   }

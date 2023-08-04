@@ -22,7 +22,7 @@ export const PhotoBackground = styled.div`
 `;
 
 export const MainPhoto = styled(motion.img)`
-  position: absolute;
+  /* position: absolute; */
   height: 510px;
   width: 336px;
   bottom: 0;

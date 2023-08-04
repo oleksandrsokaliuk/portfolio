@@ -1,4 +1,4 @@
-interface ThemeI {
+export interface ThemeI {
   mainBG: string;
   secondaryBG: string;
   thirdBG: string;
