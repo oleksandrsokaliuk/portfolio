@@ -65,8 +65,8 @@ export const JobsListContainer = styled.div`
 export const SkillsGeneralContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 100vh;
-  margin: 0 10% 10%;
+  height: 80vh;
+  margin: 1% 10% 0 10%;
   gap: 10%;
 `;
 

@@ -20,7 +20,7 @@ const EducAndExper: FC = () => {
   return (
     <>
       <Education />
-      <div style={{ scrollSnapAlign: "start" }}>
+      <div style={{ scrollSnapAlign: "start", height: "100vh" }}>
         <div style={{ overflow: "hidden" }}>
           <RunningLine
             direction={LineDirection.RIGHT}

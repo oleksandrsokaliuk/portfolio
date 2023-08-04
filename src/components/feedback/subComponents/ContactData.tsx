@@ -2,13 +2,6 @@ import { FC } from "react";
 import { useAppSelector } from "../../../redux/hooks";
 import { languageSelector } from "../../../redux/languageSlice";
 import {
-  IoCall,
-  IoLogoLinkedin,
-  IoLogoInstagram,
-  IoLogoGithub,
-} from "react-icons/io5";
-import { FiMail } from "react-icons/fi";
-import {
   CallIcon,
   CallToActionContainer,
   CallToActionDescr,

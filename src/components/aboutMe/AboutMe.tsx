@@ -61,7 +61,7 @@ const AboutMe: FC = () => {
     <AboutMeContainer>
       <InnerContainer>
         <InfoHeader>{whoAmI}</InfoHeader>
-        <InfoInterestsContainer>
+        <InfoInterestsContainer id="aboutme">
           <AnimatePresence>
             {activeSlide === 0 ? <Info /> : <InterestsSlider />}
           </AnimatePresence>

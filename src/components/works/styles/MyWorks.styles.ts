@@ -61,8 +61,8 @@ export const ExamplesContainer = styled.div`
 `;
 
 export const Example = styled.div`
-  width: 25%;
-  height: 55%;
+  width: 22%;
+  height: 45%;
   background-color: #d9d9d9;
   box-shadow: 0px 4px 10px 0px rgba(0, 6, 27, 0.5);
 `;

@@ -8,9 +8,9 @@ import {
   IntroHeader,
   IntroTextHeader,
   IntroTextSubHeader,
+  ScrollA,
   ScrollButtonContainer,
   ScrollIcon,
-  ScrollP,
   TextHeaderContainer,
 } from "./styles/Intro.styles";
 import {
@@ -60,7 +60,7 @@ const Intro: FC<IntroI> = ({ scrollPosition }) => {
         }}
       >
         {scrollButton.map((word) => (
-          <ScrollP>{word}</ScrollP>
+          <ScrollA href="#aboutme">{word}</ScrollA>
         ))}
         <ScrollIcon />
       </ScrollButtonContainer>

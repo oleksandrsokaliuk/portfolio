@@ -80,7 +80,7 @@ export const ScrollButtonContainer = styled(motion.div)`
   width: 10px;
   cursor: pointer;
   position: absolute;
-  bottom: 7%;
+  bottom: 15%;
   right: 3%;
 `;
 
@@ -88,7 +88,7 @@ export const ScrollIcon = styled(FiArrowDown)`
   width: inherit;
 `;
 
-export const ScrollP = styled.p`
+export const ScrollA = styled.a`
   width: inherit;
   word-wrap: break-word;
   color: ${(props) => props.theme.light.mainBG};
@@ -98,4 +98,5 @@ export const ScrollP = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-decoration: none;
 `;

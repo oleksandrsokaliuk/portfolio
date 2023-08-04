@@ -36,7 +36,7 @@ export const LineText = styled.h3`
 `;
 
 export const LineContainerHeaderTest = styled(Marquee)`
-  margin: 30px auto;
+  margin: 0;
   border-bottom: 1px solid #e6e6e6;
   border-top: 1px solid #e6e6e6;
   max-width: 100%;
@@ -59,12 +59,13 @@ export const LineTextTest = styled.h3`
   height: 100%;
   width: 50%;
   font-family: Noto Serif;
-  font-size: 4rem;
+  font-size: 4.5em;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 13.8px;
   padding: 0;
+  margin: 0;
 `;
 
 export const LineContainerHeaderFramer = styled.div`

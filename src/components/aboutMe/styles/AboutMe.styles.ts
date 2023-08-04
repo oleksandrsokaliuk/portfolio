@@ -37,6 +37,6 @@ export const AboutMeImage = styled(motion.img)`
   position: absolute;
   height: 90%;
   width: auto;
-  bottom: -2%;
+  bottom: 0;
   right: 5%;
 `;

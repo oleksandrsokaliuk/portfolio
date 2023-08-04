@@ -6,7 +6,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5%;
+  padding-left: 5%;
   border-left: 5px solid ${(props) => props.theme.light.secondaryBG};
 `;
 
@@ -36,8 +36,7 @@ export const Input = styled.input`
   outline: none;
 `;
 
-export const Button = styled.button`
-  color: ${(props) => props.theme.light.header};
+/* color: ${(props) => props.theme.light.header};
   font-family: ${(props) => props.theme.light.secondaryFont};
   font-size: 20px;
   font-style: normal;
@@ -49,6 +48,63 @@ export const Button = styled.button`
   background: ${(props) => props.theme.light.exceptionalColour};
   align-self: flex-start;
   padding: 3% 20%;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  cursor: pointer; */
+
+export const Button = styled.button`
+  color: ${(props) => props.theme.light.header};
+  font-family: ${(props) => props.theme.light.secondaryFont};
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 3.68px;
+  text-transform: capitalize;
+  border-radius: 36px;
+  background: ${(props) => props.theme.light.exceptionalColour};
+  align-self: flex-start;
+  padding: 3% 20%;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${(props) => props.theme.light.header};
+    z-index: -1;
+    transition: 0.3s;
+    transform: rotateX(90deg);
+    border-radius: 36px;
+  }
+  &:hover::before {
+    transform: rotateX(0deg);
+  }
+  &:hover {
+    color: ${(props) => props.theme.light.exceptionalColour};
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${(props) => props.theme.light.header};
+    z-index: -1;
+    transition: 0.3s;
+    transform: rotateY(90deg);
+    border-radius: 36px;
+  }
+  &:hover::after {
+    transform: rotateY(0deg);
+  }
 `;
 
 export const ItemContainer = styled.div`

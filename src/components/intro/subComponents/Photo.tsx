@@ -28,9 +28,6 @@ const Photo: FC<IntroI> = ({ scrollPosition }) => {
         src={mainPhoto}
         alt="Oleksandr Sokaliuk"
         style={{ y: scrollPosition * 5000 }}
-        initial={{ scale: 0, x: 200 }}
-        animate={{ scale: 1, x: 0 }}
-        // transition={{ duration: 1 }}
       />
       <PhotoBackground></PhotoBackground>
     </MainPhotoContainer>
