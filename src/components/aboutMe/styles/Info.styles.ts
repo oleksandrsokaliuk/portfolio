@@ -6,13 +6,14 @@ export const InfoContainer = styled(motion.div)`
   color: ${(props) => props.theme.light.header};
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* gap: 15px; */
   height: 100%;
   width: 100%;
   flex: 3;
   justify-content: center;
-  /* overflow: hidden; */
+  @media (max-width: 992px) {
+    flex-direction: row;
+    padding-bottom: 10%;
+  }
 `;
 
 export const InfoHeader = styled.h2`
@@ -29,6 +30,11 @@ export const InfoHeader = styled.h2`
   /* height: 20vh; */
   margin: 0;
   flex: 1;
+  @media (max-width: 992px) {
+    font-size: 2em;
+    padding: 10% 0;
+    text-align: center;
+  }
 `;
 
 export const InfoItemContainer = styled.div`
@@ -46,6 +52,9 @@ export const InfoItemHeader = styled.p`
   &::after {
     content: ":";
   }
+  @media (max-width: 992px) {
+    font-size: 1.4em;
+  }
 `;
 
 export const InfoItemDescription = styled.p`
@@ -55,6 +64,9 @@ export const InfoItemDescription = styled.p`
   font-weight: 500;
   line-height: normal;
   margin: 2% 0 0 2%;
+  @media (max-width: 992px) {
+    font-size: 1.4em;
+  }
 `;
 
 export const CVDownloadButton = styled.a`
@@ -69,11 +81,13 @@ export const CVDownloadButton = styled.a`
   border-radius: 36px;
   background: ${(props) => props.theme.light.exceptionalColour};
   align-self: flex-start;
-  /* vertical-align: middle; */
   padding: 2% 6%;
   cursor: pointer;
   text-decoration: none;
-  /* margin-top: 10%; */
+  @media (max-width: 992px) {
+    width: 100%;
+    align-self: center;
+  }
 `;
 
 export const CVDownloadIcon = styled(BiSolidDownload)`

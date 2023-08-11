@@ -92,7 +92,7 @@ export const LineTextFramer = styled.span`
   white-space: nowrap;
   height: 100%;
   width: 50%;
-  font-family: Noto Serif;
+  font-family: ${(props) => props.theme.light.mainFont};
   font-size: 75px;
   font-style: normal;
   font-weight: 700;

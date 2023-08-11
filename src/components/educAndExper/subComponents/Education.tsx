@@ -33,13 +33,13 @@ const Education: FC = () => {
       />
       <EducationContainer>
         <TitleHeader>
-          <NewComer initial={{ x: 600 }} animate={isInView && { x: 0 }}>
+          <NewComer initial={{ x: 600 }} animate={{ x: 0 }}>
             {newComer}
           </NewComer>
-          <Motivated initial={{ x: -600 }} animate={isInView && { x: 0 }}>
+          <Motivated initial={{ x: -600 }} animate={{ x: 0 }}>
             {motivated}
           </Motivated>
-          <Lawyer ref={ref} initial={{ x: 600 }} animate={isInView && { x: 0 }}>
+          <Lawyer ref={ref} initial={{ x: 600 }} animate={{ x: 0 }}>
             {lawyer}
           </Lawyer>
         </TitleHeader>

@@ -19,7 +19,7 @@ function App() {
     <>
       <GlobalStyle />
       <AppContainer ref={AppRef}>
-        <div style={{ scrollSnapAlign: "start" }}>
+        <div style={{ scrollSnapAlign: "start", height: "100vh" }}>
           <Intro scrollPosition={hookedYPostion} />
         </div>
         <div style={{ scrollSnapAlign: "center" }}>

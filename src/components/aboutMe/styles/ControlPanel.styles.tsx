@@ -8,13 +8,17 @@ interface CircleIconI {
 
 export const ControlContainer = styled.div`
   position: absolute;
-  left: -100px;
-  top: 0;
-  bottom: 0;
+  left: 5%;
+  top: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  z-index: 500;
+  @media (max-width: 992px) {
+    position: inherit;
+    flex-direction: row;
+  }
 `;
 
 export const ControlButton = styled(motion.button)`
