@@ -128,15 +128,19 @@ const englishData: DataI = {
     header: "my works",
     filterItems: [
       "all",
+      StackI.HTML,
+      StackI.CSS,
       StackI.JAVASCRIPT,
       StackI.TYPESCRIPT,
       StackI.REACT,
+      StackI.STYLEDCOMPONENTS,
       StackI.REDUX,
+      StackI.REACTNATIVE,
       StackI.NEXT,
       StackI.NEST,
-      StackI.REACTNATIVE,
       StackI.EXPRESS,
       StackI.MONGOOSE,
+      StackI.WEBSOCKET,
     ],
     works: [
       {
@@ -149,21 +153,7 @@ const englishData: DataI = {
         link: "https://oleksandrsokaliuk.github.io/the-translator/",
       },
       {
-        name: "s.tories",
-        stack: [
-          StackI.TYPESCRIPT,
-          StackI.REDUX,
-          StackI.EXPRESS,
-          StackI.MONGOOSE,
-        ],
-        description: "Web app to share dreams",
-        finished: false,
-        picture: StoriesPNG,
-        githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",
-        githubBack: "https://github.com/oleksandrsokaliuk/S.toriesBACK",
-      },
-      {
-        name: "Web app for garbage",
+        name: "decluttering app",
         stack: [StackI.TYPESCRIPT, StackI.REDUX, StackI.EXPRESS],
         description:
           "A full-stack web-app as a real project during the bootcamp. User - an employee of a decluttering company. Participated in the back-end part mostly",
@@ -173,14 +163,19 @@ const englishData: DataI = {
         picture: RemondisPNG,
       },
       {
-        name: "the wild post",
-        stack: [StackI.HTML, StackI.CSS],
+        name: "fighter",
+        stack: [
+          StackI.JAVASCRIPT,
+          StackI.REACT,
+          StackI.STYLEDCOMPONENTS,
+          StackI.REDUX,
+          StackI.EXPRESS,
+        ],
         description:
-          "A first project in the Programming bootcamp. A simple newspaper, which is supposed to have the news about my group",
+          "A game, which was developed in a team during the bootcamp. The gamer fights against enemies making random choices",
         finished: true,
-        githubFront:
-          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
-        picture: WildPostPNG,
+        githubFront: "https://github.com/arkadiyshin/fighter",
+        picture: FighterPNG,
       },
       {
         name: "chuckagator",
@@ -199,30 +194,28 @@ const englishData: DataI = {
         picture: ChuckagatorPNG,
       },
       {
-        name: "text-shrinker",
-        stack: [StackI.TYPESCRIPT, StackI.REACT, StackI.STYLEDCOMPONENTS],
+        name: "the wild post",
+        stack: [StackI.HTML, StackI.CSS],
         description:
-          "A pet project. An app that you can use to make the links shorter, using a special API for that",
-        finished: false,
+          "A first project in the Programming bootcamp. A simple newspaper, which is supposed to have the news about my group",
+        finished: true,
         githubFront:
           "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
-        picture: ChuckagatorPNG,
-        link: "https://github.com/oleksandrsokaliuk/textshrinker/settings/pages#:~:text=https%3A//oleksandrsokaliuk.github.io/textshrinker/",
+        picture: WildPostPNG,
       },
       {
-        name: "fighter",
+        name: "s.tories",
         stack: [
-          StackI.JAVASCRIPT,
-          StackI.REACT,
-          StackI.STYLEDCOMPONENTS,
+          StackI.TYPESCRIPT,
           StackI.REDUX,
           StackI.EXPRESS,
+          StackI.MONGOOSE,
         ],
-        description:
-          "A game, which was developed in a team during the bootcamp. During the game the gamer fights against enemies making random choices",
+        description: "dreams app",
         finished: false,
-        githubFront: "https://github.com/arkadiyshin/fighter",
-        picture: FighterPNG,
+        picture: StoriesPNG,
+        githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",
+        githubBack: "https://github.com/oleksandrsokaliuk/S.toriesBACK",
       },
     ],
   },

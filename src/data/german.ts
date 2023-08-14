@@ -1,6 +1,12 @@
-import DataI, { Language } from "./dataTypes";
+import DataI, { Language, StackI } from "./dataTypes";
 import { programmingSkills } from "./generalData";
 import germanCV from "./../assets/Lebenslauf_Sokaliuk.pdf";
+import TranslatorPNG from "./../assets/translator.png";
+import StoriesPNG from "./../assets/stories.png";
+import RemondisPNG from "./../assets/remondis.png";
+import WildPostPNG from "./../assets/wild-post.png";
+import ChuckagatorPNG from "./../assets/chuckagator.png";
+import FighterPNG from "./../assets/fighter.png";
 
 const germanData: DataI = {
   cv: germanCV,
@@ -129,6 +135,82 @@ const germanData: DataI = {
       "next",
       "redux",
       "nest",
+    ],
+    works: [
+      {
+        name: "translator",
+        stack: [StackI.TYPESCRIPT, StackI.REDUX],
+        description: "Web-App zum Erlernen englischer Wörter",
+        finished: true,
+        picture: TranslatorPNG,
+        githubFront: "https://github.com/oleksandrsokaliuk/the-translator",
+        link: "https://oleksandrsokaliuk.github.io/the-translator/",
+      },
+      {
+        name: "aufräum-App",
+        stack: [StackI.TYPESCRIPT, StackI.REDUX, StackI.EXPRESS],
+        description:
+          "Eine Full-Stack-Web-App als echtes Projekt während des Bootcamps. Benutzer - ein Mitarbeiter eines Aufräumunternehmens. Hauptsächlich am Backend beteiligt",
+        finished: true,
+        githubFront: "https://github.com/DevDependency/remondis-frontend",
+        githubBack: "https://github.com/arkadiyshin/remondis-backend",
+        picture: RemondisPNG,
+      },
+      {
+        name: "fighter",
+        stack: [
+          StackI.JAVASCRIPT,
+          StackI.REACT,
+          StackI.STYLEDCOMPONENTS,
+          StackI.REDUX,
+          StackI.EXPRESS,
+        ],
+        description:
+          "Ein Spiel, das im Team während des Bootcamps entwickelt wurde. Der Spieler kämpft gegen Feinde und trifft zufällige Entscheidungen",
+        finished: true,
+        githubFront: "https://github.com/arkadiyshin/fighter",
+        picture: FighterPNG,
+      },
+      {
+        name: "chuckagator",
+        stack: [
+          StackI.REACT,
+          StackI.CSS,
+          StackI.JAVASCRIPT,
+          StackI.EXPRESS,
+          StackI.WEBSOCKET,
+        ],
+        description:
+          "Ein zweites Projekt im Programmier-Bootcamp. Ein Spiel, das man mit Freunden spielen kann. Du musst Wörter erraten, die dein Freund nicht sieht",
+        finished: true,
+        githubFront:
+          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project2Team2",
+        picture: ChuckagatorPNG,
+      },
+      {
+        name: "the wild post",
+        stack: [StackI.HTML, StackI.CSS],
+        description:
+          "Ein erstes Projekt im Programmier-Bootcamp. Eine einfache Zeitung, die Nachrichten über meine Gruppe enthalten soll",
+        finished: true,
+        githubFront:
+          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
+        picture: WildPostPNG,
+      },
+      {
+        name: "s.tories",
+        stack: [
+          StackI.TYPESCRIPT,
+          StackI.REDUX,
+          StackI.EXPRESS,
+          StackI.MONGOOSE,
+        ],
+        description: "traum-app",
+        finished: false,
+        picture: StoriesPNG,
+        githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",
+        githubBack: "https://github.com/oleksandrsokaliuk/S.toriesBACK",
+      },
     ],
   },
   feedBack: {

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ExampleI {
+  picture: string;
+}
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,9 +71,11 @@ export const ExamplesContainer = styled.div`
   flex: 6 6 400px;
 `;
 
-export const Example = styled.div`
+export const Example = styled.div<ExampleI>`
   width: 22%;
   height: 45%;
-  background-color: #d9d9d9;
+  background: ${(props) => `url(${props.picture})`};
+  background-size: cover;
   box-shadow: 0px 4px 10px 0px rgba(0, 6, 27, 0.5);
+  background-position: center;
 `;

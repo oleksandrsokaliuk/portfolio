@@ -1,6 +1,12 @@
-import DataI, { Language } from "./dataTypes";
+import DataI, { Language, StackI } from "./dataTypes";
 import { programmingSkills } from "./generalData";
 import englishCV from "./../assets/CV_Sokaliuk.pdf";
+import TranslatorPNG from "./../assets/translator.png";
+import StoriesPNG from "./../assets/stories.png";
+import RemondisPNG from "./../assets/remondis.png";
+import WildPostPNG from "./../assets/wild-post.png";
+import ChuckagatorPNG from "./../assets/chuckagator.png";
+import FighterPNG from "./../assets/fighter.png";
 
 const ukrainianData: DataI = {
   cv: englishCV,
@@ -127,6 +133,82 @@ const ukrainianData: DataI = {
       "next",
       "redux",
       "nest",
+    ],
+    works: [
+      {
+        name: "Translator",
+        stack: [StackI.TYPESCRIPT, StackI.REDUX],
+        description: "Веб-додаток для вивчення англійських слів",
+        finished: true,
+        picture: TranslatorPNG,
+        githubFront: "https://github.com/oleksandrsokaliuk/the-translator",
+        link: "https://oleksandrsokaliuk.github.io/the-translator/",
+      },
+      {
+        name: "додаток для деклаторингу",
+        stack: [StackI.TYPESCRIPT, StackI.REDUX, StackI.EXPRESS],
+        description:
+          "Full-stack веб-додаток як реальний проект під час буткемпу. Користувач - співробітник компанії з деклатерингу. У більшості брав участь у бекенді",
+        finished: true,
+        githubFront: "https://github.com/DevDependency/remondis-frontend",
+        githubBack: "https://github.com/arkadiyshin/remondis-backend",
+        picture: RemondisPNG,
+      },
+      {
+        name: "Fighter",
+        stack: [
+          StackI.JAVASCRIPT,
+          StackI.REACT,
+          StackI.STYLEDCOMPONENTS,
+          StackI.REDUX,
+          StackI.EXPRESS,
+        ],
+        description:
+          "Гра, яка була розроблена в команді під час буткемпу. Гравець бореться з ворогами, приймаючи рандомні рішення",
+        finished: true,
+        githubFront: "https://github.com/arkadiyshin/fighter",
+        picture: FighterPNG,
+      },
+      {
+        name: "chuckagator",
+        stack: [
+          StackI.REACT,
+          StackI.CSS,
+          StackI.JAVASCRIPT,
+          StackI.EXPRESS,
+          StackI.WEBSOCKET,
+        ],
+        description:
+          "Другий проект в програмному буткемпі. Гра, яку можна грати з друзями. Ви повинні вгадати слова, які ваш друг не бачить",
+        finished: true,
+        githubFront:
+          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project2Team2",
+        picture: ChuckagatorPNG,
+      },
+      {
+        name: "the wild post",
+        stack: [StackI.HTML, StackI.CSS],
+        description:
+          "Перший проект у буткемпі. Онлайн газета, яка повинна містити новини про мою навчальну групу",
+        finished: true,
+        githubFront:
+          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
+        picture: WildPostPNG,
+      },
+      {
+        name: "s.tories",
+        stack: [
+          StackI.TYPESCRIPT,
+          StackI.REDUX,
+          StackI.EXPRESS,
+          StackI.MONGOOSE,
+        ],
+        description: "додаток сновидінь",
+        finished: false,
+        picture: StoriesPNG,
+        githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",
+        githubBack: "https://github.com/oleksandrsokaliuk/S.toriesBACK",
+      },
     ],
   },
   feedBack: {
