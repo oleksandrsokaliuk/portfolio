@@ -1,6 +1,12 @@
-import DataI, { Language } from "./dataTypes";
+import DataI, { Language, StackI } from "./dataTypes";
 import { programmingSkills } from "./generalData";
 import englishCV from "./../assets/CV_Sokaliuk.pdf";
+import TranslatorPNG from "./../assets/translator.png";
+import StoriesPNG from "./../assets/stories.png";
+import RemondisPNG from "./../assets/remondis.png";
+import WildPostPNG from "./../assets/wild-post.png";
+import ChuckagatorPNG from "./../assets/chuckagator.png";
+import FighterPNG from "./../assets/fighter.png";
 
 const englishData: DataI = {
   cv: englishCV,
@@ -122,13 +128,102 @@ const englishData: DataI = {
     header: "my works",
     filterItems: [
       "all",
-      "javascript",
-      "typescript",
-      "react",
-      "react native",
-      "next",
-      "redux",
-      "nest",
+      StackI.JAVASCRIPT,
+      StackI.TYPESCRIPT,
+      StackI.REACT,
+      StackI.REDUX,
+      StackI.NEXT,
+      StackI.NEST,
+      StackI.REACTNATIVE,
+      StackI.EXPRESS,
+      StackI.MONGOOSE,
+    ],
+    works: [
+      {
+        name: "translator",
+        stack: [StackI.TYPESCRIPT, StackI.REDUX],
+        description: "Web app to learn english words",
+        finished: true,
+        picture: TranslatorPNG,
+        githubFront: "https://github.com/oleksandrsokaliuk/the-translator",
+        link: "https://oleksandrsokaliuk.github.io/the-translator/",
+      },
+      {
+        name: "s.tories",
+        stack: [
+          StackI.TYPESCRIPT,
+          StackI.REDUX,
+          StackI.EXPRESS,
+          StackI.MONGOOSE,
+        ],
+        description: "Web app to share dreams",
+        finished: false,
+        picture: StoriesPNG,
+        githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",
+        githubBack: "https://github.com/oleksandrsokaliuk/S.toriesBACK",
+      },
+      {
+        name: "Web app for garbage",
+        stack: [StackI.TYPESCRIPT, StackI.REDUX, StackI.EXPRESS],
+        description:
+          "A full-stack web-app as a real project during the bootcamp. User - an employee of a decluttering company. Participated in the back-end part mostly",
+        finished: true,
+        githubFront: "https://github.com/DevDependency/remondis-frontend",
+        githubBack: "https://github.com/arkadiyshin/remondis-backend",
+        picture: RemondisPNG,
+      },
+      {
+        name: "the wild post",
+        stack: [StackI.HTML, StackI.CSS],
+        description:
+          "A first project in the Programming bootcamp. A simple newspaper, which is supposed to have the news about my group",
+        finished: true,
+        githubFront:
+          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
+        picture: WildPostPNG,
+      },
+      {
+        name: "chuckagator",
+        stack: [
+          StackI.REACT,
+          StackI.CSS,
+          StackI.JAVASCRIPT,
+          StackI.EXPRESS,
+          StackI.WEBSOCKET,
+        ],
+        description:
+          "A second project in the Programming bootcamp. A game, which you can play with friends. You have to guess the words, which your friend does not see",
+        finished: true,
+        githubFront:
+          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project2Team2",
+        picture: ChuckagatorPNG,
+      },
+      {
+        name: "text-shrinker",
+        stack: [StackI.TYPESCRIPT, StackI.REACT, StackI.STYLEDCOMPONENTS],
+        description:
+          "A pet project. An app that you can use to make the links shorter, using a special API for that",
+        finished: false,
+        githubFront:
+          "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
+        picture: ChuckagatorPNG,
+        link: "https://github.com/oleksandrsokaliuk/textshrinker/settings/pages#:~:text=https%3A//oleksandrsokaliuk.github.io/textshrinker/",
+      },
+      {
+        name: "fighter",
+        stack: [
+          StackI.JAVASCRIPT,
+          StackI.REACT,
+          StackI.STYLEDCOMPONENTS,
+          StackI.REDUX,
+          StackI.EXPRESS,
+        ],
+        description:
+          "A game, which was developed in a team during the bootcamp. During the game the gamer fights against enemies making random choices",
+        finished: false,
+        githubFront: "https://github.com/arkadiyshin/fighter",
+        picture: FighterPNG,
+      },
     ],
   },
   feedBack: {

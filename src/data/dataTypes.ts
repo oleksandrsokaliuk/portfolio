@@ -34,6 +34,33 @@ export interface ExperienceI {
   duration: string;
 }
 
+export interface WorksI {
+  name: string;
+  stack: StackI[];
+  description: string;
+  finished: boolean;
+  picture: string;
+  githubFront: string;
+  githubBack?: string;
+  link?: string;
+}
+
+export enum StackI {
+  HTML = "html",
+  CSS = "css",
+  JAVASCRIPT = "javascript",
+  TYPESCRIPT = "typescript",
+  REACT = "react",
+  STYLEDCOMPONENTS = "styled-components",
+  REACTNATIVE = "react native",
+  REDUX = "redux",
+  NEXT = "next",
+  NEST = "nest",
+  EXPRESS = "express",
+  MONGOOSE = "mongoose",
+  WEBSOCKET = "websocket",
+}
+
 interface DataI {
   cv: string;
   cvName: string;
@@ -117,16 +144,8 @@ interface DataI {
   };
   myWorks: {
     header: string;
-    filterItems: [
-      string,
-      "javascript",
-      "typescript",
-      "react",
-      "react native",
-      "next",
-      "redux",
-      "nest"
-    ];
+    filterItems: (string | StackI)[];
+    works: WorksI[];
   };
   feedBack: {
     header: string;

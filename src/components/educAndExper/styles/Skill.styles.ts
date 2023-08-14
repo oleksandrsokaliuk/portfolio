@@ -5,7 +5,12 @@ interface SkillProgressBarI {
   progress: number | undefined;
 }
 
-export const SkillContainer = styled(motion.div)``;
+export const SkillContainer = styled(motion.div)`
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
 export const SkillTitle = styled(motion.p)`
   color: ${(props) => props.theme.light.paragraph};
@@ -17,6 +22,10 @@ export const SkillTitle = styled(motion.p)`
   line-height: normal;
   text-transform: uppercase;
   margin: 0;
+  @media (max-width: 992px) {
+    font-size: 1em;
+    flex: 2 1 auto;
+  }
 `;
 export const SkillLevel = styled(motion.p)`
   color: ${(props) => props.theme.light.paragraph};
@@ -30,12 +39,19 @@ export const SkillLevel = styled(motion.p)`
   position: absolute;
   right: 0;
   margin: 0;
+  @media (max-width: 992px) {
+    font-size: 1em;
+    /* flex: 2 1 40px; */
+  }
 `;
 
 export const SkillDescrContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   position: relative;
+  @media (max-width: 992px) {
+    flex: 1 1 20px;
+  }
 `;
 
 export const SkillProgressBar = styled(motion.div)<SkillProgressBarI>`
@@ -52,5 +68,8 @@ export const SkillProgressBar = styled(motion.div)<SkillProgressBarI>`
     width: ${(props) => props.progress}%;
     z-index: 1000;
     height: 100%;
+  }
+  @media (max-width: 992px) {
+    flex: 1 1 15px;
   }
 `;

@@ -4,12 +4,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  gap: 2%;
   height: 100vh;
   background-color: ${(props) => props.theme.light.thirdBG};
   /* justify-content: center; */
   align-items: center;
   border-radius: 25% 25% 25% 25% / 15% 15% 0% 0%;
   padding: 10% 0;
+  @media (max-width: 992px) {
+    border-radius: 0;
+  }
 `;
 
 export const Header = styled.h2`
@@ -23,6 +27,7 @@ export const Header = styled.h2`
   letter-spacing: 15.64px;
   margin: 0;
   text-transform: uppercase;
+  flex: 1 1 30px;
 `;
 
 export const FilterContainer = styled.div`
@@ -32,6 +37,7 @@ export const FilterContainer = styled.div`
   gap: 5%;
   justify-content: center;
   row-gap: 1em;
+  flex: 1 1 20px;
 `;
 
 export const OneFilterParagraphContainer = styled.div`
@@ -58,6 +64,7 @@ export const ExamplesContainer = styled.div`
   gap: 5%;
   flex-wrap: wrap;
   justify-content: center;
+  flex: 6 6 400px;
 `;
 
 export const Example = styled.div`
