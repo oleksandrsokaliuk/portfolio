@@ -1,10 +1,11 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { languageSelector } from "../../redux/languageSlice";
 import {
   Container,
   Example,
   ExamplesContainer,
+  FileredAllButton,
   FilterContainer,
   FilterParagraph,
   Header,
@@ -26,6 +27,7 @@ import {
 } from "react-icons/si";
 
 const MyWorks: FC = () => {
+  const [selectedFilters, setSelectedFilters] = useState<StackI[]>([]);
   const selectedLanguage = useAppSelector(languageSelector);
   const { header, filterItems, works } = selectedLanguage.myWorks;
 
@@ -57,19 +59,70 @@ const MyWorks: FC = () => {
         return SiMongoose;
       case StackI.WEBSOCKET:
         return SiSocketdotio;
-      default:
-        console.log("Sorry, no icon");
     }
   };
   return (
     <Container>
       <Header>{header}</Header>
       <FilterContainer>
+        <OneFilterParagraphContainer
+          picked={selectedFilters.length === 13}
+          onClick={() => {
+            setSelectedFilters((prevState) => {
+              if (prevState.length >= 0 && prevState.length < 13) {
+                return [
+                  StackI.HTML,
+                  StackI.CSS,
+                  StackI.JAVASCRIPT,
+                  StackI.TYPESCRIPT,
+                  StackI.REACT,
+                  StackI.STYLEDCOMPONENTS,
+                  StackI.REACTNATIVE,
+                  StackI.REDUX,
+                  StackI.NEXT,
+                  StackI.NEST,
+                  StackI.EXPRESS,
+                  StackI.MONGOOSE,
+                  StackI.WEBSOCKET,
+                ];
+              } else {
+                return [];
+              }
+            });
+          }}
+        >
+          <FileredAllButton picked={selectedFilters.length === 13}>
+            All
+          </FileredAllButton>
+        </OneFilterParagraphContainer>
         {filterItems.map((item) => {
           const Icon = iconCreator(item as StackI);
           return Icon ? (
-            <OneFilterParagraphContainer>
-              <Icon key={item} />
+            <OneFilterParagraphContainer
+              picked={
+                selectedFilters.find((element) => element === item) !==
+                undefined
+              }
+            >
+              <Icon
+                key={item}
+                style={{ width: "100%", height: "100%" }}
+                onClick={() => {
+                  if (!selectedFilters.includes(item as StackI)) {
+                    setSelectedFilters((prevState) => [
+                      ...prevState,
+                      item as StackI,
+                    ]);
+                  } else {
+                    setSelectedFilters((prevState) => {
+                      const withoutElement = prevState.filter(
+                        (element) => element !== item
+                      );
+                      return withoutElement;
+                    });
+                  }
+                }}
+              />
             </OneFilterParagraphContainer>
           ) : null;
         })}

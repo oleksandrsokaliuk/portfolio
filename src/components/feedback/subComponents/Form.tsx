@@ -10,6 +10,7 @@ import {
   Input,
   ItemContainer,
   Label,
+  MessageSent,
 } from "../styles/Form.styles";
 import { Formik } from "formik";
 import emailjs from "@emailjs/browser";
@@ -32,11 +33,13 @@ const Form: FC = () => {
 
     setFamousNameAndEmail(getFamousNameAndEmail());
   }, []);
+
+  const [emailsIsSent, setEmailIsSent] = useState<boolean>(false);
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
       onSubmit={async (values, { setSubmitting }) => {
-        console.log(process.env.REACT_APP_EMAILSJS_KEY);
+        setEmailIsSent(false);
         try {
           await emailjs.send(
             "service_v13b2kd",
@@ -56,6 +59,10 @@ const Form: FC = () => {
           // );
           console.log(emailjs);
           console.log("Message sent successfully");
+          setEmailIsSent(true);
+          setTimeout(() => {
+            setEmailIsSent(false);
+          }, 5000);
         } catch (error) {
           console.error("Error sending message:", error);
         }
@@ -111,46 +118,12 @@ const Form: FC = () => {
               />
               {errors.message && touched.message && errors.message}
             </ItemContainer>
-            <Button type="submit" disabled={isSubmitting}>
-              {button}
+            <Button type="submit" disabled={isSubmitting || emailsIsSent}>
+              {emailsIsSent ? "The message is sent" : button}
             </Button>
           </FormInnerContainer>
         </FormContainer>
       )}
-      {/* <FormContainer action="mail.php" method="POST" onSubmit={formSubmitter}>
-        <FormInnerContainer>
-          <ItemContainer>
-            <Label htmlFor="name">{name}</Label>
-            <Input
-              type="text"
-              id="name"
-              name="name"
-              placeholder={famousNameAndEmail.name}
-            />
-          </ItemContainer>
-          <ItemContainer>
-            <Label htmlFor="email">{email}</Label>
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              placeholder={famousNameAndEmail.email}
-            />
-          </ItemContainer>
-          <ItemContainer style={{ width: "100%" }}>
-            <Label htmlFor="message">{message}</Label>
-            <Input
-              type="text"
-              id="message"
-              name="message"
-              placeholder={messagePH}
-            />
-          </ItemContainer>
-        </FormInnerContainer>
-        <Button type="submit" disabled={isSubmitting} {errors.password && touched.password && errors.password}>
-          {button}
-        </Button>
-      </FormContainer> */}
     </Formik>
   );
 };

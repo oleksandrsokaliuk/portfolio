@@ -25,7 +25,7 @@ const EducAndExper: FC = () => {
       >
         <div style={{ overflow: "hidden" }}>
           <RunningLine
-            direction={LineDirection.RIGHT}
+            direction={LineDirection.LEFT}
             text="skills • skills • skills • skills •"
           />
         </div>

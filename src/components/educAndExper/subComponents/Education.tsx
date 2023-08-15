@@ -28,7 +28,7 @@ const Education: FC = () => {
   return (
     <div style={{ scrollSnapAlign: "start" }}>
       <RunningLine
-        direction={LineDirection.RIGHT}
+        direction={LineDirection.LEFT}
         text="education and experience • education and experience • education and experience •"
       />
       <EducationContainer>

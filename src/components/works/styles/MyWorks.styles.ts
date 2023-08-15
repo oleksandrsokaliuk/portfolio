@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StackI } from "../../../data/dataTypes";
 
 interface ExampleI {
   picture: string;
@@ -44,8 +45,32 @@ export const FilterContainer = styled.div`
   flex: 1 1 20px;
 `;
 
-export const OneFilterParagraphContainer = styled.div`
-  width: 20%;
+interface IconI {
+  picked: boolean | undefined;
+}
+
+export const OneFilterParagraphContainer = styled.div<IconI>`
+  flex: 1 1 20px;
+  cursor: pointer;
+  color: ${(props) =>
+    props.picked
+      ? props.theme.light.exceptionalColour
+      : props.theme.light.mainBG};
+  transform: ${(props) => (props.picked ? "scale(1.2)" : "scale(1)")};
+`;
+
+export const FileredAllButton = styled.button<IconI>`
+  color: ${(props) =>
+    props.picked
+      ? props.theme.light.exceptionalColour
+      : props.theme.light.mainBG};
+  transform: ${(props) => (props.picked ? "scale(1.2)" : "scale(1)")};
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
 export const FilterParagraph = styled.p`

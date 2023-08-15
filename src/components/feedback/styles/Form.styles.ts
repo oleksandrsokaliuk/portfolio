@@ -29,7 +29,7 @@ export const Input = styled.input`
   font-weight: 300;
   line-height: normal;
   letter-spacing: 3.68px;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   background: transparent;
   border: none;
   border-bottom: 1px solid #e6e6e6;
@@ -105,6 +105,19 @@ export const Button = styled.button`
   &:hover::after {
     transform: rotateY(0deg);
   }
+  &:disabled {
+    color: ${(props) => props.theme.light.paragraph};
+    background-color: ${(props) => props.theme.light.secondaryBG};
+    cursor: inherit;
+  }
+  &:disabled::after {
+    width: 0;
+    height: 0;
+  }
+  &:disabled::before {
+    width: 0;
+    height: 0;
+  }
 `;
 
 export const ItemContainer = styled.div`
@@ -113,6 +126,10 @@ export const ItemContainer = styled.div`
   justify-content: space-between;
   height: 25%;
   width: 45%;
+`;
+
+export const MessageSent = styled.p`
+  color: ${(props) => props.theme.light.header};
 `;
 
 export const FormInnerContainer = styled.div`
