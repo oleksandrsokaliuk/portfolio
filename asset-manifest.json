@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.7200ad59.js",
+    "main.js": "/portfolio/static/js/main.28b2d43b.js",
     "static/media/photo.png": "/portfolio/static/media/photo.4da331b3f95b4cc50051.png",
+    "static/media/stories.png": "/portfolio/static/media/stories.19c2ee1e35e504167d9f.png",
+    "static/media/chuckagator.png": "/portfolio/static/media/chuckagator.b5fc87abf17b0f39bd8b.png",
+    "static/media/fighter.png": "/portfolio/static/media/fighter.6dec974537a6fce157f0.png",
+    "static/media/wild-post.png": "/portfolio/static/media/wild-post.183f0c52d53a21c80df6.png",
     "static/media/aboutMePhoto.png": "/portfolio/static/media/aboutMePhoto.255b6306a0a69e59e588.png",
+    "static/media/remondis.png": "/portfolio/static/media/remondis.161e2e608eb45cea618e.png",
     "static/media/Lebenslauf_Sokaliuk.pdf": "/portfolio/static/media/Lebenslauf_Sokaliuk.3c860243eab43e9a3c28.pdf",
     "static/media/CV_Sokaliuk.pdf": "/portfolio/static/media/CV_Sokaliuk.0d44aefdbec0c388ca19.pdf",
+    "static/media/translator.png": "/portfolio/static/media/translator.c0160902add1bf26014a.png",
     "static/media/videogames.svg": "/portfolio/static/media/videogames.d1effe770b6eb0d914d8292ba1e9a158.svg",
     "static/media/football.svg": "/portfolio/static/media/football.ce53f063a6c2e64c28d8789c4cbcd5a0.svg",
     "static/media/languages.svg": "/portfolio/static/media/languages.e8abaa155a9ea647c1a2222da096170d.svg",
     "static/media/music.svg": "/portfolio/static/media/music.a4a51203c330c605d917430001a190f0.svg",
     "index.html": "/portfolio/index.html",
-    "main.7200ad59.js.map": "/portfolio/static/js/main.7200ad59.js.map"
+    "main.28b2d43b.js.map": "/portfolio/static/js/main.28b2d43b.js.map"
   },
   "entrypoints": [
-    "static/js/main.7200ad59.js"
+    "static/js/main.28b2d43b.js"
   ]
 }
