@@ -31,7 +31,7 @@ const Form: FC = () => {
     setFamousNameAndEmail(getFamousNameAndEmail());
   }, []);
   return (
-    <FormContainer>
+    <FormContainer action="mail.php" method="POST">
       <FormInnerContainer>
         <ItemContainer>
           <Label htmlFor="name">{name}</Label>
