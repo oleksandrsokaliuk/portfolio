@@ -45,7 +45,7 @@ const MyWorks: FC = () => {
   const [isExampleChecked, setIsExampleChecked] = useState<boolean>(false);
   const [selectedFilters, setSelectedFilters] = useState<StackI[]>([]);
   const selectedLanguage = useAppSelector(languageSelector);
-  const { header, filterItems, works } = selectedLanguage.myWorks;
+  const { header, filterItems, works, isFinished } = selectedLanguage.myWorks;
 
   const iconCreator = (stack: StackI) => {
     switch (stack) {
@@ -187,11 +187,13 @@ const MyWorks: FC = () => {
                 {work.finished ? <TiTick /> : <ImCross />}
                 {isExampleChecked &&
                   (work.finished ? (
-                    <ExampleCheckedParagraph> finished</ExampleCheckedParagraph>
-                  ) : (
                     <ExampleCheckedParagraph>
                       {" "}
-                      not finished
+                      {isFinished.finished}
+                    </ExampleCheckedParagraph>
+                  ) : (
+                    <ExampleCheckedParagraph>
+                      {isFinished.notFinished}
                     </ExampleCheckedParagraph>
                   ))}
               </ExampleIsFinished>

@@ -145,6 +145,10 @@ interface DataI {
   myWorks: {
     header: string;
     filterItems: (string | StackI)[];
+    isFinished: {
+      finished: string;
+      notFinished: string;
+    };
     works: WorksI[];
   };
   feedBack: {

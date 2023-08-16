@@ -20,7 +20,7 @@ import { useInView } from "framer-motion";
 const Education: FC = () => {
   const selectedLanguage = useAppSelector(languageSelector);
   const { newComer, motivated, lawyer } = selectedLanguage.edAndExp.header;
-  const { experience } = selectedLanguage.edAndExp;
+  const { experience, runningLine } = selectedLanguage.edAndExp;
   const { programmingSkills } = selectedLanguage.skills;
   console.log(Object.values(programmingSkills));
   const ref = useRef(null);
@@ -29,7 +29,7 @@ const Education: FC = () => {
     <div style={{ scrollSnapAlign: "start" }}>
       <RunningLine
         direction={LineDirection.LEFT}
-        text="education and experience • education and experience • education and experience •"
+        text={`${runningLine} • ${runningLine} • ${runningLine}`}
       />
       <EducationContainer>
         <TitleHeader>

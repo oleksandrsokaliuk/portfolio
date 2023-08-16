@@ -142,21 +142,38 @@ const germanData: DataI = {
       StackI.MONGOOSE,
       StackI.WEBSOCKET,
     ],
+    isFinished: {
+      finished: "abgeschlossen",
+      notFinished: "nicht abgeschlossen",
+    },
     works: [
       {
         name: "translator",
-        stack: [StackI.TYPESCRIPT, StackI.REDUX],
-        description: "Web-App zum Erlernen englischer Wörter",
+        stack: [
+          StackI.HTML,
+          StackI.STYLEDCOMPONENTS,
+          StackI.TYPESCRIPT,
+          StackI.REACT,
+          StackI.REDUX,
+        ],
+        description: "Web-App zum Erlernen von englischen Wörtern",
         finished: true,
         picture: TranslatorPNG,
         githubFront: "https://github.com/oleksandrsokaliuk/the-translator",
         link: "https://oleksandrsokaliuk.github.io/the-translator/",
       },
       {
-        name: "aufräum-App",
-        stack: [StackI.TYPESCRIPT, StackI.REDUX, StackI.EXPRESS],
+        name: "decluttering app",
+        stack: [
+          StackI.HTML,
+          StackI.STYLEDCOMPONENTS,
+          StackI.TYPESCRIPT,
+          StackI.REACT,
+          StackI.REDUX,
+          StackI.EXPRESS,
+        ],
         description:
-          "Eine Full-Stack-Web-App als echtes Projekt während des Bootcamps. Benutzer - ein Mitarbeiter eines Aufräumunternehmens. Hauptsächlich am Backend beteiligt",
+          "Eine Full-Stack-Web-App. Letztes Projekt im Bootcamp. Echter Kunde - Aufräum-Unternehmen",
         finished: true,
         githubFront: "https://github.com/DevDependency/remondis-frontend",
         githubBack: "https://github.com/arkadiyshin/remondis-backend",
@@ -165,6 +182,7 @@ const germanData: DataI = {
       {
         name: "fighter",
         stack: [
+          StackI.HTML,
           StackI.JAVASCRIPT,
           StackI.REACT,
           StackI.STYLEDCOMPONENTS,
@@ -172,7 +190,7 @@ const germanData: DataI = {
           StackI.EXPRESS,
         ],
         description:
-          "Ein Spiel, das im Team während des Bootcamps entwickelt wurde. Der Spieler kämpft gegen Feinde und trifft zufällige Entscheidungen",
+          "Ein drittes Projekt im Bootcamp. Der Spieler kämpft gegen Feinde, die zufällige Entscheidungen treffen",
         finished: true,
         githubFront: "https://github.com/arkadiyshin/fighter",
         picture: FighterPNG,
@@ -180,14 +198,15 @@ const germanData: DataI = {
       {
         name: "chuckagator",
         stack: [
-          StackI.REACT,
+          StackI.HTML,
           StackI.CSS,
+          StackI.REACT,
           StackI.JAVASCRIPT,
           StackI.EXPRESS,
           StackI.WEBSOCKET,
         ],
         description:
-          "Ein zweites Projekt im Programmier-Bootcamp. Ein Spiel, das man mit Freunden spielen kann. Du musst Wörter erraten, die dein Freund nicht sieht",
+          "Ein zweites Projekt im Bootcamp. Du musst die Wörter erraten, die dein Freund nicht sieht",
         finished: true,
         githubFront:
           "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project2Team2",
@@ -197,7 +216,7 @@ const germanData: DataI = {
         name: "the wild post",
         stack: [StackI.HTML, StackI.CSS],
         description:
-          "Ein erstes Projekt im Programmier-Bootcamp. Eine einfache Zeitung, die Nachrichten über meine Gruppe enthalten soll",
+          "Ein erstes Projekt im Bootcamp. Eine einfache Zeitung über meine Gruppe",
         finished: true,
         githubFront:
           "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
@@ -206,12 +225,15 @@ const germanData: DataI = {
       {
         name: "s.tories",
         stack: [
+          StackI.HTML,
           StackI.TYPESCRIPT,
+          StackI.STYLEDCOMPONENTS,
+          StackI.REACT,
           StackI.REDUX,
           StackI.EXPRESS,
           StackI.MONGOOSE,
         ],
-        description: "traum-app",
+        description: "Eigenes Projekt. Web-App zum Teilen von Träumen",
         finished: false,
         picture: StoriesPNG,
         githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",

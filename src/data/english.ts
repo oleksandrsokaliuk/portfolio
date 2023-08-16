@@ -142,6 +142,10 @@ const englishData: DataI = {
       StackI.MONGOOSE,
       StackI.WEBSOCKET,
     ],
+    isFinished: {
+      finished: "finished",
+      notFinished: "not finished",
+    },
     works: [
       {
         name: "translator",

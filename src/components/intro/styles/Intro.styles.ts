@@ -4,11 +4,11 @@ import styled from "styled-components";
 
 export const IntroContainer = styled.div`
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.light.secondaryBG};
-  border-radius: 25% 25% 25% 25% / 0% 0% 5% 5%;
+  /* border-radius: 25% 25% 25% 25% / 0% 0% 5% 5%; */
   position: relative;
   @media (max-width: 992px) {
     border-radius: 0;
@@ -99,7 +99,7 @@ export const ScrollButtonContainer = styled(motion.div)`
   width: 10px;
   cursor: pointer;
   position: absolute;
-  bottom: 15%;
+  bottom: 5%;
   right: 3%;
   @media (max-width: 992px) {
     right: auto;

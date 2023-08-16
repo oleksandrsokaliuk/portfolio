@@ -10,11 +10,11 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   gap: 2%;
-  height: 100vh;
+  height: 80vh;
   background-color: ${(props) => props.theme.light.thirdBG};
   /* justify-content: center; */
   align-items: center;
-  border-radius: 25% 25% 25% 25% / 15% 15% 0% 0%;
+  /* border-radius: 25% 25% 25% 25% / 15% 15% 0% 0%; */
   padding: 10% 0;
   @media (max-width: 992px) {
     border-radius: 0;
@@ -76,10 +76,12 @@ export const OneFilterParagraphContainer = styled.div<IconI>`
     /* background-color: ${(props) => props.theme.light.secondaryBG}; */
     transition: 0.5s;
     text-align: center;
+    display: none;
   }
   &:hover:before {
     top: 40%;
     left: 10%;
+    display: block;
   }
   &:hover {
     color: transparent;

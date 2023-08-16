@@ -6,7 +6,8 @@ export const AboutMeContainer = styled(motion.div)`
   display: flex;
   position: relative;
   height: 100vh;
-  padding-top: 10%;
+  align-items: center;
+  /* padding-top: 10%; */
   @media (max-width: 992px) {
     flex-direction: column;
     width: inherit;

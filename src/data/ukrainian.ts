@@ -140,10 +140,20 @@ const ukrainianData: DataI = {
       StackI.MONGOOSE,
       StackI.WEBSOCKET,
     ],
+    isFinished: {
+      finished: "завершений",
+      notFinished: "не завершений",
+    },
     works: [
       {
-        name: "Translator",
-        stack: [StackI.TYPESCRIPT, StackI.REDUX],
+        name: "translator",
+        stack: [
+          StackI.HTML,
+          StackI.STYLEDCOMPONENTS,
+          StackI.TYPESCRIPT,
+          StackI.REACT,
+          StackI.REDUX,
+        ],
         description: "Веб-додаток для вивчення англійських слів",
         finished: true,
         picture: TranslatorPNG,
@@ -151,18 +161,26 @@ const ukrainianData: DataI = {
         link: "https://oleksandrsokaliuk.github.io/the-translator/",
       },
       {
-        name: "додаток для деклаторингу",
-        stack: [StackI.TYPESCRIPT, StackI.REDUX, StackI.EXPRESS],
+        name: "decluttering app",
+        stack: [
+          StackI.HTML,
+          StackI.STYLEDCOMPONENTS,
+          StackI.TYPESCRIPT,
+          StackI.REACT,
+          StackI.REDUX,
+          StackI.EXPRESS,
+        ],
         description:
-          "Full-stack веб-додаток як реальний проект під час буткемпу. Користувач - співробітник компанії з деклатерингу. У більшості брав участь у бекенді",
+          "Повностековий веб-додаток. Останній проект у буткемпі. Реальний клієнт - компанія з прибирання",
         finished: true,
         githubFront: "https://github.com/DevDependency/remondis-frontend",
         githubBack: "https://github.com/arkadiyshin/remondis-backend",
         picture: RemondisPNG,
       },
       {
-        name: "Fighter",
+        name: "fighter",
         stack: [
+          StackI.HTML,
           StackI.JAVASCRIPT,
           StackI.REACT,
           StackI.STYLEDCOMPONENTS,
@@ -170,7 +188,7 @@ const ukrainianData: DataI = {
           StackI.EXPRESS,
         ],
         description:
-          "Гра, яка була розроблена в команді під час буткемпу. Гравець бореться з ворогами, приймаючи рандомні рішення",
+          "Третій проект у буткемпі. Гравець бореться з ворогами, які приймають випадкові рішення",
         finished: true,
         githubFront: "https://github.com/arkadiyshin/fighter",
         picture: FighterPNG,
@@ -178,14 +196,15 @@ const ukrainianData: DataI = {
       {
         name: "chuckagator",
         stack: [
-          StackI.REACT,
+          StackI.HTML,
           StackI.CSS,
+          StackI.REACT,
           StackI.JAVASCRIPT,
           StackI.EXPRESS,
           StackI.WEBSOCKET,
         ],
         description:
-          "Другий проект в програмному буткемпі. Гра, яку можна грати з друзями. Ви повинні вгадати слова, які ваш друг не бачить",
+          "Другий проект у буткемпі. Ви повинні вгадати слова, які не бачить ваш друг",
         finished: true,
         githubFront:
           "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project2Team2",
@@ -194,8 +213,7 @@ const ukrainianData: DataI = {
       {
         name: "the wild post",
         stack: [StackI.HTML, StackI.CSS],
-        description:
-          "Перший проект у буткемпі. Онлайн газета, яка повинна містити новини про мою навчальну групу",
+        description: "Перший проект у буткемпі. Проста газета про нашу групу",
         finished: true,
         githubFront:
           "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
@@ -204,12 +222,15 @@ const ukrainianData: DataI = {
       {
         name: "s.tories",
         stack: [
+          StackI.HTML,
           StackI.TYPESCRIPT,
+          StackI.STYLEDCOMPONENTS,
+          StackI.REACT,
           StackI.REDUX,
           StackI.EXPRESS,
           StackI.MONGOOSE,
         ],
-        description: "додаток сновидінь",
+        description: "Власний проект. Веб-додаток для обміну мріями",
         finished: false,
         picture: StoriesPNG,
         githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",
