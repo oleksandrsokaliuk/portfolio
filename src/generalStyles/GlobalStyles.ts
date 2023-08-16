@@ -18,7 +18,11 @@ export const AppContainer = styled.div`
   overflow-y: scroll;
   height: 100vh;
   width: 100vw;
-  @media (max-width: 600px) {
+  display: inherit;
+  @media (max-width: 992px) {
+    display: none;
+  }
+  /* @media (max-width: 600px) {
     max-width: 600px;
   }
   @media (max-width: 768px) {
@@ -29,7 +33,24 @@ export const AppContainer = styled.div`
   }
   @media (min-width: 1200px) {
     min-width: 1200px;
+  } */
+`;
+
+export const MobileVersionTestContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  text-align: center;
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
   }
+`;
+
+export const MobileVersionTestHeader = styled.h2`
+  color: white;
+  flex: 1;
+  font-size: 2em;
 `;
 
 export default GlobalStyle;

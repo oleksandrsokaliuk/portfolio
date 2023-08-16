@@ -30,8 +30,8 @@ export const PhotoBackground = styled.div`
 
 export const MainPhoto = styled(motion.img)`
   /* position: absolute; */
-  height: 510px;
-  width: 336px;
+  height: 100%;
+  width: auto;
   bottom: 0;
   z-index: 6;
   @media (max-width: 992px) {

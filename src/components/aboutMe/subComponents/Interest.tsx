@@ -43,12 +43,12 @@ const Interest: FC<InterestProps> = ({
       bg={bg}
     >
       <Title>{title}</Title>
-      <Description>{description}</Description>
-      {team && <Description>{team}</Description>}
+      {/* <Description>{description}</Description> */}
+      {/* {team && <Description>{team}</Description>}
       {league && <Description>{league}</Description>}
       {position && <Description>{position}</Description>}
       {genres && <Description>{genres}</Description>}
-      {favGames && <Description>{favGames}</Description>}
+      {favGames && <Description>{favGames}</Description>} */}
     </InterestContainer>
   );
 };

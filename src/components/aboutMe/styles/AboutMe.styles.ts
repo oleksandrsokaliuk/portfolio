@@ -7,6 +7,7 @@ export const AboutMeContainer = styled(motion.div)`
   position: relative;
   height: 100vh;
   align-items: center;
+  overflow: hidden;
   /* padding-top: 10%; */
   @media (max-width: 992px) {
     flex-direction: column;
@@ -44,10 +45,14 @@ export const InfoInterestsContainer = styled(motion.div)`
 
 export const AboutMeImage = styled(motion.img)`
   position: absolute;
-  height: 90%;
+  height: 120%;
   width: auto;
   bottom: 0;
   right: 5%;
+  filter: drop-shadow(0px 4px 40px #00061b) blur(0.2em);
+  &:hover {
+    filter: blur(0);
+  }
   @media (max-width: 992px) {
     position: relative;
     align-self: center;

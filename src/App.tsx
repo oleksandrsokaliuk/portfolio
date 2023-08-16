@@ -3,7 +3,11 @@ import AboutMe from "./components/aboutMe/AboutMe";
 import EducAndExper from "./components/educAndExper/EducAndExper";
 import MyWorks from "./components/works/MyWorks";
 import Feedback from "./components/feedback/Feedback";
-import GlobalStyle, { AppContainer } from "./generalStyles/GlobalStyles";
+import GlobalStyle, {
+  AppContainer,
+  MobileVersionTestContainer,
+  MobileVersionTestHeader,
+} from "./generalStyles/GlobalStyles";
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 
@@ -18,21 +22,28 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <AppContainer ref={AppRef}>
-        <div style={{ scrollSnapAlign: "start", height: "100vh" }}>
-          <Intro scrollPosition={hookedYPostion} />
-        </div>
-        <div style={{ scrollSnapAlign: "center" }}>
-          <AboutMe />
-        </div>
-        <EducAndExper />
-        <div style={{ scrollSnapAlign: "center" }}>
-          <MyWorks />
-        </div>
-        <div style={{ scrollSnapAlign: "start" }}>
-          <Feedback />
-        </div>
-      </AppContainer>
+      <>
+        <MobileVersionTestContainer>
+          <MobileVersionTestHeader>
+            Mobile version of the app is under construction
+          </MobileVersionTestHeader>
+        </MobileVersionTestContainer>
+        <AppContainer ref={AppRef}>
+          <div style={{ scrollSnapAlign: "start", height: "100vh" }}>
+            <Intro scrollPosition={hookedYPostion} />
+          </div>
+          <div style={{ scrollSnapAlign: "center" }}>
+            <AboutMe />
+          </div>
+          <EducAndExper />
+          <div style={{ scrollSnapAlign: "center" }}>
+            <MyWorks />
+          </div>
+          <div style={{ scrollSnapAlign: "start" }}>
+            <Feedback />
+          </div>
+        </AppContainer>
+      </>
     </>
   );
 }
