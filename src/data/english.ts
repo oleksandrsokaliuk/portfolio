@@ -145,7 +145,13 @@ const englishData: DataI = {
     works: [
       {
         name: "translator",
-        stack: [StackI.TYPESCRIPT, StackI.REDUX],
+        stack: [
+          StackI.HTML,
+          StackI.STYLEDCOMPONENTS,
+          StackI.TYPESCRIPT,
+          StackI.REACT,
+          StackI.REDUX,
+        ],
         description: "Web app to learn english words",
         finished: true,
         picture: TranslatorPNG,
@@ -154,9 +160,16 @@ const englishData: DataI = {
       },
       {
         name: "decluttering app",
-        stack: [StackI.TYPESCRIPT, StackI.REDUX, StackI.EXPRESS],
+        stack: [
+          StackI.HTML,
+          StackI.STYLEDCOMPONENTS,
+          StackI.TYPESCRIPT,
+          StackI.REACT,
+          StackI.REDUX,
+          StackI.EXPRESS,
+        ],
         description:
-          "A full-stack web-app as a real project during the bootcamp. User - an employee of a decluttering company. Participated in the back-end part mostly",
+          "A full-stack web-app. Last project in the bootcamp. Real client - decluttering company",
         finished: true,
         githubFront: "https://github.com/DevDependency/remondis-frontend",
         githubBack: "https://github.com/arkadiyshin/remondis-backend",
@@ -165,6 +178,7 @@ const englishData: DataI = {
       {
         name: "fighter",
         stack: [
+          StackI.HTML,
           StackI.JAVASCRIPT,
           StackI.REACT,
           StackI.STYLEDCOMPONENTS,
@@ -172,7 +186,7 @@ const englishData: DataI = {
           StackI.EXPRESS,
         ],
         description:
-          "A game, which was developed in a team during the bootcamp. The gamer fights against enemies making random choices",
+          "A third project in the bootcamp. The gamer fights against enemies making random choices",
         finished: true,
         githubFront: "https://github.com/arkadiyshin/fighter",
         picture: FighterPNG,
@@ -180,14 +194,15 @@ const englishData: DataI = {
       {
         name: "chuckagator",
         stack: [
-          StackI.REACT,
+          StackI.HTML,
           StackI.CSS,
+          StackI.REACT,
           StackI.JAVASCRIPT,
           StackI.EXPRESS,
           StackI.WEBSOCKET,
         ],
         description:
-          "A second project in the Programming bootcamp. A game, which you can play with friends. You have to guess the words, which your friend does not see",
+          "A second project in the bootcamp. You have to guess the words, which your friend does not see",
         finished: true,
         githubFront:
           "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project2Team2",
@@ -197,7 +212,7 @@ const englishData: DataI = {
         name: "the wild post",
         stack: [StackI.HTML, StackI.CSS],
         description:
-          "A first project in the Programming bootcamp. A simple newspaper, which is supposed to have the news about my group",
+          "A first project in the bootcamp. A simple newspaper about my group",
         finished: true,
         githubFront:
           "https://github.com/WildCodeSchool/2022-07-EN-Berlin-Remote1-Project1Team2",
@@ -206,12 +221,15 @@ const englishData: DataI = {
       {
         name: "s.tories",
         stack: [
+          StackI.HTML,
           StackI.TYPESCRIPT,
+          StackI.STYLEDCOMPONENTS,
+          StackI.REACT,
           StackI.REDUX,
           StackI.EXPRESS,
           StackI.MONGOOSE,
         ],
-        description: "dreams app",
+        description: "Own project. Web app for sharing dreams",
         finished: false,
         picture: StoriesPNG,
         githubFront: "https://github.com/oleksandrsokaliuk/S.Tories",

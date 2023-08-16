@@ -36,9 +36,9 @@ export const Header = styled.h2`
 `;
 
 export const FilterContainer = styled.div`
-  width: 60%;
+  width: 80%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 5%;
   justify-content: center;
   row-gap: 1em;
@@ -47,16 +47,45 @@ export const FilterContainer = styled.div`
 
 interface IconI {
   picked: boolean | undefined;
+  stack?: string;
 }
 
 export const OneFilterParagraphContainer = styled.div<IconI>`
-  flex: 1 1 20px;
+  flex: 1 1 100px;
   cursor: pointer;
   color: ${(props) =>
     props.picked
       ? props.theme.light.exceptionalColour
       : props.theme.light.mainBG};
   transform: ${(props) => (props.picked ? "scale(1.2)" : "scale(1)")};
+  position: relative;
+  transition: 1s;
+  overflow-y: hidden;
+  &::before {
+    content: "${(props) => props.stack}";
+    color: ${(props) =>
+      props.picked
+        ? props.theme.light.exceptionalColour
+        : props.theme.light.mainBG};
+    position: absolute;
+    left: 0;
+    top: -100%;
+    width: auto;
+    height: 100%;
+    font-size: 1.1em;
+    /* background-color: ${(props) => props.theme.light.secondaryBG}; */
+    transition: 0.5s;
+    text-align: center;
+  }
+  &:hover:before {
+    top: 40%;
+    left: 10%;
+  }
+  &:hover {
+    color: transparent;
+    width: 200px;
+    flex: 1 0 100px;
+  }
 `;
 
 export const FileredAllButton = styled.button<IconI>`
@@ -88,7 +117,7 @@ export const FilterParagraph = styled.p`
 
 export const ExamplesContainer = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   height: 50%;
   gap: 5%;
   flex-wrap: wrap;
@@ -97,10 +126,97 @@ export const ExamplesContainer = styled.div`
 `;
 
 export const Example = styled.div<ExampleI>`
-  width: 22%;
-  height: 45%;
-  background: ${(props) => `url(${props.picture})`};
-  background-size: cover;
-  box-shadow: 0px 4px 10px 0px rgba(0, 6, 27, 0.5);
-  background-position: center;
+  width: 19%;
+  height: 38%;
+  background: gray;
+  /* box-shadow: 0px 4px 10px 0px rgba(0, 6, 27, 0.5); */
+  border-radius: 10%;
+  color: ${(props) => props.theme.light.secondaryBG};
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  &:hover {
+    backdrop-filter: blur(90%);
+    background: ${(props) => `url(${props.picture})`};
+    background-position: center;
+    background-size: cover;
+    color: ${(props) => props.theme.light.header};
+    background-color: rgb(0, 0, 0, 0.8);
+    background-blend-mode: multiply;
+  }
+`;
+
+export const ExampleSubContainer = styled.div`
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 80%;
+  color: ${(props) => props.theme.light.header};
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  border-radius: 20%;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+`;
+
+export const ExampleHeader = styled.h2`
+  margin: 0;
+  text-align: center;
+  flex: 1;
+  text-transform: uppercase;
+`;
+
+export const ExampleDescrContainer = styled.div`
+  flex: 1;
+`;
+
+export const ExampleDescr = styled.p`
+  margin: 0;
+  font-size: 1em;
+  flex: 2;
+`;
+
+export const ExampleIsFinished = styled.div`
+  flex: 2;
+  margin: 0;
+  font-size: 1em;
+  display: flex;
+`;
+
+export const ExampleCheckedParagraph = styled.p`
+  margin: 0;
+  font-size: 0.7em;
+  align-self: center;
+`;
+
+export const ExampleLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+  transition: 1s;
+  &:hover {
+    transform: rotate(25deg);
+  }
+`;
+
+export const IconsDiv = styled.div`
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  flex: 2;
+  text-decoration: none;
+  flex-wrap: wrap;
+`;
+
+export const IconContainer = styled.div<IconI>`
+  color: ${(props) =>
+    props.picked ? props.theme.light.exceptionalColour : "inherit"};
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: 1s;
+`;
+
+export const LinksContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.6em;
 `;

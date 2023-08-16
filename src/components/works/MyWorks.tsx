@@ -4,19 +4,32 @@ import { languageSelector } from "../../redux/languageSlice";
 import {
   Container,
   Example,
+  ExampleCheckedParagraph,
+  ExampleDescr,
+  ExampleDescrContainer,
+  ExampleHeader,
+  ExampleIsFinished,
+  ExampleLink,
+  ExampleSubContainer,
   ExamplesContainer,
   FileredAllButton,
   FilterContainer,
-  FilterParagraph,
   Header,
+  IconContainer,
+  IconsDiv,
+  LinksContainer,
   OneFilterParagraphContainer,
 } from "./styles/MyWorks.styles";
 import { StackI } from "../../data/dataTypes";
-import { BsFiletypeHtml } from "react-icons/bs";
+import { BsFiletypeHtml, BsGithub } from "react-icons/bs";
 import { DiCss3 } from "react-icons/di";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { TbBrandRedux, TbBrandReactNative } from "react-icons/tb";
+import { MdWeb } from "react-icons/md";
+import { ImCross } from "react-icons/im";
+import { TiTick } from "react-icons/ti";
+
 import {
   SiNextdotjs,
   SiNestjs,
@@ -25,8 +38,11 @@ import {
   SiMongoose,
   SiSocketdotio,
 } from "react-icons/si";
+import { FiGithub } from "react-icons/fi";
 
 const MyWorks: FC = () => {
+  const [showIconName, setShowIconName] = useState<boolean>(false);
+  const [isExampleChecked, setIsExampleChecked] = useState<boolean>(false);
   const [selectedFilters, setSelectedFilters] = useState<StackI[]>([]);
   const selectedLanguage = useAppSelector(languageSelector);
   const { header, filterItems, works } = selectedLanguage.myWorks;
@@ -64,7 +80,10 @@ const MyWorks: FC = () => {
   return (
     <Container>
       <Header>{header}</Header>
-      <FilterContainer>
+      <FilterContainer
+        onMouseEnter={() => setShowIconName(true)}
+        onMouseLeave={() => setShowIconName(false)}
+      >
         <OneFilterParagraphContainer
           picked={selectedFilters.length === 13}
           onClick={() => {
@@ -103,26 +122,24 @@ const MyWorks: FC = () => {
                 selectedFilters.find((element) => element === item) !==
                 undefined
               }
+              stack={item}
+              onClick={() => {
+                if (!selectedFilters.includes(item as StackI)) {
+                  setSelectedFilters((prevState) => [
+                    ...prevState,
+                    item as StackI,
+                  ]);
+                } else {
+                  setSelectedFilters((prevState) => {
+                    const withoutElement = prevState.filter(
+                      (element) => element !== item
+                    );
+                    return withoutElement;
+                  });
+                }
+              }}
             >
-              <Icon
-                key={item}
-                style={{ width: "100%", height: "100%" }}
-                onClick={() => {
-                  if (!selectedFilters.includes(item as StackI)) {
-                    setSelectedFilters((prevState) => [
-                      ...prevState,
-                      item as StackI,
-                    ]);
-                  } else {
-                    setSelectedFilters((prevState) => {
-                      const withoutElement = prevState.filter(
-                        (element) => element !== item
-                      );
-                      return withoutElement;
-                    });
-                  }
-                }}
-              />
+              <Icon key={item} style={{ width: "100%", height: "100%" }} />
             </OneFilterParagraphContainer>
           ) : null;
         })}
@@ -130,30 +147,68 @@ const MyWorks: FC = () => {
       <ExamplesContainer>
         {works.map((work) => (
           <Example picture={work.picture}>
-            <h2>{work.name}</h2>
-            <div>
-              <>
+            <ExampleHeader>{work.name}</ExampleHeader>
+            <ExampleDescrContainer>
+              <IconsDiv>
                 {work.stack.map((stack) => {
                   const Icon = iconCreator(stack);
-                  return Icon ? <Icon key={stack} /> : null;
+                  return Icon ? (
+                    <IconContainer
+                      picked={selectedFilters.includes(stack)}
+                      onClick={() => {
+                        if (!selectedFilters.includes(stack as StackI)) {
+                          setSelectedFilters((prevState) => [
+                            ...prevState,
+                            stack as StackI,
+                          ]);
+                        } else {
+                          setSelectedFilters((prevState) => {
+                            const withoutElement = prevState.filter(
+                              (element) => element !== stack
+                            );
+                            return withoutElement;
+                          });
+                        }
+                      }}
+                    >
+                      <Icon key={stack} />
+                    </IconContainer>
+                  ) : null;
                 })}
-              </>
-            </div>
-            <p>{work.description}</p>
-            <p>{work.finished ? "Finished" : "Not Finished"}</p>
-            <a href={work.githubFront} target="_blank">
-              Git hub link
-            </a>
-            {work.githubBack && (
-              <a href={work.githubBack} target="_blank">
-                Git hub backend link
-              </a>
-            )}
-            {work.link && (
-              <a href={work.link} target="_blank">
-                Page link
-              </a>
-            )}
+              </IconsDiv>
+            </ExampleDescrContainer>
+            <ExampleDescr>{work.description}</ExampleDescr>
+
+            <LinksContainer>
+              <ExampleIsFinished
+                onMouseEnter={() => setIsExampleChecked(true)}
+                onMouseLeave={() => setIsExampleChecked(false)}
+              >
+                {work.finished ? <TiTick /> : <ImCross />}
+                {isExampleChecked &&
+                  (work.finished ? (
+                    <ExampleCheckedParagraph> finished</ExampleCheckedParagraph>
+                  ) : (
+                    <ExampleCheckedParagraph>
+                      {" "}
+                      not finished
+                    </ExampleCheckedParagraph>
+                  ))}
+              </ExampleIsFinished>
+              <ExampleLink href={work.githubFront} target="_blank">
+                <FiGithub />
+              </ExampleLink>
+              {work.githubBack && (
+                <ExampleLink href={work.githubBack} target="_blank">
+                  <BsGithub />
+                </ExampleLink>
+              )}
+              {work.link && (
+                <ExampleLink href={work.link} target="_blank">
+                  <MdWeb />
+                </ExampleLink>
+              )}
+            </LinksContainer>
           </Example>
         ))}
       </ExamplesContainer>
