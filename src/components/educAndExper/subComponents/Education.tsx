@@ -29,7 +29,7 @@ const Education: FC = () => {
     <div style={{ scrollSnapAlign: "start" }}>
       <RunningLine
         direction={LineDirection.LEFT}
-        text={`${runningLine} • ${runningLine} • ${runningLine}`}
+        text={`${runningLine} • ${runningLine} • ${runningLine} • ${runningLine} • ${runningLine} • ${runningLine} •`}
       />
       <EducationContainer>
         <TitleHeader>

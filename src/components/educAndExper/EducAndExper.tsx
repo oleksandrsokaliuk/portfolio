@@ -26,7 +26,7 @@ const EducAndExper: FC = () => {
         <div style={{ overflow: "hidden" }}>
           <RunningLine
             direction={LineDirection.LEFT}
-            text={` ${title} • ${title} • ${title} •`}
+            text={` ${title} • ${title} • ${title} • ${title} • ${title} • ${title} •`}
           />
         </div>
         <SkillsGeneralContainer>
