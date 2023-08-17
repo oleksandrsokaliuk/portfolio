@@ -62,7 +62,7 @@ export const AboutMeImage = styled(motion.img)`
     right: auto;
     filter: drop-shadow(0 0 5px ${(props) => props.theme.light.header});
   }
-  @media only screen and (max-width: 1530px) {
+  @media only screen and (max-width: 1230px) {
     display: none;
   }
 `;
