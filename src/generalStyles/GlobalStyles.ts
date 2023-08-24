@@ -3,11 +3,12 @@ import styled, { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   * {
     scroll-behavior: smooth;
-  }
-  body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  body {
+    
     width: 100vw;
     background-color: ${(props) => props.theme.light.mainBG};
   }
@@ -51,6 +52,11 @@ export const MobileVersionTestHeader = styled.h2`
   color: white;
   flex: 1;
   font-size: 2em;
+`;
+
+export const SemanticInvisHeader = styled.h2`
+  position: absolute;
+  top: -200%;
 `;
 
 export default GlobalStyle;

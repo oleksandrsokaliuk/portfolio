@@ -29,19 +29,13 @@ function App() {
           </MobileVersionTestHeader>
         </MobileVersionTestContainer>
         <AppContainer ref={AppRef}>
-          <div style={{ scrollSnapAlign: "start", height: "100vh" }}>
-            <Intro scrollPosition={hookedYPostion} />
-          </div>
-          <div style={{ scrollSnapAlign: "center" }}>
+          <Intro scrollPosition={hookedYPostion} />
+          <main>
             <AboutMe />
-          </div>
-          <EducAndExper />
-          <div style={{ scrollSnapAlign: "center" }}>
+            <EducAndExper />
             <MyWorks />
-          </div>
-          <div style={{ scrollSnapAlign: "start" }}>
-            <Feedback />
-          </div>
+          </main>
+          <Feedback />
         </AppContainer>
       </>
     </>

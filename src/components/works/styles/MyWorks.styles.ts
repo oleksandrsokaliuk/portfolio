@@ -5,16 +5,15 @@ interface ExampleI {
   picture: string;
 }
 
-export const Container = styled.div`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 2%;
   height: 80vh;
   background-color: ${(props) => props.theme.light.thirdBG};
-  /* justify-content: center; */
+  scroll-snap-align: center;
   align-items: center;
-  /* border-radius: 25% 25% 25% 25% / 15% 15% 0% 0%; */
   padding: 10% 0;
   @media (max-width: 992px) {
     border-radius: 0;

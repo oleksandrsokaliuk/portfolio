@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const AboutMeContainer = styled(motion.div)`
+export const AboutMeContainer = styled(motion.section)`
   width: 100vw;
   display: flex;
   position: relative;
   height: 100vh;
   align-items: center;
   overflow: hidden;
-  /* padding-top: 10%; */
+  scroll-snap-align: "center";
   @media (max-width: 992px) {
     flex-direction: column;
     width: inherit;

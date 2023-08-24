@@ -23,6 +23,7 @@ const RunningLine: FC<RunningLineProps> = ({ direction, text }) => {
       gradient
       gradientColor={[0, 6, 27]}
       direction={direction === LineDirection.LEFT ? "left" : "right"}
+      style={{ overflow: "hidden" }}
     >
       <LineContainerTest>
         <LineTextTest>{text}</LineTextTest>

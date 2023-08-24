@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import styled from "styled-components";
 
-export const IntroContainer = styled.div`
+export const IntroContainer = styled.header`
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.light.secondaryBG};
-  /* border-radius: 25% 25% 25% 25% / 0% 0% 5% 5%; */
+  scroll-snap-align: start;
+  height: 100vh;
   position: relative;
   @media (max-width: 992px) {
     border-radius: 0;
@@ -16,7 +17,7 @@ export const IntroContainer = styled.div`
   }
 `;
 
-export const IntroHeader = styled.header`
+export const IntroHeader = styled.div`
   align-self: center;
   justify-content: center;
   width: 90%;

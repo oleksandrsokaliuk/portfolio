@@ -12,10 +12,8 @@ import {
   NewComer,
   TitleHeader,
 } from "../styles/Education.styles";
-import jobBar from "./../../../assets/jobs-bar.svg";
 import JobsBar from "./JobsBar";
-import { useInView } from "framer-motion";
-// import { JobsBar } from "../styles/JobPlace.styles";
+import { SemanticInvisHeader } from "../../../generalStyles/GlobalStyles";
 
 const Education: FC = () => {
   const selectedLanguage = useAppSelector(languageSelector);
@@ -24,9 +22,9 @@ const Education: FC = () => {
   const { programmingSkills } = selectedLanguage.skills;
   console.log(Object.values(programmingSkills));
   const ref = useRef(null);
-  const isInView = useInView(ref);
   return (
-    <div style={{ scrollSnapAlign: "start" }}>
+    <section style={{ scrollSnapAlign: "start" }}>
+      <SemanticInvisHeader>{runningLine}</SemanticInvisHeader>
       <RunningLine
         direction={LineDirection.LEFT}
         text={`${runningLine} • ${runningLine} • ${runningLine} • ${runningLine} • ${runningLine} • ${runningLine} •`}
@@ -57,7 +55,7 @@ const Education: FC = () => {
           </JobsListContainer>
         </JobsContainer>
       </EducationContainer>
-    </div>
+    </section>
   );
 };
 

@@ -10,20 +10,21 @@ interface LangSwitcherContainerI {
   isSwitcherExtended: boolean;
 }
 
-export const LanguageMainContainer = styled.div`
-  display: flex;
-  position: absolute;
-  top: 2%;
-  right: 5%;
-  width: 90%;
-  justify-content: flex-end;
-`;
+// export const LanguageMainContainer = styled.div`
+//   display: flex;
+//   position: absolute;
+//   top: 2%;
+//   right: 5%;
+//   width: 90%;
+//   justify-content: flex-end;
+// `;
 
-export const LangSwitcherContainer = styled(motion.div)<LangSwitcherContainerI>`
+export const LangSwitcherContainer = styled(motion.ul)<LangSwitcherContainerI>`
   position: absolute;
-  top: 0%;
-  right: 6%;
-  width: 23%;
+  list-style-type: none;
+  top: 2%;
+  right: 11%;
+  width: 20%;
   display: flex;
   justify-content: space-between;
   @media (max-width: 992px) {
@@ -33,7 +34,7 @@ export const LangSwitcherContainer = styled(motion.div)<LangSwitcherContainerI>`
   }
 `;
 
-export const LangSwitcherItem = styled(motion.p)<LangSwitcherItemI>`
+export const LangSwitcherItem = styled(motion.li)<LangSwitcherItemI>`
   text-align: center;
   font-family: ${(props) => props.theme.light.secondaryFont};
   font-size: 30px;
