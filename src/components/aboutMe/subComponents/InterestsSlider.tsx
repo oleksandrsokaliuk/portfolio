@@ -27,6 +27,8 @@ const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
       image: "images",
       index: 4,
       bg: footballBG,
+      gradientOne: 0,
+      gradientTwo: 65,
     },
     {
       title: selectedLanguage.interests.music.header,
@@ -35,6 +37,8 @@ const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
       image: "images",
       index: 3,
       bg: musicBG,
+      gradientOne: 10,
+      gradientTwo: 45,
     },
     {
       title: selectedLanguage.interests.videoGames.header,
@@ -44,6 +48,8 @@ const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
       image: "images",
       index: 2,
       bg: videogamesBG,
+      gradientOne: 26,
+      gradientTwo: 79,
     },
     {
       title: selectedLanguage.interests.languages.header,
@@ -51,6 +57,8 @@ const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
       image: "images",
       index: 1,
       bg: languagesBG,
+      gradientOne: 2,
+      gradientTwo: 54,
     },
   ];
 
@@ -87,6 +95,8 @@ const InterestsSlider: FC<InterestsSliderI> = ({ appears }) => {
           position={interest.position}
           genres={interest.genres}
           favGames={interest.favGames}
+          gradientOne={interest.gradientOne}
+          gradientTwo={interest.gradientTwo}
         />
       ))}
     </InterestsSliderContainer>

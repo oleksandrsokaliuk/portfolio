@@ -10,11 +10,11 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: space-around;
   gap: 2%;
-  height: 80vh;
+  height: 100vh;
   background-color: ${(props) => props.theme.light.thirdBG};
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   align-items: center;
-  padding: 10% 0;
+  padding: 3% 10%;
   @media (max-width: 992px) {
     border-radius: 0;
   }
@@ -41,7 +41,7 @@ export const FilterContainer = styled.div`
   gap: 5%;
   justify-content: center;
   row-gap: 1em;
-  flex: 1 1 20px;
+  flex: 0 1 20px;
 `;
 
 interface IconI {
@@ -50,16 +50,17 @@ interface IconI {
 }
 
 export const OneFilterParagraphContainer = styled.div<IconI>`
-  flex: 1 1 100px;
+  flex: 1 1 content;
   cursor: pointer;
   color: ${(props) =>
     props.picked
       ? props.theme.light.exceptionalColour
       : props.theme.light.mainBG};
-  transform: ${(props) => (props.picked ? "scale(1.2)" : "scale(1)")};
+  transform: ${(props) => (props.picked ? "scale(1.1)" : "scale(1)")};
   position: relative;
   transition: 1s;
   overflow-y: hidden;
+
   &::before {
     content: "${(props) => props.stack}";
     color: ${(props) =>
@@ -67,25 +68,29 @@ export const OneFilterParagraphContainer = styled.div<IconI>`
         ? props.theme.light.exceptionalColour
         : props.theme.light.mainBG};
     position: absolute;
-    left: 0;
+    right: -40%;
     top: -100%;
-    width: auto;
-    height: 100%;
-    font-size: 1.1em;
+
+    /* width: auto; */
+    /* height: 100%; */
+    /* font-size: 1.1em; */
     /* background-color: ${(props) => props.theme.light.secondaryBG}; */
     transition: 0.5s;
     text-align: center;
     display: none;
+
+    /* flex: 1; */
   }
   &:hover:before {
-    top: 40%;
-    left: 10%;
-    display: block;
+    top: 0;
+    /* left: 10%; */
+    display: flex;
   }
   &:hover {
     color: transparent;
-    width: 200px;
-    flex: 1 0 100px;
+    /* width: 200px; */
+    flex: 1 1 1;
+    overflow: visible;
   }
 `;
 
@@ -127,14 +132,15 @@ export const ExamplesContainer = styled.div`
 `;
 
 export const Example = styled.div<ExampleI>`
-  width: 19%;
-  height: 38%;
+  /* width: 19%;
+  height: 38%; */
   background: gray;
   /* box-shadow: 0px 4px 10px 0px rgba(0, 6, 27, 0.5); */
   border-radius: 10%;
   color: ${(props) => props.theme.light.secondaryBG};
   display: flex;
   flex-direction: column;
+  flex-basis: 300px;
   padding: 2%;
   &:hover {
     backdrop-filter: blur(90%);

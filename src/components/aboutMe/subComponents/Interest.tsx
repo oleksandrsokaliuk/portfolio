@@ -15,8 +15,10 @@ export interface InterestProps {
   favGames?: string;
   image: string;
   putInterestBack?: () => void;
-  index?: number;
+  index: number;
   bg?: string;
+  gradientOne: number;
+  gradientTwo: number;
 }
 
 const Interest: FC<InterestProps> = ({
@@ -31,6 +33,8 @@ const Interest: FC<InterestProps> = ({
   index,
   putInterestBack,
   bg,
+  gradientOne,
+  gradientTwo,
 }) => {
   return (
     <InterestContainer
@@ -41,8 +45,10 @@ const Interest: FC<InterestProps> = ({
       onDragEnd={putInterestBack}
       index={index}
       bg={bg}
+      gradientOne={gradientOne}
+      gradientTwo={gradientTwo}
     >
-      <Title>{title}</Title>
+      <Title index={index}>{title}</Title>
       {/* <Description>{description}</Description> */}
       {/* {team && <Description>{team}</Description>}
       {league && <Description>{league}</Description>}

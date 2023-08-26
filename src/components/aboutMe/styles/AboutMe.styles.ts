@@ -51,7 +51,7 @@ export const AboutMeImage = styled(motion.img)`
   right: 5%;
   filter: drop-shadow(0px 4px 40px #00061b) blur(0.2em);
   &:hover {
-    filter: blur(0);
+    filter: none;
   }
   @media (max-width: 992px) {
     position: relative;
@@ -60,6 +60,7 @@ export const AboutMeImage = styled(motion.img)`
     height: auto;
     bottom: auto;
     right: auto;
+    filter: blur(0);
     filter: drop-shadow(0 0 5px ${(props) => props.theme.light.header});
   }
   @media only screen and (max-width: 1230px) {
