@@ -134,22 +134,27 @@ export const ExamplesContainer = styled.div`
 export const Example = styled.div<ExampleI>`
   /* width: 19%;
   height: 38%; */
-  background: gray;
+  background: rgba(0, 0, 0, 0.3);
   /* box-shadow: 0px 4px 10px 0px rgba(0, 6, 27, 0.5); */
   border-radius: 10%;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.3);
   color: ${(props) => props.theme.light.secondaryBG};
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
   padding: 2%;
+  transition: border-radius 0.4s ease-in-out, background-color 0.2s ease-in,
+    box-shadow 0.6s ease-out;
   &:hover {
     backdrop-filter: blur(90%);
     background: ${(props) => `url(${props.picture})`};
     background-position: center;
     background-size: cover;
     color: ${(props) => props.theme.light.header};
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgb(0, 0, 0, 0.6);
     background-blend-mode: multiply;
+    border-radius: 0;
+    box-shadow: 0 0 42px rgba(0, 0, 0, 1);
   }
 `;
 
@@ -167,7 +172,7 @@ export const ExampleSubContainer = styled.div`
 `;
 
 export const ExampleHeader = styled.h2`
-  margin: 0;
+  margin: 0 0 10px 0;
   text-align: center;
   flex: 1;
   text-transform: uppercase;
