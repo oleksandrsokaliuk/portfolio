@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import styled from "styled-components";
+import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 export const IntroContainer = styled.header`
   width: 100vw;
   height: 100vh;
   display: flex;
+  padding: 2% 0 10% 0;
   flex-direction: column;
   background-color: ${(props) => props.theme.light.secondaryBG};
   scroll-snap-align: start;
   height: 100vh;
   position: relative;
-  @media (max-width: 992px) {
-    border-radius: 0;
-    height: 100vh;
+  @media (max-width: ${screenSizes.l}) {
+    padding: 5% 0;
+  }
+  @media (max-width: ${screenSizes.s}) {
   }
 `;
 
@@ -23,13 +26,14 @@ export const IntroHeader = styled.div`
   width: 90%;
   height: 70vh;
   display: flex;
+  flex: 6;
   margin-top: 5%;
   @media (max-width: 992px) {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    height: auto;
-    margin-top: 20%;
+    /* height: auto; */
+    /* margin-top: 20%; */
   }
 `;
 
@@ -38,10 +42,15 @@ export const TextHeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 150%;
-  @media (max-width: 992px) {
+  @media (max-width: ${screenSizes.l}) {
     width: 100%;
     text-align: center;
     row-gap: 20%;
+    height: 0;
+    transform: translateY(-150px);
+    z-index: 1000;
+  }
+  @media (max-width: ${screenSizes.s}) {
   }
 `;
 
@@ -64,11 +73,13 @@ export const IntroTextHeader = styled(motion.h1)`
   /* @media (max-width: 770px) {
     font-size: 40px;
   } */
-  @media (max-width: 992px) {
+  @media (max-width: ${screenSizes.l}) {
     font-size: 45px;
     letter-spacing: 8px;
     left: auto;
     top: -150%;
+  }
+  @media (max-width: ${screenSizes.s}) {
   }
 `;
 
@@ -88,11 +99,14 @@ export const IntroTextSubHeader = styled(motion.h2)`
   line-height: normal;
   letter-spacing: 15.3px;
   text-transform: uppercase;
-  @media (max-width: 992px) {
+  @media (max-width: ${screenSizes.l}) {
+    padding: 5% 0;
     font-size: 30px;
     left: auto;
     letter-spacing: 8px;
     top: -150%;
+  }
+  @media (max-width: ${screenSizes.s}) {
   }
 `;
 
@@ -102,11 +116,18 @@ export const ScrollButtonContainer = styled(motion.div)`
   position: absolute;
   bottom: 5%;
   right: 3%;
-  @media (max-width: 992px) {
+  /* @media (max-width: 992px) {
     right: auto;
     align-self: center;
     bottom: 5%;
     width: 15px;
+  } */
+  @media (max-width: ${screenSizes.l}) {
+    flex: 1;
+    position: static;
+    align-self: center;
+  }
+  @media (max-width: ${screenSizes.s}) {
   }
 `;
 

@@ -21,42 +21,40 @@ interface LangSwitcherContainerI {
 // `;
 
 export const LangSwitcherContainer = styled(motion.ul)<LangSwitcherContainerI>`
-  position: absolute;
   list-style-type: none;
-  top: 2%;
-  right: 11%;
-  width: 20%;
   display: flex;
   justify-content: space-between;
   @media (max-width: ${screenSizes.l}) {
-    width: 70%;
-    position: relative;
+    flex: 3;
     display: ${(props) => (props.isSwitcherExtended ? "flex" : "none")};
   }
 `;
 
 export const SwitcherMainContainer = styled.div`
+  position: absolute;
+  width: 90%;
+  margin: 0 5%;
   display: flex;
-  width: 95%;
-  height: 40%;
+  justify-content: flex-end;
   @media (max-width: ${screenSizes.l}) {
+    justify-content: flex-start;
     display: flex;
+    flex: 1;
     flex-direction: row-reverse;
-    align-self: flex-end;
-    margin: 5%;
+    justify-content: space-between;
   }
   @media (max-width: ${screenSizes.s}) {
-    height: 5%;
   }
 `;
 
 export const LangSwitcherItem = styled(motion.li)<LangSwitcherItemI>`
   text-align: center;
   font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 30px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  padding: 0 20px;
   cursor: pointer;
   text-transform: uppercase;
   margin: 0;
@@ -65,17 +63,24 @@ export const LangSwitcherItem = styled(motion.li)<LangSwitcherItemI>`
       ? props.theme.light.exceptionalColour
       : props.theme.light.paragraph};
   @media (max-width: ${screenSizes.l}) {
-    font-size: 1.5rem;
+    padding: 0;
   }
   @media (max-width: ${screenSizes.s}) {
   }
 `;
 
-export const LanguageIcon = styled(IoGlobeOutline)`
-  width: 100%;
-  height: 100%;
+export const LanguageIcon = styled(IoGlobeOutline)<LangSwitcherContainerI>`
   color: ${(props) => props.theme.light.paragraph};
+  display: none;
+  flex: 1;
+  align-self: center;
+  height: 2rem;
   @media (max-width: ${screenSizes.l}) {
+    display: block;
+    flex: none;
+    height: 2rem;
+    width: 2rem;
+    display: ${(props) => (props.isSwitcherExtended ? "none" : "block")};
   }
   @media (max-width: ${screenSizes.s}) {
   }

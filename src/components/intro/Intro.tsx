@@ -42,7 +42,7 @@ const Intro: FC<IntroI> = ({ scrollPosition }) => {
             {header}
           </IntroTextHeader>
           <IntroTextSubHeader
-            initial={{ x: -1000 }}
+            // initial={{ x: -1000 }}
             animate={{ x: 0 }}
             transition={{ type: "spring" }}
           >

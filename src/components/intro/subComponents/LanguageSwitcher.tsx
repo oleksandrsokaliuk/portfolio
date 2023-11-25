@@ -18,12 +18,13 @@ const LanguageSwitcher: FC = () => {
   return (
     <SwitcherMainContainer>
       <LanguageIcon
+        isSwitcherExtended={isSwitcherExtended}
         onClick={() => setIsSwitcherExtended((prevState) => !prevState)}
       />
       <LangSwitcherContainer isSwitcherExtended={isSwitcherExtended}>
         {languages.map((language) => (
           <LangSwitcherItem
-            style={{ x: isSwitcherExtended ? 0 : 100 }}
+            // style={{ x: isSwitcherExtended ? 0 : 100 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, scale: [0, 1, 0.8, 1] }}
             onClick={() => {
@@ -34,6 +35,7 @@ const LanguageSwitcher: FC = () => {
               } else if (language === Language.UKRAINIAN) {
                 dispatch(changeLanguage(language));
               }
+              setIsSwitcherExtended(false);
             }}
             selected={appLanguage === language}
           >
