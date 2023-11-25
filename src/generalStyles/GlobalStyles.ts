@@ -1,5 +1,19 @@
 import styled, { createGlobalStyle } from "styled-components";
 
+interface ScreenSizesI {
+  xl: string;
+  l: string;
+  s: string;
+  m: string;
+}
+
+export const screenSizes: ScreenSizesI = {
+  xl: "1280px",
+  l: "1024px",
+  s: "768px",
+  m: "320px",
+};
+
 const GlobalStyle = createGlobalStyle`
   * {
     scroll-behavior: smooth;
@@ -20,9 +34,6 @@ export const AppContainer = styled.div`
   height: 100vh;
   width: 100vw;
   display: inherit;
-  @media (max-width: 992px) {
-    display: none;
-  }
   /* @media (max-width: 600px) {
     max-width: 600px;
   }
@@ -37,22 +48,22 @@ export const AppContainer = styled.div`
   } */
 `;
 
-export const MobileVersionTestContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  text-align: center;
-  display: none;
-  @media (max-width: 992px) {
-    display: flex;
-  }
-`;
+// export const MobileVersionTestContainer = styled.div`
+//   height: 100vh;
+//   width: 100vw;
+//   align-items: center;
+//   text-align: center;
+//   display: none;
+//   @media (max-width: 992px) {
+//     display: flex;
+//   }
+// `;
 
-export const MobileVersionTestHeader = styled.h2`
-  color: white;
-  flex: 1;
-  font-size: 2em;
-`;
+// export const MobileVersionTestHeader = styled.h2`
+//   color: white;
+//   flex: 1;
+//   font-size: 2em;
+// `;
 
 export const SemanticInvisHeader = styled.h2`
   position: absolute;

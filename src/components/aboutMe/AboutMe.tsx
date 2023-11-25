@@ -34,10 +34,10 @@ const AboutMe: FC = () => {
     setActiveSlide((prevSlide) => (prevSlide === 0 ? 1 : 0));
   };
   return (
-    <AboutMeContainer>
+    <AboutMeContainer id="aboutme">
       <InnerContainer>
         <InfoHeader>{whoAmI}</InfoHeader>
-        <InfoInterestsContainer id="aboutme">
+        <InfoInterestsContainer>
           <AnimatePresence>
             {activeSlide === 0 ? <Info /> : <InterestsSlider />}
           </AnimatePresence>

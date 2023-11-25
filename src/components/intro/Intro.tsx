@@ -30,6 +30,7 @@ const Intro: FC<IntroI> = ({ scrollPosition }) => {
   const { header, subHeader, scrollButton } = selectedLanguage.introduction;
   return (
     <IntroContainer>
+      <LanguageSwitcher />
       <IntroHeader>
         <Photo scrollPosition={scrollPosition} />
         <TextHeaderContainer>
@@ -49,7 +50,7 @@ const Intro: FC<IntroI> = ({ scrollPosition }) => {
           </IntroTextSubHeader>
         </TextHeaderContainer>
       </IntroHeader>
-      <LanguageSwitcher />
+
       <ScrollButtonContainer
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}

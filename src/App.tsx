@@ -3,11 +3,7 @@ import AboutMe from "./components/aboutMe/AboutMe";
 import EducAndExper from "./components/educAndExper/EducAndExper";
 import MyWorks from "./components/works/MyWorks";
 import Feedback from "./components/feedback/Feedback";
-import GlobalStyle, {
-  AppContainer,
-  MobileVersionTestContainer,
-  MobileVersionTestHeader,
-} from "./generalStyles/GlobalStyles";
+import GlobalStyle, { AppContainer } from "./generalStyles/GlobalStyles";
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 
@@ -23,11 +19,11 @@ function App() {
     <>
       <GlobalStyle />
       <>
-        <MobileVersionTestContainer>
+        {/* <MobileVersionTestContainer>
           <MobileVersionTestHeader>
             Mobile version of the app is under construction
           </MobileVersionTestHeader>
-        </MobileVersionTestContainer>
+        </MobileVersionTestContainer> */}
         <AppContainer ref={AppRef}>
           <Intro scrollPosition={hookedYPostion} />
           <main>

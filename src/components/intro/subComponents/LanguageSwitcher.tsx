@@ -6,6 +6,7 @@ import {
   LangSwitcherContainer,
   LangSwitcherItem,
   LanguageIcon,
+  SwitcherMainContainer,
 } from "../styles/LanguageSwitcher.styles";
 
 const LanguageSwitcher: FC = () => {
@@ -15,7 +16,10 @@ const LanguageSwitcher: FC = () => {
   const appLanguage = selectedLanguage.language;
   const [isSwitcherExtended, setIsSwitcherExtended] = useState<boolean>(false);
   return (
-    <>
+    <SwitcherMainContainer>
+      <LanguageIcon
+        onClick={() => setIsSwitcherExtended((prevState) => !prevState)}
+      />
       <LangSwitcherContainer isSwitcherExtended={isSwitcherExtended}>
         {languages.map((language) => (
           <LangSwitcherItem
@@ -37,10 +41,7 @@ const LanguageSwitcher: FC = () => {
           </LangSwitcherItem>
         ))}
       </LangSwitcherContainer>
-      <LanguageIcon
-        onClick={() => setIsSwitcherExtended((prevState) => !prevState)}
-      />
-    </>
+    </SwitcherMainContainer>
   );
 };
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { IoGlobeOutline } from "react-icons/io5";
+import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 interface LangSwitcherItemI {
   selected: boolean;
@@ -27,10 +28,25 @@ export const LangSwitcherContainer = styled(motion.ul)<LangSwitcherContainerI>`
   width: 20%;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 992px) {
+  @media (max-width: ${screenSizes.l}) {
     width: 70%;
     position: relative;
     display: ${(props) => (props.isSwitcherExtended ? "flex" : "none")};
+  }
+`;
+
+export const SwitcherMainContainer = styled.div`
+  display: flex;
+  width: 95%;
+  height: 40%;
+  @media (max-width: ${screenSizes.l}) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+    margin: 5%;
+  }
+  @media (max-width: ${screenSizes.s}) {
+    height: 5%;
   }
 `;
 
@@ -48,15 +64,19 @@ export const LangSwitcherItem = styled(motion.li)<LangSwitcherItemI>`
     props.selected
       ? props.theme.light.exceptionalColour
       : props.theme.light.paragraph};
+  @media (max-width: ${screenSizes.l}) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: ${screenSizes.s}) {
+  }
 `;
 
 export const LanguageIcon = styled(IoGlobeOutline)`
-  width: 10%;
-  height: 40%;
-  display: none;
-  align-self: center;
+  width: 100%;
+  height: 100%;
   color: ${(props) => props.theme.light.paragraph};
-  @media (max-width: 992px) {
-    display: block;
+  @media (max-width: ${screenSizes.l}) {
+  }
+  @media (max-width: ${screenSizes.s}) {
   }
 `;
