@@ -78,8 +78,8 @@ export const LanguageIcon = styled(IoGlobeOutline)<LangSwitcherContainerI>`
   @media (max-width: ${screenSizes.l}) {
     display: block;
     flex: none;
-    height: 2rem;
-    width: 2rem;
+    height: 40px;
+    width: 40px;
     display: ${(props) => (props.isSwitcherExtended ? "none" : "block")};
   }
   @media (max-width: ${screenSizes.s}) {

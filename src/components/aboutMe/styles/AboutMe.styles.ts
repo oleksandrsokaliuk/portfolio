@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const AboutMeContainer = styled(motion.section)`
-  width: 100vw;
+  min-width: 100%;
   display: flex;
   position: relative;
   height: 100vh;

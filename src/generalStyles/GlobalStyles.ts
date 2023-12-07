@@ -70,4 +70,8 @@ export const SemanticInvisHeader = styled.h2`
   top: -200%;
 `;
 
+export const MainContainer = styled.main`
+  min-width: 100vw;
+`;
+
 export default GlobalStyle;
