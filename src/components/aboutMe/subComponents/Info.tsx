@@ -42,10 +42,10 @@ const Info: FC<InfoI> = ({ appears }) => {
           <InfoItemHeader>{city.title}</InfoItemHeader>
           <InfoItemDescription>{city.description}</InfoItemDescription>
         </InfoItemContainer>
-        <InfoItemContainer>
+        {/* <InfoItemContainer>
           <InfoItemHeader>{nationality.title}</InfoItemHeader>
           <InfoItemDescription>{nationality.description}</InfoItemDescription>
-        </InfoItemContainer>
+        </InfoItemContainer> */}
       </ItemsContainer>
     </InfoContainer>
   );

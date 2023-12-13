@@ -64,6 +64,6 @@ export const BGImage = styled.img`
 `;
 
 export const InterestsSliderContainer = styled(motion.div)`
-  height: 100%;
+  /* height: 100%; */
   flex: 3;
 `;

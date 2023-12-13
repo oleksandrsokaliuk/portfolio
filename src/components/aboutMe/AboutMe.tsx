@@ -5,7 +5,9 @@ import Info from "./subComponents/Info";
 import {
   AboutMeContainer,
   AboutMeImage,
+  AboutMeImageContainer,
   InfoInterestsContainer,
+  InfoWrapper,
   InnerContainer,
 } from "./styles/AboutMe.styles";
 import {
@@ -19,6 +21,7 @@ import { useAppSelector } from "../../redux/hooks";
 import { languageSelector } from "../../redux/languageSlice";
 import ButtonCV from "./subComponents/ButtonCV";
 import ControlPanel from "./subComponents/ControlPanel";
+import InterestsSwiper from "./subComponents/InterestsSwiper";
 
 const AboutMe: FC = () => {
   const imgRef = useRef(null);
@@ -38,18 +41,34 @@ const AboutMe: FC = () => {
       <InnerContainer>
         <InfoHeader>{whoAmI}</InfoHeader>
         <InfoInterestsContainer>
-          <AnimatePresence>
-            {activeSlide === 0 ? <Info /> : <InterestsSlider />}
-          </AnimatePresence>
+          {/* <AnimatePresence> */}
+          {/* {activeSlide === 0 ? (
+              <Info />
+            ) : (
+              // <InterestsSlider />
+              <InterestsSwiper />
+            )} */}
+
+          <InterestsSwiper />
+          <InfoWrapper>
+            <Info />
+          </InfoWrapper>
+          {/* </AnimatePresence> */}
         </InfoInterestsContainer>
-        <ControlPanel
+        {/* <ControlPanel
           handleNextSlide={handleNextSlide}
           handlePrevSlide={handlePrevSlide}
           activeSlide={activeSlide}
-        />
-        <ButtonCV />
+        /> */}
+        {/* <ButtonCV /> */}
       </InnerContainer>
-      <AboutMeImage ref={imgRef} src={aboutMePhoto} alt="Oleksandr Sokaliuk" />
+      <AboutMeImageContainer>
+        <AboutMeImage
+          ref={imgRef}
+          src={aboutMePhoto}
+          alt="Oleksandr Sokaliuk"
+        />
+      </AboutMeImageContainer>
     </AboutMeContainer>
   );
 };

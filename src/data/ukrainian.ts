@@ -33,7 +33,7 @@ const ukrainianData: DataI = {
     },
     city: {
       title: "Місто",
-      description: "Штутгарт",
+      description: "Херренберг (Штуттгарт)",
     },
     nationality: {
       title: "Національність",

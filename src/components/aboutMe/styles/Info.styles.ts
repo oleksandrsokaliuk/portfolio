@@ -10,9 +10,10 @@ export const InfoContainer = styled(motion.div)`
   width: 100%;
   flex: 3;
   justify-content: center;
+  align-items: center;
   @media (max-width: 992px) {
     flex-direction: row;
-    padding-bottom: 10%;
+    /* padding-bottom: 10%; */
   }
 `;
 
@@ -29,10 +30,10 @@ export const InfoHeader = styled.h2`
   bottom: 85%; */
   /* height: 20vh; */
   margin: 0;
-  flex: 1;
+  /* flex: 1; */
   @media (max-width: 992px) {
     font-size: 2em;
-    padding: 10% 0;
+    padding: 10% 0 0;
     text-align: center;
   }
 `;
@@ -44,7 +45,7 @@ export const InfoItemContainer = styled.div`
 
 export const InfoItemHeader = styled.p`
   font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 2.2em;
+  font-size: 1.8em;
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -59,7 +60,7 @@ export const InfoItemHeader = styled.p`
 
 export const InfoItemDescription = styled.p`
   font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 2.2em;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;

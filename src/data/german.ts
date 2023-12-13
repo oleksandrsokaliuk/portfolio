@@ -33,7 +33,7 @@ const germanData: DataI = {
     },
     city: {
       title: "Stadt",
-      description: "Stuttgart",
+      description: "Herrenberg (Stuttgart)",
     },
     nationality: {
       title: "Nationalität",

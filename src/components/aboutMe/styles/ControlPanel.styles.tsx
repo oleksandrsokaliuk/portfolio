@@ -8,13 +8,17 @@ interface CircleIconI {
 
 export const ControlContainer = styled.div`
   position: absolute;
-  left: 5%;
-  top: 50%;
+  left: 10px;
+  /* top: 50%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1;
+  height: 30%;
+  width: 25px;
+  gap: 30px;
+  /* flex: 1; */
   z-index: 500;
+  /* padding: 0 30%; */
   @media (max-width: 992px) {
     position: inherit;
     flex-direction: row;
@@ -29,10 +33,14 @@ export const ControlButton = styled(motion.button)`
   background-color: ${(props) => props.theme.light.mainBG};
 `;
 
+export const ControlSVG = styled(motion.svg)``;
+
 export const CircleIcon = styled(motion.circle)<CircleIconI>`
-  height: 400px;
-  width: 100px;
+  /* height: 400px;
+  width: 100px; */
+  height: 100%;
   cursor: pointer;
+
   fill: ${(props) =>
     props.activeSlide === props.slide
       ? props.theme.light.exceptionalColour

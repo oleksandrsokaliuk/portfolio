@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     
     width: 100vw;
     background-color: ${(props) => props.theme.light.mainBG};
+    -webkit-scrollbar-width: none;
   }
 `;
 
@@ -72,6 +73,7 @@ export const SemanticInvisHeader = styled.h2`
 
 export const MainContainer = styled.main`
   min-width: 100vw;
+  overflow: hidden;
 `;
 
 export default GlobalStyle;
