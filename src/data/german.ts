@@ -94,7 +94,7 @@ const germanData: DataI = {
         duration: "Dauer: Dezember 2018 - August 2021",
       },
       intern: {
-        name: "Praktikant / Junior Assistent bei der Kanzlei 	&#8220; Legrannt &#8221; ",
+        name: "Praktikant / Junior Assistent bei der Kanzlei 	'Legrannt' ",
         where: "Ort: Odesa, Ukraine",
         duration: "Dauer: April 2018 - September 2018",
       },
@@ -111,8 +111,8 @@ const germanData: DataI = {
       },
       german: {
         title: "Deutsch",
-        level: 50,
-        langLevel: "B1",
+        level: 66,
+        langLevel: "B2",
       },
       ukrainian: {
         title: "Ukrainisch",

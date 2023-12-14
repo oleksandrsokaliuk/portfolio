@@ -7,8 +7,10 @@ export const SkillsGeneralContainer = styled.div`
   height: 80vh;
   margin: 1% 10% 0 10%;
   gap: 10%;
+
   @media (max-width: 992px) {
     flex-direction: column;
+    padding: 10% 0;
   }
 `;
 

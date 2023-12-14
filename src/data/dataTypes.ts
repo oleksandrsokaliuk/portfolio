@@ -32,6 +32,7 @@ export interface ExperienceI {
   nameDescr?: string;
   where: string;
   duration: string;
+  index?: number;
 }
 
 export interface WorksI {

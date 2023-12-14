@@ -10,6 +10,7 @@ import {
   Lawyer,
   Motivated,
   NewComer,
+  SkillsSection,
   TitleHeader,
 } from "../styles/Education.styles";
 import JobsBar from "./JobsBar";
@@ -23,7 +24,7 @@ const Education: FC = () => {
   console.log(Object.values(programmingSkills));
   const ref = useRef(null);
   return (
-    <section style={{ scrollSnapAlign: "start" }}>
+    <SkillsSection>
       <SemanticInvisHeader>{runningLine}</SemanticInvisHeader>
       <RunningLine
         direction={LineDirection.LEFT}
@@ -44,18 +45,22 @@ const Education: FC = () => {
         <JobsContainer>
           <JobsBar />
           <JobsListContainer>
-            {Object.values(experience).map((place) => (
-              <JobPlace
-                name={place.name}
-                nameDescr={place.nameDescr}
-                where={place.where}
-                duration={place.duration}
-              />
-            ))}
+            {Object.values(experience).map((place, idx) => {
+              const reversedIdx = Object.values(experience).length - idx;
+              return (
+                <JobPlace
+                  name={place.name}
+                  nameDescr={place.nameDescr}
+                  where={place.where}
+                  duration={place.duration}
+                  index={reversedIdx}
+                />
+              );
+            })}
           </JobsListContainer>
         </JobsContainer>
       </EducationContainer>
-    </section>
+    </SkillsSection>
   );
 };
 

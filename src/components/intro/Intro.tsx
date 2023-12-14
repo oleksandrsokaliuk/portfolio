@@ -55,15 +55,13 @@ const Intro: FC<IntroI> = ({ scrollPosition }) => {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
-        whileHover={{
-          scale: 1.1,
-          transition: { duration: 0.4 },
-        }}
       >
         {scrollButton.map((word) => (
-          <ScrollA href="#aboutme">{word}</ScrollA>
+          <ScrollA href="#aboutme">
+            <ScrollIcon />
+          </ScrollA>
         ))}
-        <ScrollIcon />
+        {/* <ScrollIcon /> */}
       </ScrollButtonContainer>
     </IntroContainer>
   );

@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const JobItemContainer = styled(motion.div)`
+interface JobItemContainerI {
+  index: number;
+}
+
+export const JobItemContainer = styled(motion.li)<JobItemContainerI>`
   display: flex;
   flex-direction: column;
+  height: 125px;
+  opacity: 0;
 `;
 
 export const JobItemTitle = styled(motion.h4)`
@@ -14,7 +20,7 @@ export const JobItemTitle = styled(motion.h4)`
   font-weight: 700;
   line-height: normal;
   margin: 0;
-  width: 80%;
+  width: 100%;
 `;
 
 export const JobItemDescription = styled(motion.p)`

@@ -10,43 +10,23 @@ const JobsBar: FC = () => {
         // width="20"
         // height="321"
         width="100%"
-        height="85%"
+        height="100%"
         viewBox="0 0 20 321"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <motion.circle
-          initial={{ r: 0 }}
-          animate={isInView && { r: 10 }}
-          transition={{ duration: 0.4 }}
-          cx="10"
-          cy="215"
-          // r="10"
-          fill="#888787"
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={isInView && { pathLength: 1 }}
+          transition={{ duration: 3, ease: "linear" }}
+          d="M10 400 L10 100"
+          stroke="#888787"
+          stroke-width="2"
         />
-        <motion.circle
-          initial={{ r: 0 }}
-          animate={isInView && { r: 10 }}
-          transition={{ duration: 0.4 }}
-          cx="10"
-          cy="311"
-          r="10"
-          fill="#888787"
-        />
-        <motion.circle
-          initial={{ r: 0 }}
-          animate={isInView && { r: 10 }}
-          transition={{ duration: 0.4 }}
-          cx="10"
-          cy="10"
-          r="10"
-          fill="#0238ED"
-        />
-        <path d="M10 117L10 311" stroke="#888787" stroke-width="2" />
         <motion.line
-          initial={{ y1: 0, y2: 0 }}
-          animate={isInView && { y1: 116, y2: 7 }}
-          transition={{ duration: 2 }}
+          initial={{ y1: 100, y2: 100 }}
+          animate={isInView && { y1: 10, y2: 100 }}
+          transition={{ duration: 1, delay: 3, ease: "linear" }}
           x1="10"
           // y1="7"
           x2="10"
@@ -57,9 +37,36 @@ const JobsBar: FC = () => {
         <motion.circle
           initial={{ r: 0 }}
           animate={isInView && { r: 10 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.4, delay: 3.8 }}
           cx="10"
-          cy="123"
+          cy="10"
+          r="10"
+          fill="#0238ED"
+        />
+        <motion.circle
+          initial={{ r: 0 }}
+          animate={isInView && { r: 10 }}
+          transition={{ duration: 0.4, delay: 2.8 }}
+          cx="10"
+          cy="90"
+          r="10"
+          fill="#888787"
+        />
+        <motion.circle
+          initial={{ r: 0 }}
+          animate={isInView && { r: 10 }}
+          transition={{ duration: 0.4, delay: 1.8 }}
+          cx="10"
+          cy="170"
+          // r="10"
+          fill="#888787"
+        />
+        <motion.circle
+          initial={{ r: 0 }}
+          animate={isInView && { r: 10 }}
+          transition={{ duration: 0.4, delay: 0.8 }}
+          cx="10"
+          cy="250"
           r="10"
           fill="#888787"
         />

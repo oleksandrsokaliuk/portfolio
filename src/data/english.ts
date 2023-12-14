@@ -94,7 +94,7 @@ const englishData: DataI = {
         duration: "Duration: December 2018 - August 2021",
       },
       intern: {
-        name: "Intern / Junior Assistant at Legrannt Law Firm",
+        name: "Intern / Junior Assistant at 'Legrannt' Law Firm",
         where: "Where: Odesa, Ukraine",
         duration: "Duration: April 2018 - September 2018",
       },
@@ -111,8 +111,8 @@ const englishData: DataI = {
       },
       german: {
         title: "german",
-        level: 50,
-        langLevel: "B1",
+        level: 66,
+        langLevel: "B2",
       },
       ukrainian: {
         title: "ukrainian",

@@ -1,17 +1,27 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 export const MainPhotoContainer = styled(motion.div)`
   position: relative;
-  width: 100%;
+  /* width: 100%; */
+  min-width: 500px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  @media (max-width: 992px) {
-    width: 80vw;
+
+  @media (max-width: 1200px) {
+    min-width: 80vw;
     height: 60vh;
+  }
+  @media (min-width: ${screenSizes.l}) and (max-width: 1200px) {
+    min-width: 60vw;
+  }
+
+  @media (min-width: 1400px) {
+    flex: 3 0 40%;
   }
 `;
 

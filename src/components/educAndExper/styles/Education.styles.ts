@@ -50,6 +50,13 @@ export const Lawyer = styled(motion.p)`
   }
 `;
 
+export const SkillsSection = styled.section`
+  scroll-snap-align: start;
+  @media (max-width: 992px) {
+    padding-bottom: 10%;
+  }
+`;
+
 export const EducationContainer = styled.div`
   display: flex;
   height: 90vh;
@@ -65,7 +72,7 @@ export const EducationContainer = styled.div`
 
 export const JobsContainer = styled.div`
   display: flex;
-  height: 60%;
+  height: 500px; // update - was 60%
   align-self: center;
   width: 40%;
   gap: 5%;
@@ -75,7 +82,7 @@ export const JobsContainer = styled.div`
   }
 `;
 
-export const JobsListContainer = styled.div`
+export const JobsListContainer = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

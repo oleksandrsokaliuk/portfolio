@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { screenSizes } from "../../../generalStyles/GlobalStyles";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 export const IntroContainer = styled.header`
   width: 100vw;
@@ -28,7 +29,7 @@ export const IntroHeader = styled.div`
   display: flex;
   flex: 6;
   margin-top: 5%;
-  @media (max-width: 992px) {
+  @media (max-width: 1200px) {
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -79,7 +80,15 @@ export const IntroTextHeader = styled(motion.h1)`
     left: auto;
     top: -150%;
   }
+
+  @media (min-width: ${screenSizes.l}) and (max-width: 1200px) {
+    text-align: center;
+    font-size: 4rem;
+  }
   @media (max-width: ${screenSizes.s}) {
+  }
+  @media (max-width: ${screenSizes.l}) {
+    font-size: 2.4rem;
   }
 `;
 
@@ -106,12 +115,43 @@ export const IntroTextSubHeader = styled(motion.h2)`
     letter-spacing: 8px;
     top: -150%;
   }
+  @media (min-width: ${screenSizes.l}) and (max-width: 1200px) {
+    text-align: center;
+  }
   @media (max-width: ${screenSizes.s}) {
   }
 `;
 
+const iconShaking = keyframes`
+  5% {
+    transform: translateY(-20px);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-20px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+`;
+
+export const ScrollIcon = styled(MdKeyboardDoubleArrowDown)`
+  height: 100%;
+  width: 100%;
+  fill: ${(props) => props.theme.light.mainBG};
+  animation: ${iconShaking} 5s infinite;
+`;
+
 export const ScrollButtonContainer = styled(motion.div)`
-  width: 10px;
+  width: 50px;
   cursor: pointer;
   position: absolute;
   bottom: 5%;
@@ -131,9 +171,9 @@ export const ScrollButtonContainer = styled(motion.div)`
   }
 `;
 
-export const ScrollIcon = styled(FiArrowDown)`
-  width: inherit;
-`;
+// export const ScrollIcon = styled(FiArrowDown)`
+//   width: inherit;
+// `;
 
 export const ScrollA = styled.a`
   width: inherit;
@@ -141,7 +181,10 @@ export const ScrollA = styled.a`
   color: ${(props) => props.theme.light.mainBG};
   text-align: center;
   font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 16px;
+  /* font-size: 16px; */
+  display: block;
+  width: 100%;
+  height: 100%;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

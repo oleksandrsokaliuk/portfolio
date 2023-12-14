@@ -92,7 +92,7 @@ const ukrainianData: DataI = {
         duration: "Тривалість: грудень 2018 - серпень 2021",
       },
       intern: {
-        name: "Стажер / Молодший юрист в юридичній фірмі Legrannt",
+        name: "Стажер / Молодший юрист в юридичній фірмі 'Legrannt'",
         where: "Місце: Одеса, Україна",
         duration: "Тривалість: квітень 2018 - вересень 2018",
       },
@@ -109,8 +109,8 @@ const ukrainianData: DataI = {
       },
       german: {
         title: "Німецька",
-        level: 50,
-        langLevel: "B1",
+        level: 66,
+        langLevel: "B2",
       },
       ukrainian: {
         title: "Українська",

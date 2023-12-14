@@ -1,79 +1,6 @@
-// import styled from "styled-components";
-// import { motion } from "framer-motion";
-
-// export const AboutMeContainer = styled(motion.section)`
-//   min-width: 100%;
-//   display: flex;
-//   position: relative;
-//   height: 100vh;
-//   align-items: center;
-//   overflow: hidden;
-//   scroll-snap-align: "center";
-//   @media (max-width: 992px) {
-//     flex-direction: column;
-//     /* width: inherit;   */
-//     overflow: hidden;
-//   }
-// `;
-
-// export const InnerContainer = styled(motion.div)`
-//   /* width: 50vw; */
-//   /* margin-left: 10%; */
-//   /* height: 80vh; */
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   /* height: 80%; */
-//   @media (max-width: 992px) {
-//     /* width: 80vw; */
-//     /* margin-left: 0; */
-//     flex: 1 1 10%;
-//     align-items: center;
-//     align-self: center;
-//   }
-// `;
-
-// export const InfoInterestsContainer = styled(motion.div)`
-//   display: flex;
-//   width: 50vw;
-//   position: relative;
-//   height: 100%;
-//   @media (max-width: 992px) {
-//     width: 100%;
-//   }
-// `;
-
-// export const AboutMeImageContainer = styled.div``;
-
-// export const AboutMeImage = styled(motion.img)`
-//   position: absolute;
-//   /* height: 120%; */
-//   width: auto;
-//   bottom: 0;
-//   right: 5%;
-//   filter: drop-shadow(0px 4px 40px #00061b) blur(0.2em);
-//   &:hover {
-//     filter: none;
-//   }
-//   @media (max-width: 992px) {
-//     /* position: relative;
-//     align-self: center;
-//     flex: 1 1 10%;
-//     height: auto;
-//     bottom: auto;
-//     right: auto; */
-//     filter: blur(0);
-//     filter: drop-shadow(0 0 5px ${(props) => props.theme.light.header});
-//     bottom: 0;
-//     right: 0;
-//   }
-//   @media only screen and (max-width: 1230px) {
-//     display: none;
-//   }
-// `;
-
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { InfoContainer } from "./Info.styles";
 
 export const AboutMeContainer = styled(motion.section)`
   max-width: 1050px;
@@ -84,10 +11,10 @@ export const AboutMeContainer = styled(motion.section)`
   align-items: center;
   position: relative;
   scroll-snap-align: "center";
-  @media (max-width: 992px) {
+  @media (max-width: 1300px) {
     flex-direction: column;
     overflow: hidden;
-    padding-left: 0;
+    padding: 10% 0 0;
   }
   @media (min-width: 1800px) {
     max-width: 1500px;
@@ -107,7 +34,6 @@ export const InnerContainer = styled(motion.div)`
 
 export const InfoWrapper = styled.div`
   top: 0;
-  left: -2px;
   position: absolute;
   /* background-color: lightgray; */
   background: rgba(0, 6, 27, 0.66);
@@ -124,8 +50,8 @@ export const InfoWrapper = styled.div`
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-transform-origin: 0;
-  -ms-transform-origin: 0;
-  transform-origin: 0;
+  -ms-transform-origin: left;
+  transform-origin: left;
   -webkit-box-shadow: 1px 1px 12px #000;
   box-shadow: 1px 1px 12px #000;
   display: -webkit-box;
@@ -141,7 +67,7 @@ export const InfoWrapper = styled.div`
 `;
 
 export const InfoInterestsContainer = styled(motion.div)`
-  max-width: 500px;
+  width: 500px;
   position: relative;
   border-radius: 10px;
   -webkit-transform: preserve-3d;
@@ -163,12 +89,26 @@ export const InfoInterestsContainer = styled(motion.div)`
   &:hover ${InfoWrapper} {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    -webkit-transform: rotatey(-80deg);
-    -ms-transform: rotatey(-80deg);
-    transform: rotatey(-80deg);
+    -webkit-transform: rotatey(-95deg);
+    -ms-transform: rotatey(-95deg);
+    transform: rotatey(-84deg);
   }
-  @media (max-width: 992px) {
-    /* width: 100%; */
+  &:hover ${InfoContainer} {
+    opacity: 0;
+    display: none;
+  }
+  @media (max-width: 1200px) {
+    & ${InfoWrapper} {
+      -ms-transform-origin: top;
+      transform-origin: top;
+    }
+    &:hover ${InfoWrapper} {
+      -ms-transform-origin: top;
+      transform-origin: top;
+      -webkit-transform: rotatex(-95deg);
+      -ms-transform: rotatex(-95deg);
+      transform: rotatex(-95deg);
+    }
   }
 `;
 
@@ -177,7 +117,7 @@ export const AboutMeImageContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: flex-end;
-  @media (max-width: 992px) {
+  @media (max-width: 1300px) {
     align-self: center;
   }
 `;
