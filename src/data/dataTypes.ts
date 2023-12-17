@@ -181,6 +181,7 @@ export interface WorkExampleI {
     finished: string;
     notFinished: string;
   };
+  index: number;
 }
 
 export default DataI;

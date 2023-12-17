@@ -16,9 +16,12 @@ import {
   FilterContainer,
   Header,
   IconContainer,
-  IconsDiv,
   LinksContainer,
   OneFilterParagraphContainer,
+  Swiper,
+  SwiperBtn,
+  SwiperBtnsContainer,
+  SwiperContainer,
 } from "./styles/MyWorks.styles";
 import { StackI } from "../../data/dataTypes";
 import { BsFiletypeHtml, BsGithub } from "react-icons/bs";
@@ -40,6 +43,8 @@ import {
 } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
 import WorkExample from "./components/WorkExample";
+import ReactSwipe from "react-swipe";
+import SwiperWorks from "./components/Swiper";
 
 const MyWorks: FC = () => {
   const [showIconName, setShowIconName] = useState<boolean>(false);
@@ -47,6 +52,7 @@ const MyWorks: FC = () => {
   const [selectedFilters, setSelectedFilters] = useState<StackI[]>([]);
   const selectedLanguage = useAppSelector(languageSelector);
   const { header, filterItems, works, isFinished } = selectedLanguage.myWorks;
+  let reactSwipeEl;
 
   const iconCreator = (stack: StackI) => {
     switch (stack) {
@@ -145,92 +151,34 @@ const MyWorks: FC = () => {
           ) : null;
         })}
       </FilterContainer> */}
-      <ExamplesContainer>
-        {works.map((work) => (
-          <WorkExample
-            work={work}
-            iconCreator={iconCreator}
-            selectedFilters={selectedFilters}
-            setSelectedFilters={setSelectedFilters}
-            isExampleChecked={isExampleChecked}
-            setIsExampleChecked={setIsExampleChecked}
-            isFinished={isFinished}
-            // work={work}
-            // iconCreator={iconCreator}
-            // selectedFilters={selectedFilters}
-            // setSelectedFilters={setSelectedFilters}
-            // isExampleChecked={isExampleChecked}
-            // setIsExampleChecked={setIsExampleChecked}
-            // isFinished={isFinished}
-          />
-          // <Example picture={work.picture}>
-          //   <ExampleHeader>{work.name}</ExampleHeader>
-          //   <ExampleDescrContainer>
-          //     <IconsDiv>
-          //       {work.stack.map((stack) => {
-          //         const Icon = iconCreator(stack);
-          //         return Icon ? (
-          //           <IconContainer
-          //             picked={selectedFilters.includes(stack)}
-          //             onClick={() => {
-          //               if (!selectedFilters.includes(stack as StackI)) {
-          //                 setSelectedFilters((prevState) => [
-          //                   ...prevState,
-          //                   stack as StackI,
-          //                 ]);
-          //               } else {
-          //                 setSelectedFilters((prevState) => {
-          //                   const withoutElement = prevState.filter(
-          //                     (element) => element !== stack
-          //                   );
-          //                   return withoutElement;
-          //                 });
-          //               }
-          //             }}
-          //           >
-          //             <Icon key={stack} />
-          //           </IconContainer>
-          //         ) : null;
-          //       })}
-          //     </IconsDiv>
-          //   </ExampleDescrContainer>
-          //   <ExampleDescr>{work.description}</ExampleDescr>
+      {/* <SwiperContainer>
+        <Swiper
+          swipeOptions={{
+            continuous: true,
+            // auto: 5000,
+            speed: 2000,
+          }}
+          ref={(el) => (reactSwipeEl = el)}
+        >
+          {works.map((work) => (
+            <WorkExample
+              work={work}
+              iconCreator={iconCreator}
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+              isExampleChecked={isExampleChecked}
+              setIsExampleChecked={setIsExampleChecked}
+              isFinished={isFinished}
+            />
+          ))}
+        </Swiper>
 
-          //   <LinksContainer>
-          //     <ExampleIsFinished
-          //       onMouseEnter={() => setIsExampleChecked(true)}
-          //       onMouseLeave={() => setIsExampleChecked(false)}
-          //     >
-          //       {work.finished ? <TiTick /> : <ImCross />}
-          //       {isExampleChecked &&
-          //         (work.finished ? (
-          //           <ExampleCheckedParagraph>
-          //             {" "}
-          //             {isFinished.finished}
-          //           </ExampleCheckedParagraph>
-          //         ) : (
-          //           <ExampleCheckedParagraph>
-          //             {isFinished.notFinished}
-          //           </ExampleCheckedParagraph>
-          //         ))}
-          //     </ExampleIsFinished>
-          //     <ExampleLink href={work.githubFront} target="_blank">
-          //       <FiGithub />
-          //     </ExampleLink>
-          //     {work.githubBack && (
-          //       <ExampleLink href={work.githubBack} target="_blank">
-          //         <BsGithub />
-          //       </ExampleLink>
-          //     )}
-          //     {work.link && (
-          //       <ExampleLink href={work.link} target="_blank">
-          //         <MdWeb />
-          //       </ExampleLink>
-          //     )}
-          //   </LinksContainer>
-          // </Example>
-        ))}
-      </ExamplesContainer>
+        <SwiperBtnsContainer>
+          <SwiperBtn onClick={() => reactSwipeEl.prev()}>Previous</SwiperBtn>
+          <SwiperBtn onClick={() => reactSwipeEl.next()}>Next</SwiperBtn>
+        </SwiperBtnsContainer>
+      </SwiperContainer> */}
+      <SwiperWorks />
     </Container>
   );
 };

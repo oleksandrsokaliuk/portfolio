@@ -33,7 +33,7 @@ export const AppContainer = styled.div`
   scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   display: inherit;
   /* @media (max-width: 600px) {
     max-width: 600px;

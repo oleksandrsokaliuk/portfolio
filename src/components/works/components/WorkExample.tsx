@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { useAppSelector } from "../../../redux/hooks";
 import { languageSelector } from "../../../redux/languageSlice";
 import {
+  BlurWrapper,
   Container,
   Example,
   ExampleCheckedParagraph,
@@ -16,7 +17,6 @@ import {
   FilterContainer,
   Header,
   IconContainer,
-  IconsDiv,
   LinksContainer,
   OneFilterParagraphContainer,
 } from "../styles/MyWorks.styles";
@@ -45,54 +45,50 @@ const WorkExample: FC<WorkExampleI> = (props) => {
     <Example picture={props.work.picture}>
       <ExampleHeader>{props.work.name}</ExampleHeader>
       <ExampleDescrContainer>
-        <IconsDiv>
-          {props.work.stack.map((stack) => {
-            const Icon = props.iconCreator(stack);
-            return Icon ? (
-              <IconContainer
-                picked={props.selectedFilters.includes(stack)}
-                onClick={() => {
-                  if (!props.selectedFilters.includes(stack as StackI)) {
-                    props.setSelectedFilters((prevState) => [
-                      ...prevState,
-                      stack as StackI,
-                    ]);
-                  } else {
-                    props.setSelectedFilters((prevState) => {
-                      const withoutElement = prevState.filter(
-                        (element) => element !== stack
-                      );
-                      return withoutElement;
-                    });
-                  }
-                }}
-              >
-                <Icon key={stack} />
-              </IconContainer>
-            ) : null;
-          })}
-        </IconsDiv>
+        {props.work.stack.map((stack) => {
+          const Icon = props.iconCreator(stack);
+          return Icon ? (
+            <IconContainer
+              picked={props.selectedFilters.includes(stack)}
+              onClick={() => {
+                if (!props.selectedFilters.includes(stack as StackI)) {
+                  props.setSelectedFilters((prevState) => [
+                    ...prevState,
+                    stack as StackI,
+                  ]);
+                } else {
+                  props.setSelectedFilters((prevState) => {
+                    const withoutElement = prevState.filter(
+                      (element) => element !== stack
+                    );
+                    return withoutElement;
+                  });
+                }
+              }}
+            >
+              <Icon key={stack} style={{ height: "100%", width: "30px" }} />
+            </IconContainer>
+          ) : null;
+        })}
       </ExampleDescrContainer>
       <ExampleDescr>{props.work.description}</ExampleDescr>
-
+      <ExampleIsFinished
+        finished={props.work.finished}
+        statusText={props.isFinished}
+      >
+        {props.work.finished ? <TiTick /> : <ImCross />}
+        {/* {props.isExampleChecked &&
+          (props.work.finished ? (
+            <ExampleCheckedParagraph>
+              {props.isFinished.finished}
+            </ExampleCheckedParagraph>
+          ) : (
+            <ExampleCheckedParagraph>
+              {props.isFinished.notFinished}
+            </ExampleCheckedParagraph>
+          ))} */}
+      </ExampleIsFinished>
       <LinksContainer>
-        <ExampleIsFinished
-          onMouseEnter={() => props.setIsExampleChecked(true)}
-          onMouseLeave={() => props.setIsExampleChecked(false)}
-        >
-          {props.work.finished ? <TiTick /> : <ImCross />}
-          {props.isExampleChecked &&
-            (props.work.finished ? (
-              <ExampleCheckedParagraph>
-                {" "}
-                {props.isFinished.finished}
-              </ExampleCheckedParagraph>
-            ) : (
-              <ExampleCheckedParagraph>
-                {props.isFinished.notFinished}
-              </ExampleCheckedParagraph>
-            ))}
-        </ExampleIsFinished>
         <ExampleLink href={props.work.githubFront} target="_blank">
           <FiGithub />
         </ExampleLink>
@@ -107,6 +103,7 @@ const WorkExample: FC<WorkExampleI> = (props) => {
           </ExampleLink>
         )}
       </LinksContainer>
+      <BlurWrapper />
     </Example>
   );
 };

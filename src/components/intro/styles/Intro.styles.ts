@@ -42,7 +42,7 @@ export const TextHeaderContainer = styled.div`
   align-self: center;
   display: flex;
   flex-direction: column;
-  width: 150%;
+  width: 100%;
   @media (max-width: ${screenSizes.l}) {
     width: 100%;
     text-align: center;
