@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 export enum Language {
   ENGLISH = "eng",
   GERMAN = "deu",
@@ -165,6 +167,19 @@ interface DataI {
       messagePH: string;
       button: string;
     };
+  };
+}
+
+export interface WorkExampleI {
+  work: WorksI;
+  iconCreator: (stack: StackI) => IconType;
+  selectedFilters: StackI[];
+  setSelectedFilters: React.Dispatch<React.SetStateAction<StackI[]>>;
+  isExampleChecked: boolean;
+  setIsExampleChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  isFinished: {
+    finished: string;
+    notFinished: string;
   };
 }
 

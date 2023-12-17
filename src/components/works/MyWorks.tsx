@@ -39,6 +39,7 @@ import {
   SiSocketdotio,
 } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
+import WorkExample from "./components/WorkExample";
 
 const MyWorks: FC = () => {
   const [showIconName, setShowIconName] = useState<boolean>(false);
@@ -146,72 +147,88 @@ const MyWorks: FC = () => {
       </FilterContainer> */}
       <ExamplesContainer>
         {works.map((work) => (
-          <Example picture={work.picture}>
-            <ExampleHeader>{work.name}</ExampleHeader>
-            <ExampleDescrContainer>
-              <IconsDiv>
-                {work.stack.map((stack) => {
-                  const Icon = iconCreator(stack);
-                  return Icon ? (
-                    <IconContainer
-                      picked={selectedFilters.includes(stack)}
-                      onClick={() => {
-                        if (!selectedFilters.includes(stack as StackI)) {
-                          setSelectedFilters((prevState) => [
-                            ...prevState,
-                            stack as StackI,
-                          ]);
-                        } else {
-                          setSelectedFilters((prevState) => {
-                            const withoutElement = prevState.filter(
-                              (element) => element !== stack
-                            );
-                            return withoutElement;
-                          });
-                        }
-                      }}
-                    >
-                      <Icon key={stack} />
-                    </IconContainer>
-                  ) : null;
-                })}
-              </IconsDiv>
-            </ExampleDescrContainer>
-            <ExampleDescr>{work.description}</ExampleDescr>
+          <WorkExample
+            work={work}
+            iconCreator={iconCreator}
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+            isExampleChecked={isExampleChecked}
+            setIsExampleChecked={setIsExampleChecked}
+            isFinished={isFinished}
+            // work={work}
+            // iconCreator={iconCreator}
+            // selectedFilters={selectedFilters}
+            // setSelectedFilters={setSelectedFilters}
+            // isExampleChecked={isExampleChecked}
+            // setIsExampleChecked={setIsExampleChecked}
+            // isFinished={isFinished}
+          />
+          // <Example picture={work.picture}>
+          //   <ExampleHeader>{work.name}</ExampleHeader>
+          //   <ExampleDescrContainer>
+          //     <IconsDiv>
+          //       {work.stack.map((stack) => {
+          //         const Icon = iconCreator(stack);
+          //         return Icon ? (
+          //           <IconContainer
+          //             picked={selectedFilters.includes(stack)}
+          //             onClick={() => {
+          //               if (!selectedFilters.includes(stack as StackI)) {
+          //                 setSelectedFilters((prevState) => [
+          //                   ...prevState,
+          //                   stack as StackI,
+          //                 ]);
+          //               } else {
+          //                 setSelectedFilters((prevState) => {
+          //                   const withoutElement = prevState.filter(
+          //                     (element) => element !== stack
+          //                   );
+          //                   return withoutElement;
+          //                 });
+          //               }
+          //             }}
+          //           >
+          //             <Icon key={stack} />
+          //           </IconContainer>
+          //         ) : null;
+          //       })}
+          //     </IconsDiv>
+          //   </ExampleDescrContainer>
+          //   <ExampleDescr>{work.description}</ExampleDescr>
 
-            <LinksContainer>
-              <ExampleIsFinished
-                onMouseEnter={() => setIsExampleChecked(true)}
-                onMouseLeave={() => setIsExampleChecked(false)}
-              >
-                {work.finished ? <TiTick /> : <ImCross />}
-                {isExampleChecked &&
-                  (work.finished ? (
-                    <ExampleCheckedParagraph>
-                      {" "}
-                      {isFinished.finished}
-                    </ExampleCheckedParagraph>
-                  ) : (
-                    <ExampleCheckedParagraph>
-                      {isFinished.notFinished}
-                    </ExampleCheckedParagraph>
-                  ))}
-              </ExampleIsFinished>
-              <ExampleLink href={work.githubFront} target="_blank">
-                <FiGithub />
-              </ExampleLink>
-              {work.githubBack && (
-                <ExampleLink href={work.githubBack} target="_blank">
-                  <BsGithub />
-                </ExampleLink>
-              )}
-              {work.link && (
-                <ExampleLink href={work.link} target="_blank">
-                  <MdWeb />
-                </ExampleLink>
-              )}
-            </LinksContainer>
-          </Example>
+          //   <LinksContainer>
+          //     <ExampleIsFinished
+          //       onMouseEnter={() => setIsExampleChecked(true)}
+          //       onMouseLeave={() => setIsExampleChecked(false)}
+          //     >
+          //       {work.finished ? <TiTick /> : <ImCross />}
+          //       {isExampleChecked &&
+          //         (work.finished ? (
+          //           <ExampleCheckedParagraph>
+          //             {" "}
+          //             {isFinished.finished}
+          //           </ExampleCheckedParagraph>
+          //         ) : (
+          //           <ExampleCheckedParagraph>
+          //             {isFinished.notFinished}
+          //           </ExampleCheckedParagraph>
+          //         ))}
+          //     </ExampleIsFinished>
+          //     <ExampleLink href={work.githubFront} target="_blank">
+          //       <FiGithub />
+          //     </ExampleLink>
+          //     {work.githubBack && (
+          //       <ExampleLink href={work.githubBack} target="_blank">
+          //         <BsGithub />
+          //       </ExampleLink>
+          //     )}
+          //     {work.link && (
+          //       <ExampleLink href={work.link} target="_blank">
+          //         <MdWeb />
+          //       </ExampleLink>
+          //     )}
+          //   </LinksContainer>
+          // </Example>
         ))}
       </ExamplesContainer>
     </Container>
