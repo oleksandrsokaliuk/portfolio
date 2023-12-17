@@ -109,7 +109,7 @@ export const FileredAllButton = styled.button<IconI>`
 `;
 
 export const FilterParagraph = styled.p`
-  color: var(--pictures-background, #888787);
+  color: #888787;
   text-align: center;
   font-family: ${(props) => props.theme.light.secondaryFont};
   font-size: 1.4em;

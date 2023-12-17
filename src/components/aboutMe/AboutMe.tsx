@@ -41,14 +41,6 @@ const AboutMe: FC = () => {
       <InnerContainer>
         <InfoHeader>{whoAmI}</InfoHeader>
         <InfoInterestsContainer>
-          {/* <AnimatePresence> */}
-          {/* {activeSlide === 0 ? (
-              <Info />
-            ) : (
-              // <InterestsSlider />
-              <InterestsSwiper />
-            )} */}
-
           <InterestsSwiper />
           <InfoWrapper>
             <Info />
@@ -60,7 +52,7 @@ const AboutMe: FC = () => {
           handlePrevSlide={handlePrevSlide}
           activeSlide={activeSlide}
         /> */}
-        {/* <ButtonCV /> */}
+        <ButtonCV />
       </InnerContainer>
       <AboutMeImageContainer>
         <AboutMeImage

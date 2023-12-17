@@ -35,7 +35,6 @@ export const InfoHeader = styled.h2`
   /* flex: 1; */
   @media (max-width: 992px) {
     font-size: 2em;
-    padding: 10% 0 0;
     text-align: center;
   }
 `;
@@ -85,13 +84,15 @@ export const CVDownloadButton = styled.a`
   letter-spacing: 3.72px;
   border-radius: 36px;
   background: ${(props) => props.theme.light.exceptionalColour};
-  align-self: flex-start;
+  align-self: center;
+  margin-top: 2%;
   padding: 2% 6%;
   cursor: pointer;
   text-decoration: none;
   @media (max-width: 992px) {
     width: 100%;
     align-self: center;
+    margin-top: 0;
   }
 `;
 

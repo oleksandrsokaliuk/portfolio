@@ -70,28 +70,21 @@ export const InfoInterestsContainer = styled(motion.div)`
   width: 500px;
   position: relative;
   border-radius: 10px;
-  -webkit-transform: preserve-3d;
-  -ms-transform: preserve-3d;
   transform: preserve-3d;
-  -webkit-perspective: 2000px;
   perspective: 2000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   color: #000;
+  padding-left: 30px;
+
   /* padding: 10px 20px 10px 40px; */
   &:hover ${InfoWrapper} {
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    -webkit-transform: rotatey(-95deg);
-    -ms-transform: rotatey(-95deg);
-    transform: rotatey(-84deg);
+    transform: rotatex(-95deg);
+    transform-origin: top;
   }
   &:hover ${InfoContainer} {
     opacity: 0;
@@ -99,16 +92,16 @@ export const InfoInterestsContainer = styled(motion.div)`
   }
   @media (max-width: 1200px) {
     & ${InfoWrapper} {
-      -ms-transform-origin: top;
       transform-origin: top;
     }
     &:hover ${InfoWrapper} {
-      -ms-transform-origin: top;
       transform-origin: top;
-      -webkit-transform: rotatex(-95deg);
-      -ms-transform: rotatex(-95deg);
       transform: rotatex(-95deg);
     }
+  }
+
+  @media (max-width: 992px) {
+    padding-left: 0;
   }
 `;
 

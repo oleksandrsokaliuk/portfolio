@@ -80,7 +80,7 @@ const MyWorks: FC = () => {
   return (
     <Container>
       <Header>{header}</Header>
-      <FilterContainer
+      {/* <FilterContainer
         onMouseEnter={() => setShowIconName(true)}
         onMouseLeave={() => setShowIconName(false)}
       >
@@ -143,7 +143,7 @@ const MyWorks: FC = () => {
             </OneFilterParagraphContainer>
           ) : null;
         })}
-      </FilterContainer>
+      </FilterContainer> */}
       <ExamplesContainer>
         {works.map((work) => (
           <Example picture={work.picture}>

@@ -1,13 +1,25 @@
 import styled from "styled-components";
+import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 export const FormContainer = styled.form`
-  height: 100%;
-  width: 40%;
+  /* height: 100%;
+  width: 100%; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 5%;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* padding-left: 5%; */
+  /* justify-content: space-between; */
+  padding: 10% 50px 10% 20px;
+  flex: 3 0 60%;
   border-left: 5px solid ${(props) => props.theme.light.secondaryBG};
+  @media (max-width: ${screenSizes.l}) {
+    padding: 35% 50px 35% 20px;
+  }
+  @media (max-width: ${screenSizes.s}) {
+    padding: 15% 10px 25% 10px;
+    border-left: none;
+    background-color: #888787;
+  }
 `;
 
 export const Label = styled.label`
@@ -19,6 +31,10 @@ export const Label = styled.label`
   line-height: normal;
   letter-spacing: 6.44px;
   text-transform: uppercase;
+  margin-bottom: 20px;
+  @media (max-width: ${screenSizes.s}) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const Input = styled.input`
@@ -34,6 +50,29 @@ export const Input = styled.input`
   border: none;
   border-bottom: 1px solid #e6e6e6;
   outline: none;
+  &:focus {
+    border-bottom: 2px solid ${(props) => props.theme.light.exceptionalColour};
+  }
+`;
+
+export const InputText = styled.textarea`
+  color: ${(props) => props.theme.light.header};
+  font-family: ${(props) => props.theme.light.secondaryFont};
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 3.68px;
+  /* text-transform: capitalize; */
+  background: transparent;
+  outline: none;
+  border: 1px solid #e6e6e6;
+  min-height: 100px;
+  &::placeholder {
+  }
+  &:focus {
+    border: 2px solid ${(props) => props.theme.light.exceptionalColour};
+  }
 `;
 
 /* color: ${(props) => props.theme.light.header};
@@ -63,13 +102,16 @@ export const Button = styled.button`
   letter-spacing: 3.68px;
   text-transform: capitalize;
   border-radius: 36px;
+  border: none;
+  padding: 0 60px;
   background: ${(props) => props.theme.light.exceptionalColour};
-  align-self: flex-start;
-  padding: 3% 20%;
+  padding: 0 60px;
   text-decoration: none;
   position: relative;
   z-index: 1;
   cursor: pointer;
+  height: 100px;
+  align-self: flex-end;
   &::before {
     content: "";
     position: absolute;
@@ -118,14 +160,26 @@ export const Button = styled.button`
     width: 0;
     height: 0;
   }
+  @media (max-width: ${screenSizes.s}) {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
 `;
 
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 25%;
-  width: 45%;
+  /* justify-content: space-between; */
+  width: 40%;
+  /* width: 100%; */
+`;
+
+export const ItemContainerWholeWidth = styled(ItemContainer)`
+  width: 100%;
+  align-self: center;
 `;
 
 export const MessageSent = styled.p`
@@ -135,6 +189,7 @@ export const MessageSent = styled.p`
 export const FormInnerContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  height: 50%;
+  /* height: 50%; */
   justify-content: space-between;
+  margin: 0 auto;
 `;

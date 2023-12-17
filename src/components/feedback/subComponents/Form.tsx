@@ -8,7 +8,9 @@ import {
   FormContainer,
   FormInnerContainer,
   Input,
+  InputText,
   ItemContainer,
+  ItemContainerWholeWidth,
   Label,
   MessageSent,
 } from "../styles/Form.styles";
@@ -105,10 +107,9 @@ const Form: FC = () => {
               />
               {errors.email && touched.email && errors.email}
             </ItemContainer>
-            <ItemContainer style={{ width: "100%" }}>
+            <ItemContainerWholeWidth>
               <Label htmlFor="message">{message}</Label>
-              <Input
-                type="text"
+              <InputText
                 id="message"
                 name="message"
                 placeholder={messagePH}
@@ -117,7 +118,7 @@ const Form: FC = () => {
                 value={values.message}
               />
               {errors.message && touched.message && errors.message}
-            </ItemContainer>
+            </ItemContainerWholeWidth>
             <Button type="submit" disabled={isSubmitting || emailsIsSent}>
               {emailsIsSent ? "The message is sent" : button}
             </Button>
