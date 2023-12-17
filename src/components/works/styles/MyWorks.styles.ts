@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { StackI, WorkExampleI } from "../../../data/dataTypes";
 import ReactSwipe from "react-swipe";
 import { SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+import { TiTick } from "react-icons/ti";
+import { ImCross } from "react-icons/im";
+import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 interface ExampleI {
   picture: string;
@@ -10,7 +14,7 @@ interface ExampleI {
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 50px 20px;
+  padding: 50px 0;
   /* justify-content: space-around; */
   gap: 2%;
   height: 100vh;
@@ -21,7 +25,10 @@ export const Container = styled.section`
   /* padding: 3% 10%; */
   @media (max-width: 992px) {
     border-radius: 0;
-    padding: 80px 10px;
+    padding: 80px 0 120px 0;
+  }
+  @media (max-width: ${screenSizes.l}) {
+    padding: 120px 0 200px 0;
   }
 `;
 
@@ -175,29 +182,6 @@ export const SwiperBtnsContainer = styled.div`
 
 export const SwiperBtn = styled.button``;
 
-export const Example = styled.div<ExampleI>`
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-  padding: 30px;
-  height: 100%;
-  width: 100%;
-  background: ${(props) => `url(${props.picture})`};
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  color: ${(props) => props.theme.light.mainBG};
-  transition: border-radius 0.4s ease-in-out, background-color 0.2s ease-in,
-    box-shadow 0.6s ease-out;
-  z-index: 3;
-  &:hover {
-    color: ${(props) => props.theme.light.header};
-    background: ${(props) => props.theme.light.mainBG};
-    box-shadow: 0 0 42px rgba(0, 0, 0, 1);
-  }
-`;
-
 export const ExampleSubContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   color: ${(props) => props.theme.light.header};
@@ -218,9 +202,12 @@ export const ExampleHeader = styled.h2`
 export const ExampleDescrContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex: 1 0 50px;
+  flex-wrap: nowrap;
+  row-gap: 0;
+  column-gap: 10px;
   z-index: 7;
+  margin-top: 30px;
+  flex: 0;
 `;
 
 export const ExampleDescr = styled.p`
@@ -228,7 +215,11 @@ export const ExampleDescr = styled.p`
   font-size: 1.4rem;
   padding: 20px 0;
   z-index: 7;
+  display: none;
 `;
+
+export const FinishedIcon = styled(TiTick)``;
+export const NotFinishedIcon = styled(ImCross)``;
 
 interface ExampleIsFinishedI {
   finished: boolean;
@@ -239,13 +230,12 @@ interface ExampleIsFinishedI {
 }
 
 export const ExampleIsFinished = styled.div<ExampleIsFinishedI>`
-  flex: 0 0 40px;
-  width: auto;
-  padding: 5px 20px;
-  background: #41a148;
+  /* flex: 0 0 40px; */
+  /* width: auto; */
+  padding: 5px 50px;
+  background: ${(props) => (props.finished ? "#41a148" : "#FF1611")};
   margin-bottom: 20px;
   align-self: flex-end;
-  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
@@ -253,20 +243,34 @@ export const ExampleIsFinished = styled.div<ExampleIsFinishedI>`
   position: relative;
   z-index: 7;
   color: ${(props) => props.theme.light.header};
+  display: none;
+  overflow: hidden;
   &::after {
-    content: ${(props) =>
-      props.finished
-        ? props.statusText.finished
-        : props.statusText.notFinished};
+    content: ${(props) => {
+      console.log({ statusText: typeof props.statusText.finished });
+      return props.finished
+        ? `"${props.statusText.finished}"`
+        : `"${props.statusText.notFinished}"`;
+    }};
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 100%;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
   }
   &:hover::after {
     left: 0;
+  }
+  &:hover ${FinishedIcon} {
+    opacity: 0;
+  }
+  &:hover ${NotFinishedIcon} {
+    opacity: 0;
   }
 `;
 
@@ -292,7 +296,7 @@ export const IconContainer = styled.div<IconI>`
 
 export const LinksContainer = styled.div`
   flex: 0 0 40px;
-  display: flex;
+  display: none;
   gap: 20px;
   z-index: 7;
 `;
@@ -307,3 +311,51 @@ export const BlurWrapper = styled.div`
   z-index: 5;
   border-radius: 10px;
 `;
+
+export const ExampleFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Example = styled(motion.div)<ExampleI>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  background: ${(props) => `url(${props.picture})`};
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  color: ${(props) => props.theme.light.mainBG};
+  transition: border-radius 0.4s ease-in-out, background-color 0.2s ease-in,
+    box-shadow 0.6s ease-out;
+  z-index: 3;
+  &:hover {
+    color: ${(props) => props.theme.light.header};
+    background: ${(props) => props.theme.light.mainBG};
+    box-shadow: 0 0 42px rgba(0, 0, 0, 1);
+  }
+
+  &:hover ${ExampleDescr} {
+    display: block;
+  }
+  &:hover ${ExampleIsFinished}, &:hover ${LinksContainer} {
+    display: flex;
+  }
+
+  & ${ExampleDescrContainer} {
+  }
+
+  & ${ExampleHeader} {
+  }
+
+  /* @media (max-width: ${screenSizes.s}) {
+    width: 80%;
+    margin: 0 auto;
+  } */
+`;
+
+export const SwiperSld = styled(SwiperSlide)``;

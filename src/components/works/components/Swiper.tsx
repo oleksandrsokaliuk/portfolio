@@ -25,6 +25,7 @@ import { useAppSelector } from "../../../redux/hooks";
 import { languageSelector } from "../../../redux/languageSlice";
 import WorkExample from "./WorkExample";
 import { StackI } from "../../../data/dataTypes";
+import { SwiperSld } from "../styles/MyWorks.styles";
 
 export default function SwiperWorks() {
   const [showIconName, setShowIconName] = useState<boolean>(false);
@@ -81,7 +82,7 @@ export default function SwiperWorks() {
         className="mySwiper"
       >
         {works.map((work, idx) => (
-          <SwiperSlide>
+          <SwiperSld>
             <WorkExample
               work={work}
               iconCreator={iconCreator}
@@ -92,7 +93,7 @@ export default function SwiperWorks() {
               isFinished={isFinished}
               index={idx}
             />
-          </SwiperSlide>
+          </SwiperSld>
         ))}
       </Swiper>
     </>

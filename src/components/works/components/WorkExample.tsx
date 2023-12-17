@@ -8,6 +8,7 @@ import {
   ExampleCheckedParagraph,
   ExampleDescr,
   ExampleDescrContainer,
+  ExampleFooter,
   ExampleHeader,
   ExampleIsFinished,
   ExampleLink,
@@ -15,9 +16,11 @@ import {
   ExamplesContainer,
   FileredAllButton,
   FilterContainer,
+  FinishedIcon,
   Header,
   IconContainer,
   LinksContainer,
+  NotFinishedIcon,
   OneFilterParagraphContainer,
 } from "../styles/MyWorks.styles";
 import { StackI, WorkExampleI, WorksI } from "../../../data/dataTypes";
@@ -72,37 +75,29 @@ const WorkExample: FC<WorkExampleI> = (props) => {
         })}
       </ExampleDescrContainer>
       <ExampleDescr>{props.work.description}</ExampleDescr>
-      <ExampleIsFinished
-        finished={props.work.finished}
-        statusText={props.isFinished}
-      >
-        {props.work.finished ? <TiTick /> : <ImCross />}
-        {/* {props.isExampleChecked &&
-          (props.work.finished ? (
-            <ExampleCheckedParagraph>
-              {props.isFinished.finished}
-            </ExampleCheckedParagraph>
-          ) : (
-            <ExampleCheckedParagraph>
-              {props.isFinished.notFinished}
-            </ExampleCheckedParagraph>
-          ))} */}
-      </ExampleIsFinished>
-      <LinksContainer>
-        <ExampleLink href={props.work.githubFront} target="_blank">
-          <FiGithub />
-        </ExampleLink>
-        {props.work.githubBack && (
-          <ExampleLink href={props.work.githubBack} target="_blank">
-            <BsGithub />
+      <ExampleFooter>
+        <LinksContainer>
+          <ExampleLink href={props.work.githubFront} target="_blank">
+            <FiGithub />
           </ExampleLink>
-        )}
-        {props.work.link && (
-          <ExampleLink href={props.work.link} target="_blank">
-            <MdWeb />
-          </ExampleLink>
-        )}
-      </LinksContainer>
+          {props.work.githubBack && (
+            <ExampleLink href={props.work.githubBack} target="_blank">
+              <BsGithub />
+            </ExampleLink>
+          )}
+          {props.work.link && (
+            <ExampleLink href={props.work.link} target="_blank">
+              <MdWeb />
+            </ExampleLink>
+          )}
+        </LinksContainer>
+        <ExampleIsFinished
+          finished={props.work.finished}
+          statusText={props.isFinished}
+        >
+          {props.work.finished ? <FinishedIcon /> : <NotFinishedIcon />}
+        </ExampleIsFinished>
+      </ExampleFooter>
       <BlurWrapper />
     </Example>
   );
