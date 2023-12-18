@@ -12,10 +12,10 @@ export const AboutMeContainer = styled(motion.section)`
   align-items: center;
   position: relative;
   scroll-snap-align: "center";
-  @media (max-width: 1300px) {
+  @media (max-width: ${screenSizes.l}) {
     flex-direction: column;
     overflow: hidden;
-    padding: 10% 0 0;
+    padding: 100px 0 0 0;
   }
   @media (min-width: 1800px) {
     max-width: 1500px;
@@ -26,6 +26,15 @@ export const InnerContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  flex: 1 1 40%;
+  height: 100%;
+  align-items: center;
+  padding: 100px 0;
+  @media (max-width: ${screenSizes.s}) {
+    padding: 0;
+    gap: 10px;
+  }
+
   @media (max-width: 992px) {
     flex: 1 1 10%;
     align-items: center;
@@ -111,6 +120,7 @@ export const AboutMeImageContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: flex-end;
+  flex: 1 0 50%;
   @media (max-width: 1300px) {
     align-self: center;
   }
@@ -121,8 +131,12 @@ export const AboutMeImage = styled(motion.img)`
   object-fit: contain;
   object-position: top;
   width: 100%;
+  height: 100%;
   @media (max-width: ${screenSizes.l}) {
     filter: none;
+  }
+  @media (min-width: ${screenSizes.xl}) {
+    height: auto;
   }
 
   &:hover {

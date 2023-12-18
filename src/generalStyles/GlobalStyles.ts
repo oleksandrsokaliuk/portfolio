@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
     
     width: 100vw;
     background-color: ${(props) => props.theme.light.mainBG};
-    -webkit-scrollbar-width: none;
   }
 `;
 

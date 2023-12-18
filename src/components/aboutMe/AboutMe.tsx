@@ -22,6 +22,7 @@ import { languageSelector } from "../../redux/languageSlice";
 import ButtonCV from "./subComponents/ButtonCV";
 import ControlPanel from "./subComponents/ControlPanel";
 import InterestsSwiper from "./subComponents/InterestsSwiper";
+import CubeSwiper from "./subComponents/CubeSwiper";
 
 const AboutMe: FC = () => {
   const imgRef = useRef(null);
@@ -40,18 +41,13 @@ const AboutMe: FC = () => {
     <AboutMeContainer id="aboutme">
       <InnerContainer>
         <InfoHeader>{whoAmI}</InfoHeader>
-        <InfoInterestsContainer>
+        {/* <InfoInterestsContainer>
           <InterestsSwiper />
           <InfoWrapper>
             <Info />
           </InfoWrapper>
-          {/* </AnimatePresence> */}
-        </InfoInterestsContainer>
-        {/* <ControlPanel
-          handleNextSlide={handleNextSlide}
-          handlePrevSlide={handlePrevSlide}
-          activeSlide={activeSlide}
-        /> */}
+        </InfoInterestsContainer> */}
+        <CubeSwiper />
         <ButtonCV />
       </InnerContainer>
       <AboutMeImageContainer>

@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 export const TitleHeader = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: ${screenSizes.l}) {
+    text-align: center;
+  }
 `;
 
 export const NewComer = styled(motion.p)`
@@ -44,15 +48,18 @@ export const Lawyer = styled(motion.p)`
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  margin: 10% 0;
+  margin: 0;
   @media (max-width: 992px) {
     font-size: 1.1em;
+  }
+  @media (min-width: ${screenSizes.xl}) {
+    margin: 10% 0;
   }
 `;
 
 export const SkillsSection = styled.section`
   scroll-snap-align: start;
-  @media (max-width: 992px) {
+  @media (max-width: ${screenSizes.s}) {
     padding-bottom: 10%;
   }
 `;
@@ -61,12 +68,17 @@ export const EducationContainer = styled.div`
   display: flex;
   height: 90vh;
   justify-content: space-around;
-  @media (max-width: 992px) {
+
+  @media (max-width: ${screenSizes.l}) {
+    gap: 50px;
+    padding: 0 50px;
+  }
+  @media (max-width: ${screenSizes.s}) {
     flex-direction: column;
     width: 80%;
     margin: 0 auto;
     justify-content: center;
-    gap: 2%;
+    padding: 0;
   }
 `;
 
@@ -79,6 +91,13 @@ export const JobsContainer = styled.div`
   @media (max-width: 992px) {
     width: 100%;
     gap: 10%;
+  }
+  @media (min-width: ${screenSizes.s}) and (max-width: ${screenSizes.l}) {
+    height: 550px;
+  }
+
+  @media (max-width: ${screenSizes.s}) {
+    height: 450px;
   }
 `;
 

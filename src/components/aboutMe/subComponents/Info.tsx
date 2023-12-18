@@ -3,6 +3,9 @@ import ButtonCV from "./ButtonCV";
 import { languageSelector } from "../../../redux/languageSlice";
 import { useAppSelector } from "../../../redux/hooks";
 import {
+  DragIcon,
+  DragIconContainer,
+  DragIconText,
   InfoContainer,
   InfoHeader,
   InfoItemContainer,
@@ -11,6 +14,7 @@ import {
   ItemsContainer,
 } from "../styles/Info.styles";
 import { AnimatePresence, useInView } from "framer-motion";
+import { FaArrowsLeftRight } from "react-icons/fa6";
 
 interface InfoI {
   appears?: boolean;

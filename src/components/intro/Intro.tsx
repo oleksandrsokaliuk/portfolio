@@ -28,6 +28,17 @@ export interface IntroI {
 const Intro: FC<IntroI> = ({ scrollPosition }) => {
   const selectedLanguage = useAppSelector(languageSelector);
   const { header, subHeader, scrollButton } = selectedLanguage.introduction;
+  useEffect(() => {
+    console.log("Subscribed to scroll events");
+    return () => {
+      console.log("Unsubscribed from scroll events");
+    };
+  }, []); // Эффект выполняется только при монтировании компонента
+
+  useEffect(() => {
+    console.log("Current scroll position:", scrollPosition);
+  }, [scrollPosition]);
+
   return (
     <IntroContainer>
       <LanguageSwitcher />

@@ -1,19 +1,59 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 import { BiSolidDownload } from "react-icons/bi";
+import { FaArrowsLeftRight } from "react-icons/fa6";
+
+const dragIcon = keyframes`
+20% {
+  transform: translateX(-20px);
+}
+40% {
+  opacity: 1;
+  transform: translateX(20px);
+}
+60% {
+  opacity: 1;
+  transform: translateX(-20px);
+}
+80% {
+  transform: translateX(20px);
+}
+`;
 
 export const InfoContainer = styled(motion.div)`
   color: ${(props) => props.theme.light.header};
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   flex: 3;
-  justify-content: center;
+  gap: 20px;
+  justify-content: space-around;
   /* align-items: center; */
   @media (max-width: 992px) {
     flex-direction: row;
     /* padding-bottom: 10%; */
+  }
+  &:after {
+    content: "<- Drag ->";
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    width: 100%;
+    /* height: 2rem; */
+    opacity: 0;
+    font-size: 1.3rem;
+    z-index: 100000000;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: ${(props) => props.theme.light.exceptionalColour}; */
+    color: ${(props) => props.theme.light.secondaryBG};
+  }
+  &:hover::after {
+    animation: ${dragIcon} 3s ease-in;
   }
 `;
 
@@ -102,3 +142,18 @@ export const CVDownloadIcon = styled(BiSolidDownload)`
 `;
 
 export const ItemsContainer = styled.div``;
+
+export const DragIconContainer = styled.div`
+  /* position: absolute; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const DragIconText = styled.p``;
+
+export const DragIcon = styled(FaArrowsLeftRight)`
+  font-size: 3rem;
+  stroke-width: 0px;
+`;
