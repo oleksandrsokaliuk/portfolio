@@ -27,7 +27,7 @@ export const SkillTitle = styled(motion.p)`
     flex: 2 1 auto;
   }
 `;
-export const SkillLevel = styled(motion.p)`
+export const SkillLevel = styled(motion.div)`
   color: ${(props) => props.theme.light.paragraph};
   text-align: right;
   font-family: ${(props) => props.theme.light.secondaryFont};
@@ -59,17 +59,19 @@ export const SkillProgressBar = styled(motion.div)<SkillProgressBarI>`
   height: 100%;
   background-color: ${(props) => props.theme.light.thirdBG};
   position: relative;
-  &::before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: ${(props) => props.theme.light.exceptionalColour};
-    width: ${(props) => props.progress}%;
-    z-index: 1000;
-    height: 100%;
-  }
+  overflow: hidden;
+  border-radius: 10px;
   @media (max-width: 992px) {
     flex: 1 1 15px;
   }
+`;
+
+export const SkillProgressCurrent = styled(motion.div)<SkillProgressBarI>`
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: ${(props) => props.theme.light.exceptionalColour};
+  z-index: 1000;
+  height: 100%;
 `;

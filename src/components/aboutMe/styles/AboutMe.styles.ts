@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { InfoContainer } from "./Info.styles";
+import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 export const AboutMeContainer = styled(motion.section)`
   max-width: 1050px;
@@ -120,6 +121,9 @@ export const AboutMeImage = styled(motion.img)`
   object-fit: contain;
   object-position: top;
   width: 100%;
+  @media (max-width: ${screenSizes.l}) {
+    filter: none;
+  }
 
   &:hover {
     filter: none;

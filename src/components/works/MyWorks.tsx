@@ -87,7 +87,7 @@ const MyWorks: FC = () => {
   return (
     <Container>
       <Header>{header}</Header>
-      {/* <FilterContainer
+      <FilterContainer
         onMouseEnter={() => setShowIconName(true)}
         onMouseLeave={() => setShowIconName(false)}
       >
@@ -150,7 +150,7 @@ const MyWorks: FC = () => {
             </OneFilterParagraphContainer>
           ) : null;
         })}
-      </FilterContainer> */}
+      </FilterContainer>
       {/* <SwiperContainer>
         <Swiper
           swipeOptions={{
