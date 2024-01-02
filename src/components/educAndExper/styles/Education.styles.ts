@@ -59,6 +59,7 @@ export const Lawyer = styled(motion.p)`
 
 export const SkillsSection = styled.section`
   scroll-snap-align: start;
+  max-height: 100vh;
   @media (max-width: ${screenSizes.s}) {
     padding-bottom: 10%;
   }

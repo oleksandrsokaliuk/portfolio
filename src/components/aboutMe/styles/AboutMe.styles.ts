@@ -131,7 +131,7 @@ export const AboutMeImage = styled(motion.img)`
   object-fit: contain;
   object-position: top;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   @media (max-width: ${screenSizes.l}) {
     filter: none;
   }

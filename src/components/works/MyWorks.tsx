@@ -45,6 +45,7 @@ import { FiGithub } from "react-icons/fi";
 import WorkExample from "./components/WorkExample";
 import ReactSwipe from "react-swipe";
 import SwiperWorks from "./components/Swiper";
+import Filter from "./components/filter/Filter";
 
 const MyWorks: FC = () => {
   const [showIconName, setShowIconName] = useState<boolean>(false);
@@ -87,10 +88,7 @@ const MyWorks: FC = () => {
   return (
     <Container>
       <Header>{header}</Header>
-      <FilterContainer
-        onMouseEnter={() => setShowIconName(true)}
-        onMouseLeave={() => setShowIconName(false)}
-      >
+      {/* <FilterContainer>
         <OneFilterParagraphContainer
           picked={selectedFilters.length === 13}
           onClick={() => {
@@ -150,7 +148,8 @@ const MyWorks: FC = () => {
             </OneFilterParagraphContainer>
           ) : null;
         })}
-      </FilterContainer>
+      </FilterContainer> */}
+      <Filter />
       {/* <SwiperContainer>
         <Swiper
           swipeOptions={{

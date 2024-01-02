@@ -21,7 +21,6 @@ const Education: FC = () => {
   const { newComer, motivated, lawyer } = selectedLanguage.edAndExp.header;
   const { experience, runningLine } = selectedLanguage.edAndExp;
   const { programmingSkills } = selectedLanguage.skills;
-  console.log(Object.values(programmingSkills));
   const ref = useRef(null);
   return (
     <SkillsSection>

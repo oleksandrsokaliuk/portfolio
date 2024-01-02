@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const AppContainer = styled.div`
+export const AppMainContainer = styled.div`
   scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100vh;

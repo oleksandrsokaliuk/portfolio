@@ -16,7 +16,6 @@ interface RunningLineProps {
 }
 
 const RunningLine: FC<RunningLineProps> = ({ direction, text }) => {
-  console.log(direction);
   return (
     <LineContainerHeaderTest
       pauseOnHover

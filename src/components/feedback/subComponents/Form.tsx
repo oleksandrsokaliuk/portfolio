@@ -59,8 +59,6 @@ const Form: FC = () => {
           //   values,
           //   "AVKkAuycPbKpnubtp"
           // );
-          console.log(emailjs);
-          console.log("Message sent successfully");
           setEmailIsSent(true);
           setTimeout(() => {
             setEmailIsSent(false);

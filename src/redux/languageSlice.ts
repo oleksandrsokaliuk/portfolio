@@ -17,7 +17,7 @@ const languageSlice = createSlice({
       } else if (action.payload === Language.UKRAINIAN) {
         return ukrainianData;
       }
-      console.log("english data");
+      // console.log("english data");
       return englishData;
     },
     updateScroll: (state, action: PayloadAction<number>) => {},

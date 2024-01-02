@@ -48,13 +48,24 @@ export const Header = styled.h2`
 `;
 
 export const FilterContainer = styled.div`
-  width: 80%;
+  /* width: 80%;
   display: flex;
   flex-wrap: nowrap;
   gap: 5%;
   justify-content: center;
   row-gap: 1em;
-  flex: 0 1 20px;
+  flex: 0 1 20px; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100000;
+  background: green;
 `;
 
 interface IconI {
@@ -69,42 +80,34 @@ export const OneFilterParagraphContainer = styled.div<IconI>`
     props.picked
       ? props.theme.light.exceptionalColour
       : props.theme.light.mainBG};
-  transform: ${(props) => (props.picked ? "scale(1.1)" : "scale(1)")};
+  width: 30px;
+  /* transform: ${(props) => (props.picked ? "scale(1.1)" : "scale(1)")}; */
   position: relative;
-  transition: 1s;
-  overflow-y: hidden;
+  /* transition: 1s; */
 
-  &::before {
+  /* &::before {
     content: "${(props) => props.stack}";
     color: ${(props) =>
-      props.picked
-        ? props.theme.light.exceptionalColour
-        : props.theme.light.mainBG};
+    props.picked
+      ? props.theme.light.exceptionalColour
+      : props.theme.light.mainBG};
     position: absolute;
     right: -40%;
     top: -100%;
-
-    /* width: auto; */
-    /* height: 100%; */
-    /* font-size: 1.1em; */
-    /* background-color: ${(props) => props.theme.light.secondaryBG}; */
     transition: 0.5s;
     text-align: center;
     display: none;
 
-    /* flex: 1; */
-  }
-  &:hover:before {
+  } */
+  /* &:hover:before {
     top: 0;
-    /* left: 10%; */
     display: flex;
   }
   &:hover {
     color: transparent;
-    /* width: 200px; */
     flex: 1 1 1;
     overflow: visible;
-  }
+  } */
 `;
 
 export const FileredAllButton = styled.button<IconI>`
@@ -114,7 +117,6 @@ export const FileredAllButton = styled.button<IconI>`
       : props.theme.light.mainBG};
   transform: ${(props) => (props.picked ? "scale(1.2)" : "scale(1)")};
   width: 100%;
-  height: 100%;
   font-size: 1em;
   background: transparent;
   border: none;
@@ -247,7 +249,7 @@ export const ExampleIsFinished = styled.div<ExampleIsFinishedI>`
   overflow: hidden;
   &::after {
     content: ${(props) => {
-      console.log({ statusText: typeof props.statusText.finished });
+      // console.log({ statusText: typeof props.statusText.finished });
       return props.finished
         ? `"${props.statusText.finished}"`
         : `"${props.statusText.notFinished}"`;
