@@ -5,6 +5,9 @@ import { FamousNamesEmailsI } from "../../../data/dataTypes";
 import { funnyNamesEmails } from "../../../data/generalData";
 import {
   Button,
+  ButtonErrorContainer,
+  Error,
+  ErrorContainer,
   FormContainer,
   FormInnerContainer,
   Input,
@@ -16,11 +19,13 @@ import {
 } from "../styles/Form.styles";
 import { Formik } from "formik";
 import emailjs from "@emailjs/browser";
+import * as Yup from "yup";
 
 const Form: FC = () => {
   const selectedLanguage = useAppSelector(languageSelector);
   const { name, email, message, messagePH, button } =
     selectedLanguage.feedBack.form;
+  const formErrors = selectedLanguage.feedBack.errors;
   const [famousNameAndEmail, setFamousNameAndEmail] =
     useState<FamousNamesEmailsI>({
       name: "",
@@ -36,12 +41,26 @@ const Form: FC = () => {
     setFamousNameAndEmail(getFamousNameAndEmail());
   }, []);
 
+  const FormSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
+    message: Yup.string().min(5, "Too Short!").required("Required"),
+  });
+
   const [emailsIsSent, setEmailIsSent] = useState<boolean>(false);
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
+      validationSchema={FormSchema}
       onSubmit={async (values, { setSubmitting }) => {
         setEmailIsSent(false);
+        // if (!values.name || !values.email || !values.message) {
+
+        //   return;
+        // }
         try {
           await emailjs.send(
             "service_v13b2kd",
@@ -90,7 +109,6 @@ const Form: FC = () => {
                 value={values.name}
                 placeholder={famousNameAndEmail.name}
               />
-              {errors.name && touched.name && errors.name}
             </ItemContainer>
             <ItemContainer>
               <Label htmlFor="email">{email}</Label>
@@ -103,7 +121,6 @@ const Form: FC = () => {
                 onBlur={handleBlur}
                 value={values.email}
               />
-              {errors.email && touched.email && errors.email}
             </ItemContainer>
             <ItemContainerWholeWidth>
               <Label htmlFor="message">{message}</Label>
@@ -115,11 +132,48 @@ const Form: FC = () => {
                 onBlur={handleBlur}
                 value={values.message}
               />
-              {errors.message && touched.message && errors.message}
             </ItemContainerWholeWidth>
-            <Button type="submit" disabled={isSubmitting || emailsIsSent}>
-              {emailsIsSent ? "The message is sent" : button}
-            </Button>
+            <ButtonErrorContainer>
+              <Button
+                type="submit"
+                disabled={
+                  isSubmitting ||
+                  emailsIsSent ||
+                  !!errors.message ||
+                  !!errors.name ||
+                  !!errors.email ||
+                  !touched.message ||
+                  !touched.email ||
+                  !touched.name
+                }
+              >
+                {emailsIsSent ? "The message is sent" : button}
+              </Button>
+              {((errors.message && touched.message) ||
+                (errors.name && touched.name) ||
+                (errors.email && touched.email)) && (
+                <ErrorContainer>
+                  {touched.name && !values.name && (
+                    <Error>{formErrors.name.required}</Error>
+                  )}
+                  {touched.name && errors.name && (
+                    <Error>{formErrors.name.condition}</Error>
+                  )}
+                  {touched.email && !values.email && (
+                    <Error>{formErrors.email.required}</Error>
+                  )}
+                  {touched.email && errors.email && (
+                    <Error>{formErrors.email.condition}</Error>
+                  )}
+                  {touched.message && !values.message && (
+                    <Error>{formErrors.message.required}</Error>
+                  )}
+                  {touched.message && errors.message && (
+                    <Error>{formErrors.message.condition}</Error>
+                  )}
+                </ErrorContainer>
+              )}
+            </ButtonErrorContainer>
           </FormInnerContainer>
         </FormContainer>
       )}

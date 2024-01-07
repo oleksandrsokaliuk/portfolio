@@ -143,8 +143,8 @@ const germanData: DataI = {
       StackI.WEBSOCKET,
     ],
     isFinished: {
-      finished: "abgeschlossen",
-      notFinished: "nicht abgeschlossen",
+      finished: "fertig",
+      notFinished: "nicht fertig",
     },
     works: [
       {
@@ -242,7 +242,7 @@ const germanData: DataI = {
     ],
   },
   feedBack: {
-    header: "lass uns reden!",
+    header: "lass uns reden",
     callToAction: {
       ask: "frag mich alles oder sag einfach",
       hi: "hallo...",
@@ -253,6 +253,20 @@ const germanData: DataI = {
       message: "nachricht",
       messagePH: "hallo...",
       button: "senden",
+    },
+    errors: {
+      name: {
+        required: "Der Name ist ein Pflichtfeld",
+        condition: "Der Name muss zwischen 2 und 50 Zeichen lang sein",
+      },
+      email: {
+        required: "Die E-Mail ist ein Pflichtfeld",
+        condition: "Die E-Mail muss eine gültige E-Mail-Adresse sein",
+      },
+      message: {
+        required: "Die Nachricht ist ein Pflichtfeld",
+        condition: "Die Nachricht muss mindestens 5 Zeichen lang sein",
+      },
     },
   },
 };

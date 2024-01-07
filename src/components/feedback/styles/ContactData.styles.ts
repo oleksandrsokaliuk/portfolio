@@ -32,6 +32,8 @@ export const Container = styled.div`
 export const CallToActionContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
 `;
 
 export const CallToActionHeader = styled.h3`
@@ -96,6 +98,7 @@ export const SocialNetworksContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  height: 50px;
   gap: 10%;
   @media (max-width: ${screenSizes.s}) {
     justify-content: center;

@@ -239,7 +239,7 @@ const ukrainianData: DataI = {
     ],
   },
   feedBack: {
-    header: "давай поговоримо!",
+    header: "давай поговоримо",
     callToAction: {
       ask: "спитай мене будь-що або просто скажи",
       hi: "привіт...",
@@ -250,6 +250,20 @@ const ukrainianData: DataI = {
       message: "повідомлення",
       messagePH: "привіт...",
       button: "відправити",
+    },
+    errors: {
+      name: {
+        required: "Ім'я є обов'язковим полем",
+        condition: "Ім'я повинно містити від 2 до 50 символів",
+      },
+      email: {
+        required: "Email є обов'язковим полем",
+        condition: "Email повинна бути дійсною адресою",
+      },
+      message: {
+        required: "Повідомлення є обов'язковим полем",
+        condition: "Повідомлення повинно містити щонайменше 5 символів",
+      },
     },
   },
 };

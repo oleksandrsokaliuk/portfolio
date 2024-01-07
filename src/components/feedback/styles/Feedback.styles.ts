@@ -6,7 +6,8 @@ export const Container = styled.footer`
   width: 100%;
   /* margin: 0 auto; */
   scroll-snap-align: start;
-  @media (max-width: 992px) {
+  overflow: hidden;
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `;

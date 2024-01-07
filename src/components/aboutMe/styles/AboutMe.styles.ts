@@ -15,7 +15,7 @@ export const AboutMeContainer = styled(motion.section)`
   @media (max-width: ${screenSizes.l}) {
     flex-direction: column;
     overflow: hidden;
-    padding: 100px 0 0 0;
+    padding: 5% 0 0 0;
   }
   @media (min-width: 1800px) {
     max-width: 1500px;
@@ -29,7 +29,7 @@ export const InnerContainer = styled(motion.div)`
   flex: 1 1 40%;
   height: 100%;
   align-items: center;
-  padding: 100px 0;
+  padding: 50px 0;
   @media (max-width: ${screenSizes.s}) {
     padding: 0;
     gap: 10px;

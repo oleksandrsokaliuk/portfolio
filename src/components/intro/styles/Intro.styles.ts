@@ -110,7 +110,7 @@ export const IntroTextSubHeader = styled(motion.h2)`
   text-transform: uppercase;
   @media (max-width: ${screenSizes.l}) {
     padding: 5% 0;
-    font-size: 30px;
+    font-size: 1.9rem;
     left: auto;
     letter-spacing: 8px;
     top: -150%;

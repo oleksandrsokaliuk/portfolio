@@ -86,7 +86,7 @@ export const InfoItemContainer = styled.div`
 
 export const InfoItemHeader = styled.p`
   font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 1.8em;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -107,6 +107,7 @@ export const InfoItemDescription = styled.p`
   font-weight: 500;
   line-height: normal;
   margin: 2% 0 0 2%;
+  white-space: nowrap;
   text-transform: capitalize;
   @media (max-width: 992px) {
     font-size: 1.4em;

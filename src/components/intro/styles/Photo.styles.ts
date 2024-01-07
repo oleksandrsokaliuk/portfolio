@@ -79,6 +79,9 @@ export const PhotoBackground = styled.div`
   @media (max-width: 992px) {
     height: 85%;
   }
+  @media (max-width: 1200px) and (max-height: 850px) {
+    height: 50vh;
+  }
 `;
 
 export const MainPhoto = styled(motion.img)`

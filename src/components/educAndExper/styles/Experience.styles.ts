@@ -12,6 +12,9 @@ export const SkillsGeneralContainer = styled.div`
     flex-direction: column;
     padding: 10% 0;
   }
+  /* @media (max-width: 380px) {
+    font-size: 8px;
+  } */
 `;
 
 export const SkillsProgrammingContainer = styled.div`

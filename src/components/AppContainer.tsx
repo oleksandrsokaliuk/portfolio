@@ -33,7 +33,7 @@ function AppContainer() {
   return (
     <AppMainContainer ref={AppRef}>
       <Intro scrollPosition={hookedYPostion} />
-      <MainContainer>
+      <MainContainer id="aboutme">
         <AboutMe />
         <EducAndExper />
         <MyWorks />

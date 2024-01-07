@@ -242,7 +242,7 @@ const englishData: DataI = {
     ],
   },
   feedBack: {
-    header: "let's talk!",
+    header: "let's talk",
     callToAction: {
       ask: "ask me anything or just say",
       hi: "hi...",
@@ -253,6 +253,20 @@ const englishData: DataI = {
       message: "message",
       messagePH: "hi there...",
       button: "send",
+    },
+    errors: {
+      name: {
+        required: "Name is a required field",
+        condition: "Name must be between 2 and 50 characters",
+      },
+      email: {
+        required: "Email is a required field",
+        condition: "Email must be a valid email address",
+      },
+      message: {
+        required: "Message is a required field",
+        condition: "Message must be at least 5 characters",
+      },
     },
   },
 };

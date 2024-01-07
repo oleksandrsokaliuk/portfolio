@@ -64,6 +64,11 @@ export enum StackI {
   WEBSOCKET = "websocket",
 }
 
+interface FormErrorsI {
+  required: string;
+  condition: string;
+}
+
 interface DataI {
   cv: string;
   cvName: string;
@@ -166,6 +171,11 @@ interface DataI {
       message: string;
       messagePH: string;
       button: string;
+    };
+    errors: {
+      name: FormErrorsI;
+      email: FormErrorsI;
+      message: FormErrorsI;
     };
   };
 }

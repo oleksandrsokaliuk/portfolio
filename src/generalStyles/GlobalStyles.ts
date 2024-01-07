@@ -26,7 +26,13 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     background-color: ${(props) => props.theme.light.mainBG};
   }
-`;
+
+  html {
+    @media (max-height: 680px) {
+      font-size: 9px;
+    }
+  }
+    `;
 
 export const AppMainContainer = styled.div`
   scroll-snap-type: y proximity;

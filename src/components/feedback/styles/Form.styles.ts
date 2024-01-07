@@ -50,6 +50,7 @@ export const Input = styled.input`
   border: none;
   border-bottom: 1px solid #e6e6e6;
   outline: none;
+  padding: 0 10px 5px 10px;
   &:focus {
     border-bottom: 2px solid ${(props) => props.theme.light.exceptionalColour};
   }
@@ -68,6 +69,7 @@ export const InputText = styled.textarea`
   outline: none;
   border: 1px solid #e6e6e6;
   min-height: 100px;
+  padding: 10px 10px 0 10px;
   &::placeholder {
   }
   &:focus {
@@ -92,6 +94,43 @@ export const InputText = styled.textarea`
   z-index: 1;
   cursor: pointer; */
 
+export const ButtonErrorContainer = styled.div`
+  display: flex;
+  align-self: flex-end;
+  gap: 40px;
+  /* align-self: center; */
+  align-items: center;
+  min-height: 50px;
+  @media (max-width: ${screenSizes.l}) {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+`;
+
+export const ErrorContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  gap: 5px;
+  flex-wrap: wrap;
+  @media (max-width: ${screenSizes.l}) {
+    /* align-items: center; */
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+`;
+
+export const Error = styled.li`
+  color: white;
+  font-size: 0.9rem;
+  color: #ff1611;
+  letter-spacing: 2px;
+  @media (max-width: ${screenSizes.l}) {
+    font-size: 1rem;
+  }
+`;
+
 export const Button = styled.button`
   color: ${(props) => props.theme.light.header};
   font-family: ${(props) => props.theme.light.secondaryFont};
@@ -105,13 +144,13 @@ export const Button = styled.button`
   border: none;
   padding: 0 60px;
   background: ${(props) => props.theme.light.exceptionalColour};
-  padding: 0 60px;
   text-decoration: none;
   position: relative;
   z-index: 1;
   cursor: pointer;
-  height: 100px;
-  align-self: flex-end;
+  height: 100%;
+  height: 50px;
+
   &::before {
     content: "";
     position: absolute;

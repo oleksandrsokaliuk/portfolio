@@ -81,6 +81,9 @@ export const EducationContainer = styled.div`
     justify-content: center;
     padding: 0;
   }
+  @media (max-width: 380px) {
+    font-size: 10px;
+  }
 `;
 
 export const JobsContainer = styled.div`
