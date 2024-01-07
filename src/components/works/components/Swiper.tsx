@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BsFiletypeHtml } from "react-icons/bs";
 import { DiCss3 } from "react-icons/di";
@@ -26,11 +26,15 @@ import { languageSelector } from "../../../redux/languageSlice";
 import WorkExample from "./WorkExample";
 import { StackI } from "../../../data/dataTypes";
 import { SwiperSld } from "../styles/MyWorks.styles";
+import { FilterI } from "./filter/Filter";
 
-export default function SwiperWorks() {
+const SwiperWorks: React.FC<FilterI> = ({
+  selectedFilters,
+  setSelectedFilters,
+}) => {
   const [showIconName, setShowIconName] = useState<boolean>(false);
   const [isExampleChecked, setIsExampleChecked] = useState<boolean>(false);
-  const [selectedFilters, setSelectedFilters] = useState<StackI[]>([]);
+  // const [selectedFilters, setSelectedFilters] = useState<StackI[]>([]);
   const selectedLanguage = useAppSelector(languageSelector);
   const { header, filterItems, works, isFinished } = selectedLanguage.myWorks;
   const iconCreator = (stack: StackI) => {
@@ -63,6 +67,13 @@ export default function SwiperWorks() {
         return SiSocketdotio;
     }
   };
+  // useEffect(() => {
+  //   selectedFilters.forEach((filter) => {
+  //     console.log({ filterTest: filter });
+  //   });
+  //   console.log("Hello");
+  // }, []);
+
   return (
     <>
       <Swiper
@@ -81,7 +92,32 @@ export default function SwiperWorks() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {works.map((work, idx) => (
+        {works.map((work, idx) => {
+          console.log({ workStack: work.stack });
+          console.log({ selectedFilters });
+          if (
+            work.stack.some((item1) =>
+              selectedFilters.some((item2) => item1 === item2)
+            )
+          ) {
+            return (
+              <SwiperSld>
+                <WorkExample
+                  work={work}
+                  iconCreator={iconCreator}
+                  selectedFilters={selectedFilters}
+                  setSelectedFilters={setSelectedFilters}
+                  isExampleChecked={isExampleChecked}
+                  setIsExampleChecked={setIsExampleChecked}
+                  isFinished={isFinished}
+                  index={idx}
+                />
+              </SwiperSld>
+            );
+          }
+        })}
+
+        {/* {works.map((work, idx) => (
           <SwiperSld>
             <WorkExample
               work={work}
@@ -94,8 +130,9 @@ export default function SwiperWorks() {
               index={idx}
             />
           </SwiperSld>
-        ))}
+        ))} */}
       </Swiper>
     </>
   );
-}
+};
+export default SwiperWorks;

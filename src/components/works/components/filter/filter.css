@@ -46,12 +46,22 @@
   position: absolute;
   top: 100px;
   width: 100%;
-  padding: 0 30%;
+  padding: 0 25%;
+  transition-delay: 0.4s;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (max-width: 1024px) {
+  .filter-ul {
+    gap: 25px;
+  }
 }
 
 .filter-item {
   list-style: none;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   cursor: pointer;

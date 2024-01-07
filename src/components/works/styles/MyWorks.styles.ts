@@ -73,41 +73,15 @@ interface IconI {
   stack?: string;
 }
 
-export const OneFilterParagraphContainer = styled.div<IconI>`
-  flex: 1 1 content;
-  cursor: pointer;
+export const OneFilterParagraphContainer = styled(motion.li)<IconI>`
   color: ${(props) =>
     props.picked
       ? props.theme.light.exceptionalColour
       : props.theme.light.mainBG};
-  width: 30px;
-  /* transform: ${(props) => (props.picked ? "scale(1.1)" : "scale(1)")}; */
-  position: relative;
-  /* transition: 1s; */
-
-  /* &::before {
-    content: "${(props) => props.stack}";
-    color: ${(props) =>
-    props.picked
-      ? props.theme.light.exceptionalColour
-      : props.theme.light.mainBG};
-    position: absolute;
-    right: -40%;
-    top: -100%;
-    transition: 0.5s;
-    text-align: center;
-    display: none;
-
-  } */
-  /* &:hover:before {
-    top: 0;
-    display: flex;
-  }
-  &:hover {
-    color: transparent;
-    flex: 1 1 1;
-    overflow: visible;
-  } */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 `;
 
 export const FileredAllButton = styled.button<IconI>`
@@ -264,6 +238,7 @@ export const ExampleIsFinished = styled.div<ExampleIsFinishedI>`
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    font-size: 0.7rem;
   }
   &:hover::after {
     left: 0;

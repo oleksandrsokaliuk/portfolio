@@ -5,6 +5,7 @@ import { useDimensions } from "./use-dimensions";
 import { FilterToggle } from "./FilterToggle";
 import { FilterContainer } from "./FilterContainer";
 import "./filter.css";
+import { StackI } from "../../../../data/dataTypes";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -29,9 +30,16 @@ const sidebar = {
 export interface FilterChildrenProps {
   isShown: boolean;
   toggle?: () => void;
+  setSelectedFilters?: React.Dispatch<React.SetStateAction<StackI[]>>;
+  selectedFilters?: StackI[];
 }
 
-const Filter = () => {
+export interface FilterI {
+  setSelectedFilters: React.Dispatch<React.SetStateAction<StackI[]>>;
+  selectedFilters: StackI[];
+}
+
+const Filter: React.FC<FilterI> = ({ setSelectedFilters, selectedFilters }) => {
   const [isAnimationStarted, setIsAnimationStarted] =
     React.useState<boolean>(false);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -39,15 +47,21 @@ const Filter = () => {
   const { height } = useDimensions(containerRef);
   const [isShown, setIsShown] = React.useState<boolean>(false);
   React.useEffect(() => {
-    if (isAnimationStarted && isOpen) {
+    if (!isAnimationStarted && isOpen) {
       setIsShown(true);
-      // console.log("StartAndShown");
+      console.log("StartAndShown");
+      console.log({ isOpen: isOpen });
+      console.log({ isAnimationStarted: isAnimationStarted });
     }
     if (!isAnimationStarted && !isOpen) {
       setIsShown(false);
-      // console.log("NOTStartNOTShown");
-      // console.log({ isOpen: isOpen });
+      console.log("NOTStartNOTShown");
+      console.log({ isOpen: isOpen });
+      console.log({ isAnimationStarted: isAnimationStarted });
     }
+    // console.log({ isOpen: isOpen });
+    // console.log({ isAnimationStarted: isAnimationStarted });
+
     // console.log({ isAnimationStarted: isAnimationStarted });
     // console.log({ isOpen: isOpen });
     // console.log({ isShown: isShown });
@@ -60,18 +74,22 @@ const Filter = () => {
       custom={height}
       ref={containerRef}
       className="filter-container"
-      onAnimationStart={() => {
-        // console.log("animationstarted");
-        setIsAnimationStarted(true);
-      }}
-      onAnimationComplete={() => setIsAnimationStarted(false)}
     >
       <motion.div
         className="background"
         variants={sidebar}
         style={isShown ? { zIndex: 10 } : { zIndex: 0 }}
+        onAnimationStart={() => {
+          // console.log("animationstarted");
+          setIsAnimationStarted(true);
+        }}
+        onAnimationComplete={() => setIsAnimationStarted(false)}
       />
-      <FilterContainer isShown={isShown} />
+      <FilterContainer
+        isShown={isShown}
+        setSelectedFilters={setSelectedFilters}
+        selectedFilters={selectedFilters}
+      />
       <FilterToggle toggle={() => toggleOpen()} isShown={isShown} />
     </motion.div>
   );
