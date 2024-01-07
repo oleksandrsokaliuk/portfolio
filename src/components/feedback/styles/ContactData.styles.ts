@@ -9,8 +9,6 @@ import styled from "styled-components";
 import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 export const Container = styled.div`
-  /* height: 75%;
-  width: 100%; */
   height: 100%;
   padding: 10% 20px 10% 50px;
   flex: 1 1 40%;
@@ -22,7 +20,6 @@ export const Container = styled.div`
     padding: 35% 20px 35% 50px;
   }
   @media (max-width: ${screenSizes.s}) {
-    /* padding: 2% 10px 2% 10px; */
     padding: 5% 10px 5% 10px;
     align-items: center;
     gap: 40px;
@@ -94,7 +91,6 @@ export const PhoneEmail = styled.p`
 `;
 
 export const SocialNetworksContainer = styled.div`
-  /* height: 10%; */
   width: 100%;
   display: flex;
   align-items: center;

@@ -105,25 +105,14 @@ interface DataI {
   interests: {
     football: {
       header: string;
-      description: string;
       team: string;
       league: string;
-      position: string;
     };
-    music: {
+    learning: {
       header: string;
-      description: string;
-      genres: string;
     };
-    videoGames: {
+    coding: {
       header: string;
-      description: string;
-      genres: string;
-      favGames: string;
-    };
-    languages: {
-      header: string;
-      description: string;
     };
   };
   edAndExp: {

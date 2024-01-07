@@ -33,39 +33,3 @@ export const FilterToggle: React.FC<FilterChildrenProps> = ({
     </svg>
   </button>
 );
-
-{
-  /* <FileredAllButton picked={selectedFilters.length === 13}>
-            All
-          </FileredAllButton>
-        </OneFilterParagraphContainer>
-        {filterItems.map((item) => {
-          const Icon = iconCreator(item as StackI);
-          return Icon ? (
-            <OneFilterParagraphContainer
-              picked={
-                selectedFilters.find((element) => element === item) !==
-                undefined
-              }
-              stack={item}
-              onClick={() => {
-                if (!selectedFilters.includes(item as StackI)) {
-                  setSelectedFilters((prevState) => [
-                    ...prevState,
-                    item as StackI,
-                  ]);
-                } else {
-                  setSelectedFilters((prevState) => {
-                    const withoutElement = prevState.filter(
-                      (element) => element !== item
-                    );
-                    return withoutElement;
-                  });
-                }
-              }}
-            >
-              <Icon key={item} style={{ width: "100%", height: "100%" }} />
-            </OneFilterParagraphContainer>
-          ) : null;
-        })} */
-}

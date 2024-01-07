@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useAppSelector } from "../../../redux/hooks";
 import { languageSelector } from "../../../redux/languageSlice";
 import { FamousNamesEmailsI } from "../../../data/dataTypes";
@@ -15,7 +15,6 @@ import {
   ItemContainer,
   ItemContainerWholeWidth,
   Label,
-  MessageSent,
 } from "../styles/Form.styles";
 import { Formik } from "formik";
 import emailjs from "@emailjs/browser";
@@ -57,10 +56,6 @@ const Form: FC = () => {
       validationSchema={FormSchema}
       onSubmit={async (values, { setSubmitting }) => {
         setEmailIsSent(false);
-        // if (!values.name || !values.email || !values.message) {
-
-        //   return;
-        // }
         try {
           await emailjs.send(
             "service_v13b2kd",
@@ -72,12 +67,6 @@ const Form: FC = () => {
             },
             process.env.REACT_APP_EMAILSJS_KEY
           );
-          // await emailjs.send(
-          //   "service_v13b2kd",
-          //   "template_eumncb8",
-          //   values,
-          //   "AVKkAuycPbKpnubtp"
-          // );
           setEmailIsSent(true);
           setTimeout(() => {
             setEmailIsSent(false);

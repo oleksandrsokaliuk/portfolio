@@ -41,7 +41,6 @@ export const SkillLevel = styled(motion.div)`
   margin: 0;
   @media (max-width: 992px) {
     font-size: 1em;
-    /* flex: 2 1 40px; */
   }
 `;
 

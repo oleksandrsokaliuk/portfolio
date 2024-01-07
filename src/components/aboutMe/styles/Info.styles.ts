@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 import { BiSolidDownload } from "react-icons/bi";
-import { FaArrowsLeftRight } from "react-icons/fa6";
 
 const dragIcon = keyframes`
 20% {
@@ -30,10 +29,8 @@ export const InfoContainer = styled(motion.div)`
   flex: 3;
   gap: 20px;
   justify-content: space-around;
-  /* align-items: center; */
   @media (max-width: 992px) {
     flex-direction: row;
-    /* padding-bottom: 10%; */
   }
   &:after {
     content: "<- Drag ->";
@@ -41,7 +38,6 @@ export const InfoContainer = styled(motion.div)`
     bottom: -20%;
     left: 0;
     width: 100%;
-    /* height: 2rem; */
     opacity: 0;
     font-size: 1.3rem;
     z-index: 100000000;
@@ -49,7 +45,6 @@ export const InfoContainer = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: ${(props) => props.theme.light.exceptionalColour}; */
     color: ${(props) => props.theme.light.secondaryBG};
   }
   &:hover::after {
@@ -67,12 +62,8 @@ export const InfoHeader = styled.h2`
   text-transform: uppercase;
   color: ${(props) => props.theme.light.header};
   text-align: center;
-  /* position: absolute;
-  bottom: 85%; */
-  /* height: 20vh; */
   margin: 0;
   padding: 0 20px;
-  /* flex: 1; */
   @media (max-width: 992px) {
     font-size: 2em;
     text-align: center;
@@ -81,7 +72,6 @@ export const InfoHeader = styled.h2`
 
 export const InfoItemContainer = styled.div`
   display: flex;
-  /* margin-top: -15px; */
 `;
 
 export const InfoItemHeader = styled.p`
@@ -143,18 +133,3 @@ export const CVDownloadIcon = styled(BiSolidDownload)`
 `;
 
 export const ItemsContainer = styled.div``;
-
-export const DragIconContainer = styled.div`
-  /* position: absolute; */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const DragIconText = styled.p``;
-
-export const DragIcon = styled(FaArrowsLeftRight)`
-  font-size: 3rem;
-  stroke-width: 0px;
-`;

@@ -45,13 +45,10 @@ const morphBottom = keyframes`
 
 export const MainPhotoContainer = styled(motion.div)`
   position: relative;
-  /* width: 100%; */
   min-width: 500px;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  /* border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%; */
   animation: ${morphBottom} 10s linear infinite;
 
   @media (max-width: 1200px) {
@@ -74,7 +71,6 @@ export const PhotoBackground = styled.div`
   position: absolute;
   bottom: -2%;
   z-index: 5;
-  /* border-radius: 54% 21% 54% 20% / 37% 18% 46% 25%; */
   animation: ${morph} 10s linear infinite;
   @media (max-width: 992px) {
     height: 85%;
@@ -85,7 +81,6 @@ export const PhotoBackground = styled.div`
 `;
 
 export const MainPhoto = styled(motion.img)`
-  /* position: absolute; */
   height: 100%;
   width: auto;
   bottom: 0;

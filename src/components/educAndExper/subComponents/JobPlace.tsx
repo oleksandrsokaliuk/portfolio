@@ -1,7 +1,6 @@
 import { FC, useRef } from "react";
 import { ExperienceI } from "../../../data/dataTypes";
 import {
-  BarItemContainer,
   JobItemContainer,
   JobItemDescription,
   JobItemTitle,
@@ -20,7 +19,7 @@ const JobPlace: FC<ExperienceI> = ({
   return (
     <JobItemContainer
       ref={ref}
-      index={index}
+      key={index}
       initial={{ opacity: 0 }}
       animate={isInView && { opacity: 1 }}
       transition={{ duration: 0.4, ease: "linear", delay: index }}

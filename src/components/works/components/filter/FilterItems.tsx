@@ -1,14 +1,10 @@
 import * as React from "react";
-import { motion } from "framer-motion";
 import { StackI } from "../../../../data/dataTypes";
-import { BsFiletypeHtml, BsGithub } from "react-icons/bs";
+import { BsFiletypeHtml } from "react-icons/bs";
 import { DiCss3 } from "react-icons/di";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { TbBrandRedux, TbBrandReactNative } from "react-icons/tb";
-import { MdWeb } from "react-icons/md";
-import { ImCross } from "react-icons/im";
-import { TiTick } from "react-icons/ti";
 import {
   SiNextdotjs,
   SiNestjs,
@@ -17,37 +13,10 @@ import {
   SiMongoose,
   SiSocketdotio,
 } from "react-icons/si";
-import { FiGithub } from "react-icons/fi";
 import { useAppSelector } from "../../../../redux/hooks";
 import { languageSelector } from "../../../../redux/languageSlice";
-import {
-  FileredAllButton,
-  OneFilterParagraphContainer,
-} from "../../styles/MyWorks.styles";
+import { OneFilterParagraphContainer } from "../../styles/MyWorks.styles";
 import { FilterI } from "./Filter";
-
-const variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
-
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-
-interface FilterItemI {
-  isOpen: boolean;
-}
 
 export const FilterItems: React.FC<FilterI> = ({
   setSelectedFilters,
@@ -55,7 +24,6 @@ export const FilterItems: React.FC<FilterI> = ({
 }) => {
   const selectedLanguage = useAppSelector(languageSelector);
   const { filterItems } = selectedLanguage.myWorks;
-  // const [selectedFilters, setSelectedFilters] = React.useState<StackI[]>([]);
   const iconCreator = (stack: StackI) => {
     switch (stack) {
       case StackI.HTML:
@@ -86,7 +54,6 @@ export const FilterItems: React.FC<FilterI> = ({
         return SiSocketdotio;
     }
   };
-  // const style = { border: `2px solid ${colors[i]}` };
   return (
     <>
       <OneFilterParagraphContainer
@@ -121,10 +88,10 @@ export const FilterItems: React.FC<FilterI> = ({
       >
         ALL
       </OneFilterParagraphContainer>
-      {filterItems.map((item) => {
+      {filterItems.map((item, idx) => {
         const Icon = iconCreator(item as StackI);
         return Icon ? (
-          <>
+          <div key={idx}>
             <OneFilterParagraphContainer
               className="filter-item"
               whileHover={{ scale: 1.1 }}
@@ -149,22 +116,14 @@ export const FilterItems: React.FC<FilterI> = ({
                   });
                 }
               }}
+              key={item}
             >
-              <Icon key={item} style={{ width: "30px" }} />
-              <div key={item}>{item}</div>
+              <Icon style={{ width: "30px" }} />
+              <div>{item}</div>
             </OneFilterParagraphContainer>
-          </>
+          </div>
         ) : null;
       })}
     </>
   );
-  // <motion.li
-  //   className="filter-item"
-  //   variants={variants}
-  //   whileHover={{ scale: 1.1 }}
-  //   whileTap={{ scale: 0.95 }}
-  // >
-  //   <div className="icon-placeholder" style={style} />
-  //   <div className="text-placeholder" style={style} />
-  // </motion.li>
 };

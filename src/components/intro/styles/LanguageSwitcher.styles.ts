@@ -11,15 +11,6 @@ interface LangSwitcherContainerI {
   isSwitcherExtended: boolean;
 }
 
-// export const LanguageMainContainer = styled.div`
-//   display: flex;
-//   position: absolute;
-//   top: 2%;
-//   right: 5%;
-//   width: 90%;
-//   justify-content: flex-end;
-// `;
-
 export const LangSwitcherContainer = styled(motion.ul)<LangSwitcherContainerI>`
   list-style-type: none;
   display: flex;

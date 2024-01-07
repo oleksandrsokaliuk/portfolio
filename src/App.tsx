@@ -1,5 +1,5 @@
 import GlobalStyle from "./generalStyles/GlobalStyles";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import Loading from "./components/loading/Loading";
 import AppContainer from "./components/AppContainer";
 

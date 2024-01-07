@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRef } from "react";
-import { motion, sync, useCycle } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { FilterToggle } from "./FilterToggle";
 import { FilterContainer } from "./FilterContainer";
@@ -49,22 +49,10 @@ const Filter: React.FC<FilterI> = ({ setSelectedFilters, selectedFilters }) => {
   React.useEffect(() => {
     if (!isAnimationStarted && isOpen) {
       setIsShown(true);
-      console.log("StartAndShown");
-      console.log({ isOpen: isOpen });
-      console.log({ isAnimationStarted: isAnimationStarted });
     }
     if (!isAnimationStarted && !isOpen) {
       setIsShown(false);
-      console.log("NOTStartNOTShown");
-      console.log({ isOpen: isOpen });
-      console.log({ isAnimationStarted: isAnimationStarted });
     }
-    // console.log({ isOpen: isOpen });
-    // console.log({ isAnimationStarted: isAnimationStarted });
-
-    // console.log({ isAnimationStarted: isAnimationStarted });
-    // console.log({ isOpen: isOpen });
-    // console.log({ isShown: isShown });
   }, [isOpen, isAnimationStarted]);
 
   return (
@@ -80,7 +68,6 @@ const Filter: React.FC<FilterI> = ({ setSelectedFilters, selectedFilters }) => {
         variants={sidebar}
         style={isShown ? { zIndex: 10 } : { zIndex: 0 }}
         onAnimationStart={() => {
-          // console.log("animationstarted");
           setIsAnimationStarted(true);
         }}
         onAnimationComplete={() => setIsAnimationStarted(false)}

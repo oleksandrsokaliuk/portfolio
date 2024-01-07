@@ -44,29 +44,14 @@ const germanData: DataI = {
   interests: {
     football: {
       header: "Fußballer",
-      description:
-        "Ich spiele seit meinem 7. Lebensjahr Fußball. Es ist meine Leidenschaft.",
-      team: "SV Oberjesingen",
-      league: "Kreisliga B6",
-      position: "Zentraler Verteidiger",
+      team: "Mannschaft: SV Oberjesingen II",
+      league: "Liga: Kreisliga B6",
     },
-    music: {
-      header: "Melomane",
-      description:
-        "Ich bin ein Musikliebhaber und finde beim Programmieren Inspiration und Fokus in verschiedenen Genres.",
-      genres: "Hip-Hop, Country, Rock, Klassische Musik",
+    learning: {
+      header: "Lernbegeisterter",
     },
-    videoGames: {
-      header: "Gamer",
-      description:
-        "Ich bin ein leidenschaftlicher Videospieler, der die problemlösenden und strategischen Aspekte des Spielens schätzt.",
-      genres: "RPG, Strategie, Simulation",
-      favGames: "FIFA, Civilization VI",
-    },
-    languages: {
-      header: "Sprachen-Enthusiast",
-      description:
-        "Ich bin ein begeisterter Sprachlerner und immer bereit, neue Fremdsprachen zu erkunden und zu beherrschen.",
+    coding: {
+      header: "Coder",
     },
   },
   edAndExp: {

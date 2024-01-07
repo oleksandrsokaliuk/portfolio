@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from "react";
+import { FC } from "react";
 import LanguageSwitcher from "./subComponents/LanguageSwitcher";
 import { useAppSelector } from "../../redux/hooks";
 import { languageSelector } from "../../redux/languageSlice";
@@ -13,13 +13,6 @@ import {
   ScrollIcon,
   TextHeaderContainer,
 } from "./styles/Intro.styles";
-import {
-  MotionValue,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { ThemeI } from "../../generalStyles/theme";
 
 export interface IntroI {
   scrollPosition: number;
@@ -28,10 +21,6 @@ export interface IntroI {
 const Intro: FC<IntroI> = ({ scrollPosition }) => {
   const selectedLanguage = useAppSelector(languageSelector);
   const { header, subHeader, scrollButton } = selectedLanguage.introduction;
-
-  // useEffect(() => {
-  //   console.log("Current scroll position:", scrollPosition);
-  // }, [scrollPosition]);
 
   return (
     <IntroContainer>
@@ -47,7 +36,6 @@ const Intro: FC<IntroI> = ({ scrollPosition }) => {
             {header}
           </IntroTextHeader>
           <IntroTextSubHeader
-            // initial={{ x: -1000 }}
             animate={{ x: 0 }}
             transition={{ type: "spring" }}
           >
@@ -61,12 +49,11 @@ const Intro: FC<IntroI> = ({ scrollPosition }) => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
       >
-        {scrollButton.map((word) => (
-          <ScrollA href="#aboutme">
+        {scrollButton.map((word, idx) => (
+          <ScrollA href="#aboutme" key={idx}>
             <ScrollIcon />
           </ScrollA>
         ))}
-        {/* <ScrollIcon /> */}
       </ScrollButtonContainer>
     </IntroContainer>
   );

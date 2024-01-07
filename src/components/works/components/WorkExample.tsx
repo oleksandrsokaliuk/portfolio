@@ -1,46 +1,21 @@
-import { FC, useState } from "react";
-import { useAppSelector } from "../../../redux/hooks";
-import { languageSelector } from "../../../redux/languageSlice";
+import { FC } from "react";
 import {
   BlurWrapper,
-  Container,
   Example,
-  ExampleCheckedParagraph,
   ExampleDescr,
   ExampleDescrContainer,
   ExampleFooter,
   ExampleHeader,
   ExampleIsFinished,
   ExampleLink,
-  ExampleSubContainer,
-  ExamplesContainer,
-  FileredAllButton,
-  FilterContainer,
   FinishedIcon,
-  Header,
   IconContainer,
   LinksContainer,
   NotFinishedIcon,
-  OneFilterParagraphContainer,
 } from "../styles/MyWorks.styles";
-import { StackI, WorkExampleI, WorksI } from "../../../data/dataTypes";
-import { BsFiletypeHtml, BsGithub } from "react-icons/bs";
-import { DiCss3 } from "react-icons/di";
-import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
-import { TbBrandRedux, TbBrandReactNative } from "react-icons/tb";
+import { StackI, WorkExampleI } from "../../../data/dataTypes";
+import { BsGithub } from "react-icons/bs";
 import { MdWeb } from "react-icons/md";
-import { ImCross } from "react-icons/im";
-import { TiTick } from "react-icons/ti";
-
-import {
-  SiNextdotjs,
-  SiNestjs,
-  SiStyledcomponents,
-  SiExpress,
-  SiMongoose,
-  SiSocketdotio,
-} from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
 
 const WorkExample: FC<WorkExampleI> = (props) => {
@@ -48,7 +23,7 @@ const WorkExample: FC<WorkExampleI> = (props) => {
     <Example picture={props.work.picture}>
       <ExampleHeader>{props.work.name}</ExampleHeader>
       <ExampleDescrContainer>
-        {props.work.stack.map((stack) => {
+        {props.work.stack.map((stack, idx) => {
           const Icon = props.iconCreator(stack);
           return Icon ? (
             <IconContainer
@@ -68,6 +43,7 @@ const WorkExample: FC<WorkExampleI> = (props) => {
                   });
                 }
               }}
+              key={idx}
             >
               <Icon key={stack} style={{ height: "100%", width: "30px" }} />
             </IconContainer>

@@ -1,27 +1,13 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC } from "react";
 import mainPhoto from "../../../assets/photo.png";
 import {
   MainPhoto,
   MainPhotoContainer,
   PhotoBackground,
 } from "../styles/Photo.styles";
-import {
-  AnimatePresence,
-  useInView,
-  useMotionValueEvent,
-  useScroll,
-  useSpring,
-} from "framer-motion";
 import { IntroI } from "../Intro";
 
 const Photo: FC<IntroI> = ({ scrollPosition }) => {
-  // const { scrollYProgress } = useScroll();
-  // const [hookedYPostion, setHookedYPosition] = React.useState(0);
-  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  //   console.log(latest);
-  //   setHookedYPosition(latest);
-  // });
-
   return (
     <MainPhotoContainer>
       <MainPhoto

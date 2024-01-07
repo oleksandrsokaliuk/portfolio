@@ -47,6 +47,4 @@ const Skill: FC<SkillsI> = ({ title, level, langLevel, langProgress }) => {
   );
 };
 
-// width: ${(props) => props.progress}%;
-
 export default Skill;

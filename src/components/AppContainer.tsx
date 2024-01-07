@@ -1,4 +1,3 @@
-// import Intro from "./intro/Intro";
 import {
   AppMainContainer,
   MainContainer,
@@ -26,7 +25,6 @@ function AppContainer() {
   }, [scrollYProgress]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // console.log({ latestScroll: latest * 100 });
     setHookedYPosition(latest);
   });
 

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { FiArrowDown } from "react-icons/fi";
 import styled, { keyframes } from "styled-components";
 import { screenSizes } from "../../../generalStyles/GlobalStyles";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
@@ -33,8 +32,6 @@ export const IntroHeader = styled.div`
     width: 100%;
     flex-direction: column;
     align-items: center;
-    /* height: auto; */
-    /* margin-top: 20%; */
   }
 `;
 
@@ -71,9 +68,6 @@ export const IntroTextHeader = styled(motion.h1)`
   line-height: normal;
   letter-spacing: 15.3px;
   text-transform: uppercase;
-  /* @media (max-width: 770px) {
-    font-size: 40px;
-  } */
   @media (max-width: ${screenSizes.l}) {
     font-size: 45px;
     letter-spacing: 8px;
@@ -156,12 +150,6 @@ export const ScrollButtonContainer = styled(motion.div)`
   position: absolute;
   bottom: 5%;
   right: 3%;
-  /* @media (max-width: 992px) {
-    right: auto;
-    align-self: center;
-    bottom: 5%;
-    width: 15px;
-  } */
   @media (max-width: ${screenSizes.l}) {
     flex: 1;
     position: static;
@@ -171,17 +159,12 @@ export const ScrollButtonContainer = styled(motion.div)`
   }
 `;
 
-// export const ScrollIcon = styled(FiArrowDown)`
-//   width: inherit;
-// `;
-
 export const ScrollA = styled.a`
   width: inherit;
   word-wrap: break-word;
   color: ${(props) => props.theme.light.mainBG};
   text-align: center;
   font-family: ${(props) => props.theme.light.secondaryFont};
-  /* font-size: 16px; */
   display: block;
   width: 100%;
   height: 100%;

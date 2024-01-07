@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { StackI, WorkExampleI } from "../../../data/dataTypes";
-import ReactSwipe from "react-swipe";
 import { SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import { TiTick } from "react-icons/ti";
@@ -15,14 +13,12 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   padding: 50px 0;
-  /* justify-content: space-around; */
   gap: 2%;
   height: 100vh;
   background-color: ${(props) => props.theme.light.thirdBG};
   scroll-snap-align: start;
   align-items: center;
   position: relative;
-  /* padding: 3% 10%; */
   @media (max-width: 992px) {
     border-radius: 0;
     padding: 80px 0 120px 0;
@@ -43,33 +39,11 @@ export const Header = styled.h2`
   letter-spacing: 15.64px;
   margin: 0;
   text-transform: uppercase;
-  /* flex: 1 1 30px; */
   flex: 0 0 20px;
 `;
 
-export const FilterContainer = styled.div`
-  /* width: 80%;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 5%;
-  justify-content: center;
-  row-gap: 1em;
-  flex: 0 1 20px; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  padding: 100px 50px;
-  display: flex;
-  flex-direction: column;
-  z-index: 100000;
-  background: green;
-`;
-
 interface IconI {
-  picked: boolean | undefined;
+  picked: boolean;
   stack?: string;
 }
 
@@ -84,19 +58,6 @@ export const OneFilterParagraphContainer = styled(motion.li)<IconI>`
   font-size: 1.2rem;
 `;
 
-export const FileredAllButton = styled.button<IconI>`
-  color: ${(props) =>
-    props.picked
-      ? props.theme.light.exceptionalColour
-      : props.theme.light.mainBG};
-  transform: ${(props) => (props.picked ? "scale(1.2)" : "scale(1)")};
-  width: 100%;
-  font-size: 1em;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-`;
-
 export const FilterParagraph = styled.p`
   color: #888787;
   text-align: center;
@@ -108,65 +69,6 @@ export const FilterParagraph = styled.p`
   text-transform: lowercase;
   margin: 0;
   cursor: pointer;
-`;
-
-/// swiper
-
-export const ExamplesContainer = styled.div`
-  /* display: flex;
-  width: 100%;
-  height: 50%;
-  gap: 5%;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex: 6 6 400px; */
-  /* position: relative; */
-  /* max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex; */
-`;
-
-export const SwiperContainer = styled.div`
-  position: relative;
-  /* width: 100%; */
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  flex: 5 0 auto;
-`;
-
-export const Swiper = styled(ReactSwipe)`
-  /* max-width: 100%; */
-  overflow: hidden;
-  height: 100%;
-  /* border-radius: 80px; */
-  box-shadow: 1px -2px 17px rgba(255, 255, 255, 0.5);
-  flex: 1 0 500px;
-  /* position: relative; */
-  & > div {
-    height: 100%;
-    /* float: left;
-    width: 100%;
-    position: relative; */
-  }
-`;
-
-export const SwiperBtnsContainer = styled.div`
-  flex: 1 0 50px;
-`;
-
-export const SwiperBtn = styled.button``;
-
-export const ExampleSubContainer = styled.div`
-  background-color: rgba(0, 0, 0, 0.9);
-  color: ${(props) => props.theme.light.header};
-  display: flex;
-  flex-direction: column;
-  border-radius: 20%;
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
 `;
 
 export const ExampleHeader = styled.h2`
@@ -206,8 +108,6 @@ interface ExampleIsFinishedI {
 }
 
 export const ExampleIsFinished = styled.div<ExampleIsFinishedI>`
-  /* flex: 0 0 40px; */
-  /* width: auto; */
   padding: 5px 50px;
   background: ${(props) => (props.finished ? "#41a148" : "#FF1611")};
   margin-bottom: 20px;
@@ -223,7 +123,6 @@ export const ExampleIsFinished = styled.div<ExampleIsFinishedI>`
   overflow: hidden;
   &::after {
     content: ${(props) => {
-      // console.log({ statusText: typeof props.statusText.finished });
       return props.finished
         ? `"${props.statusText.finished}"`
         : `"${props.statusText.notFinished}"`;
@@ -328,11 +227,6 @@ export const Example = styled(motion.div)<ExampleI>`
 
   & ${ExampleHeader} {
   }
-
-  /* @media (max-width: ${screenSizes.s}) {
-    width: 80%;
-    margin: 0 auto;
-  } */
 `;
 
 export const SwiperSld = styled(SwiperSlide)``;

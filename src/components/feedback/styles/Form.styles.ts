@@ -2,13 +2,7 @@ import styled from "styled-components";
 import { screenSizes } from "../../../generalStyles/GlobalStyles";
 
 export const FormContainer = styled.form`
-  /* height: 100%;
-  width: 100%; */
   display: flex;
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* padding-left: 5%; */
-  /* justify-content: space-between; */
   padding: 10% 50px 10% 20px;
   flex: 3 0 60%;
   border-left: 5px solid ${(props) => props.theme.light.secondaryBG};
@@ -45,7 +39,6 @@ export const Input = styled.input`
   font-weight: 300;
   line-height: normal;
   letter-spacing: 3.68px;
-  /* text-transform: capitalize; */
   background: transparent;
   border: none;
   border-bottom: 1px solid #e6e6e6;
@@ -64,7 +57,6 @@ export const InputText = styled.textarea`
   font-weight: 300;
   line-height: normal;
   letter-spacing: 3.68px;
-  /* text-transform: capitalize; */
   background: transparent;
   outline: none;
   border: 1px solid #e6e6e6;
@@ -77,28 +69,10 @@ export const InputText = styled.textarea`
   }
 `;
 
-/* color: ${(props) => props.theme.light.header};
-  font-family: ${(props) => props.theme.light.secondaryFont};
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  letter-spacing: 3.68px;
-  text-transform: capitalize;
-  border-radius: 36px;
-  background: ${(props) => props.theme.light.exceptionalColour};
-  align-self: flex-start;
-  padding: 3% 20%;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-  cursor: pointer; */
-
 export const ButtonErrorContainer = styled.div`
   display: flex;
   align-self: flex-end;
   gap: 40px;
-  /* align-self: center; */
   align-items: center;
   min-height: 50px;
   @media (max-width: ${screenSizes.l}) {
@@ -115,7 +89,6 @@ export const ErrorContainer = styled.ul`
   gap: 5px;
   flex-wrap: wrap;
   @media (max-width: ${screenSizes.l}) {
-    /* align-items: center; */
     margin: 0 auto;
     padding-left: 20px;
   }
@@ -211,9 +184,7 @@ export const Button = styled.button`
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   width: 40%;
-  /* width: 100%; */
 `;
 
 export const ItemContainerWholeWidth = styled(ItemContainer)`
@@ -221,14 +192,9 @@ export const ItemContainerWholeWidth = styled(ItemContainer)`
   align-self: center;
 `;
 
-export const MessageSent = styled.p`
-  color: ${(props) => props.theme.light.header};
-`;
-
 export const FormInnerContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* height: 50%; */
   justify-content: space-between;
   margin: 0 auto;
 `;

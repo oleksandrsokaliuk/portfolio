@@ -7,8 +7,6 @@ const JobsBar: FC = () => {
   return (
     <div style={{ height: "100%", width: "20%" }} ref={ref}>
       <svg
-        // width="20"
-        // height="321"
         width="100%"
         height="100%"
         viewBox="0 0 20 321"
@@ -21,18 +19,16 @@ const JobsBar: FC = () => {
           transition={{ duration: 3, ease: "linear" }}
           d="M10 400 L10 100"
           stroke="#888787"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <motion.line
           initial={{ y1: 100, y2: 100 }}
           animate={isInView && { y1: 10, y2: 100 }}
           transition={{ duration: 1, delay: 3, ease: "linear" }}
           x1="10"
-          // y1="7"
           x2="10"
-          // y2="116"
           stroke="#0238ED"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <motion.circle
           initial={{ r: 0 }}
@@ -58,7 +54,6 @@ const JobsBar: FC = () => {
           transition={{ duration: 0.4, delay: 1.8 }}
           cx="10"
           cy="170"
-          // r="10"
           fill="#888787"
         />
         <motion.circle

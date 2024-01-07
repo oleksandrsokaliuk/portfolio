@@ -44,27 +44,14 @@ const ukrainianData: DataI = {
   interests: {
     football: {
       header: "Футболіст",
-      description: "Я граю у футбол з 7 років. Це моя страсть",
-      team: "SV Oberjesingen",
-      league: "Kreisliga B6",
-      position: "Центральний захисник",
+      team: "Команда: SV Oberjesingen II",
+      league: "Ліга: Kreisliga B6",
     },
-    music: {
-      header: "Меломан",
-      description:
-        "Я люблю музику і знаходжу натхнення та фокус, працюючи над кодом, слухаючи різні жанри",
-      genres: "Хіп-хоп, Кантрі, Рок, Класична музика",
+    learning: {
+      header: "Любитель навчання",
     },
-    videoGames: {
-      header: "Геймер",
-      description:
-        "Я відданий гравець, який оцінює головоломки та стратегічні аспекти в іграх",
-      genres: "RPG, Стратегія, Симуляція",
-      favGames: "FIFA, Civilization VI",
-    },
-    languages: {
-      header: "Ентузіаст мов",
-      description: "Я завжди готовий вивчати і засвоювати нові іноземні мови",
+    coding: {
+      header: "Кодер",
     },
   },
   edAndExp: {

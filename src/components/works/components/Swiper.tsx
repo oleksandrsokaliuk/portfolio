@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState } from "react";
+import { Swiper } from "swiper/react";
 import { BsFiletypeHtml } from "react-icons/bs";
 import { DiCss3 } from "react-icons/di";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
@@ -17,7 +17,6 @@ import {
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
 import "./../styles/styles.css";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
@@ -32,11 +31,9 @@ const SwiperWorks: React.FC<FilterI> = ({
   selectedFilters,
   setSelectedFilters,
 }) => {
-  const [showIconName, setShowIconName] = useState<boolean>(false);
   const [isExampleChecked, setIsExampleChecked] = useState<boolean>(false);
-  // const [selectedFilters, setSelectedFilters] = useState<StackI[]>([]);
   const selectedLanguage = useAppSelector(languageSelector);
-  const { header, filterItems, works, isFinished } = selectedLanguage.myWorks;
+  const { works, isFinished } = selectedLanguage.myWorks;
   const iconCreator = (stack: StackI) => {
     switch (stack) {
       case StackI.HTML:
@@ -67,12 +64,6 @@ const SwiperWorks: React.FC<FilterI> = ({
         return SiSocketdotio;
     }
   };
-  // useEffect(() => {
-  //   selectedFilters.forEach((filter) => {
-  //     console.log({ filterTest: filter });
-  //   });
-  //   console.log("Hello");
-  // }, []);
 
   return (
     <>
@@ -93,15 +84,13 @@ const SwiperWorks: React.FC<FilterI> = ({
         className="mySwiper"
       >
         {works.map((work, idx) => {
-          console.log({ workStack: work.stack });
-          console.log({ selectedFilters });
           if (
             work.stack.some((item1) =>
               selectedFilters.some((item2) => item1 === item2)
             )
           ) {
             return (
-              <SwiperSld>
+              <SwiperSld key={idx}>
                 <WorkExample
                   work={work}
                   iconCreator={iconCreator}
@@ -116,21 +105,6 @@ const SwiperWorks: React.FC<FilterI> = ({
             );
           }
         })}
-
-        {/* {works.map((work, idx) => (
-          <SwiperSld>
-            <WorkExample
-              work={work}
-              iconCreator={iconCreator}
-              selectedFilters={selectedFilters}
-              setSelectedFilters={setSelectedFilters}
-              isExampleChecked={isExampleChecked}
-              setIsExampleChecked={setIsExampleChecked}
-              isFinished={isFinished}
-              index={idx}
-            />
-          </SwiperSld>
-        ))} */}
       </Swiper>
     </>
   );

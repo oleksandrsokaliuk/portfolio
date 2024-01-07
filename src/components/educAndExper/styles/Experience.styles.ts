@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const SkillsGeneralContainer = styled.div`
@@ -12,9 +11,6 @@ export const SkillsGeneralContainer = styled.div`
     flex-direction: column;
     padding: 10% 0;
   }
-  /* @media (max-width: 380px) {
-    font-size: 8px;
-  } */
 `;
 
 export const SkillsProgrammingContainer = styled.div`

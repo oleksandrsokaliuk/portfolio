@@ -40,36 +40,7 @@ export const AppMainContainer = styled.div`
   height: 100vh;
   max-width: 100vw;
   display: inherit;
-  /* @media (max-width: 600px) {
-    max-width: 600px;
-  }
-  @media (max-width: 768px) {
-    max-width: 768px;
-  }
-  @media (max-width: 992px) {
-    max-width: 992px;
-  }
-  @media (min-width: 1200px) {
-    min-width: 1200px;
-  } */
 `;
-
-// export const MobileVersionTestContainer = styled.div`
-//   height: 100vh;
-//   width: 100vw;
-//   align-items: center;
-//   text-align: center;
-//   display: none;
-//   @media (max-width: 992px) {
-//     display: flex;
-//   }
-// `;
-
-// export const MobileVersionTestHeader = styled.h2`
-//   color: white;
-//   flex: 1;
-//   font-size: 2em;
-// `;
 
 export const SemanticInvisHeader = styled.h2`
   position: absolute;

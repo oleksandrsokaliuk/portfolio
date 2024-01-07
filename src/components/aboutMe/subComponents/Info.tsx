@@ -1,28 +1,16 @@
-import { FC, useEffect, useRef } from "react";
-import ButtonCV from "./ButtonCV";
 import { languageSelector } from "../../../redux/languageSlice";
 import { useAppSelector } from "../../../redux/hooks";
 import {
-  DragIcon,
-  DragIconContainer,
-  DragIconText,
   InfoContainer,
-  InfoHeader,
   InfoItemContainer,
   InfoItemDescription,
   InfoItemHeader,
   ItemsContainer,
 } from "../styles/Info.styles";
-import { AnimatePresence, useInView } from "framer-motion";
-import { FaArrowsLeftRight } from "react-icons/fa6";
 
-interface InfoI {
-  appears?: boolean;
-}
-
-const Info: FC<InfoI> = ({ appears }) => {
+const Info = () => {
   const languageState = useAppSelector(languageSelector);
-  const { name, birthDate, county, city, nationality } = languageState.aboutMe;
+  const { name, birthDate, county, city } = languageState.aboutMe;
   return (
     <InfoContainer
       initial={{ opacity: 0, y: -1000 }}
@@ -46,10 +34,6 @@ const Info: FC<InfoI> = ({ appears }) => {
           <InfoItemHeader>{city.title}</InfoItemHeader>
           <InfoItemDescription>{city.description}</InfoItemDescription>
         </InfoItemContainer>
-        {/* <InfoItemContainer>
-          <InfoItemHeader>{nationality.title}</InfoItemHeader>
-          <InfoItemDescription>{nationality.description}</InfoItemDescription>
-        </InfoItemContainer> */}
       </ItemsContainer>
     </InfoContainer>
   );

@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-interface JobItemContainerI {
-  index: number;
-}
-
-export const JobItemContainer = styled(motion.li)<JobItemContainerI>`
+export const JobItemContainer = styled(motion.li)`
   display: flex;
   flex-direction: column;
   height: 125px;
@@ -35,10 +31,4 @@ export const JobItemDescription = styled(motion.p)`
 
 export const JobsBar = styled(motion.img)`
   height: 95%;
-`;
-
-export const BarItemContainer = styled.div`
-  display: flex;
-  width: 100%;
-  height: 2%;
 `;

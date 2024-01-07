@@ -20,7 +20,6 @@ const Education: FC = () => {
   const selectedLanguage = useAppSelector(languageSelector);
   const { newComer, motivated, lawyer } = selectedLanguage.edAndExp.header;
   const { experience, runningLine } = selectedLanguage.edAndExp;
-  const { programmingSkills } = selectedLanguage.skills;
   const ref = useRef(null);
   return (
     <SkillsSection>
@@ -53,6 +52,7 @@ const Education: FC = () => {
                   where={place.where}
                   duration={place.duration}
                   index={reversedIdx}
+                  key={reversedIdx}
                 />
               );
             })}

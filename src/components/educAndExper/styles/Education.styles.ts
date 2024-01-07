@@ -88,7 +88,7 @@ export const EducationContainer = styled.div`
 
 export const JobsContainer = styled.div`
   display: flex;
-  height: 500px; // update - was 60%
+  height: 500px;
   align-self: center;
   width: 40%;
   gap: 5%;

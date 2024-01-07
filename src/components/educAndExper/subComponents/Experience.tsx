@@ -24,16 +24,17 @@ const Experience: FC = () => {
       />
       <SkillsGeneralContainer>
         <SkillsProgrammingContainer>
-          {Object.values(programmingSkills).map((skill) => (
-            <Skill title={skill.title} level={skill.level} />
+          {Object.values(programmingSkills).map((skill, idx) => (
+            <Skill title={skill.title} level={skill.level} key={idx} />
           ))}
         </SkillsProgrammingContainer>
         <SkillsLanguageContainer>
-          {Object.values(languagesSkills).map((skill) => (
+          {Object.values(languagesSkills).map((skill, idx) => (
             <Skill
               title={skill.title}
               langProgress={skill.level}
               langLevel={skill.langLevel}
+              key={idx}
             />
           ))}
         </SkillsLanguageContainer>

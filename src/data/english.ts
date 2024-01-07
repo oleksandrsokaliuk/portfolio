@@ -44,29 +44,14 @@ const englishData: DataI = {
   interests: {
     football: {
       header: "Footballer",
-      description:
-        "I've been playing soccer since I was 7 years old. It's my passion",
-      team: "SV Oberjesingen",
-      league: "Kreisliga B6",
-      position: "Central Defender",
+      team: "Team: SV Oberjesingen II",
+      league: "League: Kreisliga B6",
     },
-    music: {
-      header: "Melomaniac",
-      description:
-        "I'm a music enthusiast who finds inspiration and focus while coding through various genres",
-      genres: "Hip-Hop, Country, Rock, Classical Music",
+    learning: {
+      header: "Knowledge enthusiast",
     },
-    videoGames: {
-      header: "Gamer",
-      description:
-        "I'm a passionate video gamer who embraces gaming's problem-solving and strategic aspects",
-      genres: "RPG, Strategy, Simulation",
-      favGames: "FIFA, Civilization VI",
-    },
-    languages: {
-      header: "Language Enthusiast",
-      description:
-        "I am an avid language learner, always eager to explore and master new foreign languages",
+    coding: {
+      header: "Developer",
     },
   },
   edAndExp: {
